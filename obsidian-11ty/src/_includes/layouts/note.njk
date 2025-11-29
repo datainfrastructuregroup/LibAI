@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="note">
+    <header>
+        <h1>{{ title }}</h1>
+        <div class="meta">
+            <a href="/notes" class="back-link">← Back to all notes</a>
+        </div>
+    </header>
+    
+    <div class="content">
+        {{ content | safe }}
+    </div>
+    
+    {% set backlinks = collections.all | getBacklinks(page) %}
+    {% if backlinks.length > 0 %}
+    <aside class="backlinks">
+        <h2>Backlinks</h2>
+        <ul>
+            {% for backlink in backlinks %}
+            <li><a href="{{ backlink.url }}">{{ backlink.data.title | default(backlink.fileSlug) }}</a></li>
+            {% endfor %}
+        </ul>
+    </aside>
+    {% endif %}
+    
+    <div class="graph-container">
+        <h2>Graph View</h2>
+        <div id="graph" class="graph"></div>
+    </div>
+</article>
