@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Note</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="/" class="logo">Obsidian 11ty</a></h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/notes">All Notes</a>
+            </nav>
+        </header>
+        
+        <main>
+            
+<article class="note">
+    <header>
+        <h1>Example Note</h1>
+        <div class="meta">
+            <a href="/notes" class="back-link">← Back to all notes</a>
+        </div>
+    </header>
+    
+    <div class="content">
+        <h1>Example Note</h1>
+<p>This is an example note that demonstrates the functionality of Obsidian 11ty.</p>
+<h2>Features</h2>
+<ul>
+<li><a href="/notes/another-note.html">Linking to another note</a> using double square brackets</li>
+<li>Automatic backlinks</li>
+<li>Graph view of connections</li>
+</ul>
+<h2>More Information</h2>
+<p>You can create links to other notes by surrounding the note name in double square brackets, like this: <code>[[another-note]]</code>.</p>
+<p>This will automatically create a link to the note with that name, and if the note doesn’t exist yet, it will be created when you click the link.</p>
+
+    </div>
+    
+    
+    
+    <aside class="backlinks">
+        <h2>Backlinks</h2>
+        <ul>
+            
+            <li><a href="/">Welcome to Obsidian 11ty</a></li>
+            
+        </ul>
+    </aside>
+    
+    
+    <div class="graph-container">
+        <h2>Graph View</h2>
+        <div id="graph" class="graph"></div>
+    </div>
+</article>
+
+        </main>
+        
+        <footer>
+            <p>Built with <a href="https://www.11ty.dev/" target="_blank">11ty</a></p>
+        </footer>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html>
