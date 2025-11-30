@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Simple text-based graph visualization for now
                 let graphHTML = '<div style="padding: 1rem;">';
-                graphHTML += `<h4>Knowledge Graph (${graphData.nodes.length} notes, ${graphData.edges.length} connections)</h4>`;
+                graphHTML += `<h4>Knowledge 33Graph (${graphData.nodes.length} notes, ${graphData.edges.length} connections)</h4>`;
                 
                 // Show nodes and connections
                 graphData.nodes.forEach(node => {

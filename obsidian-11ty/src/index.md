@@ -1,6 +1,6 @@
 ---
 title: Welcome to Obsidian 11ty
-layout: layouts/base.njk
+layout: base.njk
 ---
 
 # Welcome to Obsidian 11ty

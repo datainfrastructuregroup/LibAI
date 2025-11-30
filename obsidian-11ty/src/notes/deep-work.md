@@ -1,6 +1,6 @@
 ---
 title: Deep Work
-layout: layouts/note.njk
+layout: note.njk
 ---
 
 # Deep Work

@@ -1,6 +1,6 @@
 ---
 title: All Notes
-layout: layouts/base.njk
+layout: base.njk
 ---
 
 # All Notes

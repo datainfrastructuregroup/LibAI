@@ -1,6 +1,6 @@
 ---
 title: Example Note
-layout: layouts/note.njk
+layout: note.njk
 ---
 
 # Example Note
