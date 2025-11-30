@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Obsidian 11ty</title>
     <link rel="stylesheet" href="/css/style.css">
+    <script type="module" src="/js/graph-visualization.js"></script>
 </head>
 <body>
     <div class="container">
@@ -13,6 +14,7 @@
             <nav>
                 <a href="/">Home</a>
                 <a href="/notes">All Notes</a>
+                <a href="/about">About</a>
             </nav>
         </header>
         
@@ -21,6 +23,21 @@
 <p>A digital garden built with 11ty, inspired by Obsidian Publish.</p>
 <h2>Recent Notes</h2>
 <ul>
+<li>
+<p><a href="/notes/reading-list/">Reading List</a></p>
+</li>
+<li>
+<p><a href="/notes/knowledge-management/">Knowledge Management</a></p>
+</li>
+<li>
+<p><a href="/notes/learning-methods/">Learning Methods</a></p>
+</li>
+<li>
+<p><a href="/notes/deep-work/">Deep Work</a></p>
+</li>
+<li>
+<p><a href="/notes/productivity/">Productivity Systems</a></p>
+</li>
 <li>
 <p><a href="/notes/another-note/">Another Note</a></p>
 </li>
@@ -41,6 +58,11 @@
 </ul>
 
         </main>
+        
+        <section class="graph-section">
+            <h2>Knowledge Graph</h2>
+            <div id="force-graph" class="force-graph-container"></div>
+        </section>
         
         <footer>
             <p>Built with <a href="https://www.11ty.dev/" target="_blank">11ty</a></p>

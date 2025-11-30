@@ -78,8 +78,8 @@ Modify `.eleventy.js` to change site-wide settings and add custom filters or sho
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
 
----
-
-Built with [11ty](https://www.11ty.dev/) | Inspired by [Obsidian](https://obsidian.md/)
+## Graph Implementation
+- https://github.com/barrettotte/md-graph (python)
+- https://github.com/adaptivekind/markdown-graph?tab=readme-ov-file (npm) + graph/viz partner https://adaptivekind.github.io/graph-gizmo/ 
+- https://www.shedloadofcode.com/blog/searching-markdown-files-for-internal-links-and-visualising-with-a-pyvis-network-graph

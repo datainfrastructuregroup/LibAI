@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or 'Obsidian 11ty' }}</title>
     <link rel="stylesheet" href="/css/style.css">
+    <script type="module" src="/js/graph-visualization.js"></script>
 </head>
 <body>
     <div class="container">
@@ -13,12 +14,18 @@
             <nav>
                 <a href="/">Home</a>
                 <a href="/notes">All Notes</a>
+                <a href="/about">About</a>
             </nav>
         </header>
         
         <main>
             {{ content | safe }}
         </main>
+        
+        <section class="graph-section">
+            <h2>Knowledge Graph</h2>
+            <div id="force-graph" class="force-graph-container"></div>
+        </section>
         
         <footer>
             <p>Built with <a href="https://www.11ty.dev/" target="_blank">11ty</a></p>

@@ -1,0 +1,831 @@
+{
+  "nodes": {
+    "readme": {
+      "label": "Obsidian 11ty"
+    },
+    "readme#features": {
+      "label": "Features"
+    },
+    "readme#getting-started": {
+      "label": "Getting Started"
+    },
+    "readme#prerequisites": {
+      "label": "Prerequisites"
+    },
+    "readme#installation": {
+      "label": "Installation"
+    },
+    "readme#development-server": {
+      "label": "Development Server"
+    },
+    "readme#creating-new-notes": {
+      "label": "Creating New Notes"
+    },
+    "readme#building-for-production": {
+      "label": "Building for Production"
+    },
+    "readme#project-structure": {
+      "label": "Project Structure"
+    },
+    "readme#customization": {
+      "label": "Customization"
+    },
+    "readme#styling": {
+      "label": "Styling"
+    },
+    "readme#configuration": {
+      "label": "Configuration"
+    },
+    "readme#license": {
+      "label": "License"
+    },
+    "readme#graph-implementation": {
+      "label": "Graph Implementation"
+    },
+    "about": {
+      "label": "About Obsidian 11ty",
+      "meta": {
+        "title": "About",
+        "layout": "layouts/base.njk"
+      }
+    },
+    "about#what-is-a-digital-garden": {
+      "label": "What is a Digital Garden?",
+      "meta": {
+        "title": "About",
+        "layout": "layouts/base.njk"
+      }
+    },
+    "about#features": {
+      "label": "Features",
+      "meta": {
+        "title": "About",
+        "layout": "layouts/base.njk"
+      }
+    },
+    "about#getting-started": {
+      "label": "Getting Started",
+      "meta": {
+        "title": "About",
+        "layout": "layouts/base.njk"
+      }
+    },
+    "about#technology": {
+      "label": "Technology",
+      "meta": {
+        "title": "About",
+        "layout": "layouts/base.njk"
+      }
+    },
+    "another-note": {
+      "label": "Another Note",
+      "meta": {
+        "title": "Another Note",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "another-note#more-connections": {
+      "label": "More Connections",
+      "meta": {
+        "title": "Another Note",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "another-note#example-of-a-link": {
+      "label": "Example of a Link",
+      "meta": {
+        "title": "Another Note",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "index": {
+      "label": "Welcome to Obsidian 11ty",
+      "meta": {
+        "title": "Welcome to Obsidian 11ty",
+        "layout": "layouts/base.njk"
+      }
+    },
+    "index#recent-notes": {
+      "label": "Recent Notes",
+      "meta": {
+        "title": "Welcome to Obsidian 11ty",
+        "layout": "layouts/base.njk"
+      }
+    },
+    "index#getting-started": {
+      "label": "Getting Started",
+      "meta": {
+        "title": "Welcome to Obsidian 11ty",
+        "layout": "layouts/base.njk"
+      }
+    },
+    "index#example-notes": {
+      "label": "Example Notes",
+      "meta": {
+        "title": "Welcome to Obsidian 11ty",
+        "layout": "layouts/base.njk"
+      }
+    },
+    "deep-work": {
+      "label": "Deep Work",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "deep-work#principles": {
+      "label": "Principles",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "deep-work#implementation": {
+      "label": "Implementation",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "deep-work#benefits": {
+      "label": "Benefits",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "deep-work#challenges": {
+      "label": "Challenges",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "deep-work#related-reading": {
+      "label": "Related Reading",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "learning-methods": {
+      "label": "Learning Methods",
+      "meta": {
+        "title": "Learning Methods",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "learning-methods#active-recall": {
+      "label": "Active Recall",
+      "meta": {
+        "title": "Learning Methods",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "learning-methods#spaced-repetition": {
+      "label": "Spaced Repetition",
+      "meta": {
+        "title": "Learning Methods",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "learning-methods#the-feynman-technique": {
+      "label": "The Feynman Technique",
+      "meta": {
+        "title": "Learning Methods",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "learning-methods#interleaving": {
+      "label": "Interleaving",
+      "meta": {
+        "title": "Learning Methods",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "learning-methods#elaboration": {
+      "label": "Elaboration",
+      "meta": {
+        "title": "Learning Methods",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "learning-methods#related-topics": {
+      "label": "Related Topics",
+      "meta": {
+        "title": "Learning Methods",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "example-note": {
+      "label": "Example Note",
+      "meta": {
+        "title": "Example Note",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "example-note#features": {
+      "label": "Features",
+      "meta": {
+        "title": "Example Note",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "example-note#more-information": {
+      "label": "More Information",
+      "meta": {
+        "title": "Example Note",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "knowledge-management": {
+      "label": "Knowledge Management",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "knowledge-management#personal-knowledge-management-pkm": {
+      "label": "Personal Knowledge Management (PKM)",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "knowledge-management#popular-tools": {
+      "label": "Popular Tools",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "knowledge-management#zettelkasten-method": {
+      "label": "Zettelkasten Method",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "knowledge-management#building-a-second-brain": {
+      "label": "Building a Second Brain",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "knowledge-management#related-concepts": {
+      "label": "Related Concepts",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "notes": {
+      "label": "All Notes",
+      "meta": {
+        "title": "All Notes",
+        "layout": "layouts/base.njk"
+      }
+    },
+    "productivity": {
+      "label": "Productivity Systems",
+      "meta": {
+        "title": "Productivity Systems",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "productivity#getting-things-done-gtd": {
+      "label": "Getting Things Done (GTD)",
+      "meta": {
+        "title": "Productivity Systems",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "productivity#time-blocking": {
+      "label": "Time Blocking",
+      "meta": {
+        "title": "Productivity Systems",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "productivity#the-pomodoro-technique": {
+      "label": "The Pomodoro Technique",
+      "meta": {
+        "title": "Productivity Systems",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "productivity#digital-tools": {
+      "label": "Digital Tools",
+      "meta": {
+        "title": "Productivity Systems",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "productivity#related-concepts": {
+      "label": "Related Concepts",
+      "meta": {
+        "title": "Productivity Systems",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "reading-list": {
+      "label": "Reading List",
+      "meta": {
+        "title": "Reading List",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "reading-list#productivity--work": {
+      "label": "Productivity & Work",
+      "meta": {
+        "title": "Reading List",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "reading-list#learning--memory": {
+      "label": "Learning & Memory",
+      "meta": {
+        "title": "Reading List",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "reading-list#knowledge-management": {
+      "label": "Knowledge Management",
+      "meta": {
+        "title": "Reading List",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "reading-list#technology--digital-life": {
+      "label": "Technology & Digital Life",
+      "meta": {
+        "title": "Reading List",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "reading-list#philosophy--thinking": {
+      "label": "Philosophy & Thinking",
+      "meta": {
+        "title": "Reading List",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "reading-list#reading-strategies": {
+      "label": "Reading Strategies",
+      "meta": {
+        "title": "Reading List",
+        "layout": "layouts/note.njk"
+      }
+    },
+    "reading-list#current-reading": {
+      "label": "Current Reading",
+      "meta": {
+        "title": "Reading List",
+        "layout": "layouts/note.njk"
+      }
+    }
+  },
+  "links": [
+    {
+      "source": "readme#features",
+      "target": "readme"
+    },
+    {
+      "source": "readme#getting-started",
+      "target": "readme"
+    },
+    {
+      "source": "readme#prerequisites",
+      "target": "readme"
+    },
+    {
+      "source": "readme#installation",
+      "target": "readme"
+    },
+    {
+      "source": "readme#development-server",
+      "target": "readme"
+    },
+    {
+      "source": "readme#creating-new-notes",
+      "target": "readme"
+    },
+    {
+      "source": "readme#building-for-production",
+      "target": "readme"
+    },
+    {
+      "source": "readme#project-structure",
+      "target": "readme"
+    },
+    {
+      "source": "readme#customization",
+      "target": "readme"
+    },
+    {
+      "source": "readme#styling",
+      "target": "readme"
+    },
+    {
+      "source": "readme#configuration",
+      "target": "readme"
+    },
+    {
+      "source": "readme#license",
+      "target": "readme"
+    },
+    {
+      "source": "readme#graph-implementation",
+      "target": "readme"
+    },
+    {
+      "source": "about#what-is-a-digital-garden",
+      "target": "wikilinks"
+    },
+    {
+      "source": "about#what-is-a-digital-garden",
+      "target": "backlinks"
+    },
+    {
+      "source": "about#what-is-a-digital-garden",
+      "target": "about"
+    },
+    {
+      "source": "about#features",
+      "target": "about"
+    },
+    {
+      "source": "about#getting-started",
+      "target": "all-notes"
+    },
+    {
+      "source": "about#getting-started",
+      "target": "graph-view"
+    },
+    {
+      "source": "about#getting-started",
+      "target": "about"
+    },
+    {
+      "source": "about#technology",
+      "target": "about"
+    },
+    {
+      "source": "another-note",
+      "target": "example-note"
+    },
+    {
+      "source": "another-note#more-connections",
+      "target": "another-note"
+    },
+    {
+      "source": "another-note#example-of-a-link",
+      "target": "example-notefirst-example-note"
+    },
+    {
+      "source": "another-note#example-of-a-link",
+      "target": "another-note"
+    },
+    {
+      "source": "index#recent-notes",
+      "target": "index"
+    },
+    {
+      "source": "index#getting-started",
+      "target": "index"
+    },
+    {
+      "source": "index#example-notes",
+      "target": "index"
+    },
+    {
+      "source": "deep-work#principles",
+      "target": "deep-work"
+    },
+    {
+      "source": "deep-work#implementation",
+      "target": "time-blocking"
+    },
+    {
+      "source": "deep-work#implementation",
+      "target": "pomodoro-technique"
+    },
+    {
+      "source": "deep-work#implementation",
+      "target": "digital-minimalism"
+    },
+    {
+      "source": "deep-work#implementation",
+      "target": "deep-work"
+    },
+    {
+      "source": "deep-work#benefits",
+      "target": "deep-work"
+    },
+    {
+      "source": "deep-work#challenges",
+      "target": "deep-work"
+    },
+    {
+      "source": "deep-work#related-reading",
+      "target": "productivity-systems"
+    },
+    {
+      "source": "deep-work#related-reading",
+      "target": "focus-techniques"
+    },
+    {
+      "source": "deep-work#related-reading",
+      "target": "attention-management"
+    },
+    {
+      "source": "deep-work#related-reading",
+      "target": "deep-work"
+    },
+    {
+      "source": "learning-methods#active-recall",
+      "target": "spaced-repetition"
+    },
+    {
+      "source": "learning-methods#active-recall",
+      "target": "flashcards"
+    },
+    {
+      "source": "learning-methods#active-recall",
+      "target": "feynman-technique"
+    },
+    {
+      "source": "learning-methods#active-recall",
+      "target": "learning-methods"
+    },
+    {
+      "source": "learning-methods#spaced-repetition",
+      "target": "anki"
+    },
+    {
+      "source": "learning-methods#spaced-repetition",
+      "target": "learning-methods"
+    },
+    {
+      "source": "learning-methods#the-feynman-technique",
+      "target": "learning-methods"
+    },
+    {
+      "source": "learning-methods#interleaving",
+      "target": "learning-methods"
+    },
+    {
+      "source": "learning-methods#elaboration",
+      "target": "concept-maps"
+    },
+    {
+      "source": "learning-methods#elaboration",
+      "target": "analogies"
+    },
+    {
+      "source": "learning-methods#elaboration",
+      "target": "learning-methods"
+    },
+    {
+      "source": "learning-methods#related-topics",
+      "target": "memory-techniques"
+    },
+    {
+      "source": "learning-methods#related-topics",
+      "target": "study-habits"
+    },
+    {
+      "source": "learning-methods#related-topics",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "learning-methods#related-topics",
+      "target": "learning-methods"
+    },
+    {
+      "source": "example-note#features",
+      "target": "another-notelinking-to-another-note"
+    },
+    {
+      "source": "example-note#features",
+      "target": "example-note"
+    },
+    {
+      "source": "example-note#more-information",
+      "target": "example-note"
+    },
+    {
+      "source": "knowledge-management#personal-knowledge-management-pkm",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#popular-tools",
+      "target": "obsidian"
+    },
+    {
+      "source": "knowledge-management#popular-tools",
+      "target": "roam-research"
+    },
+    {
+      "source": "knowledge-management#popular-tools",
+      "target": "notion"
+    },
+    {
+      "source": "knowledge-management#popular-tools",
+      "target": "evernote"
+    },
+    {
+      "source": "knowledge-management#popular-tools",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#zettelkasten-method",
+      "target": "linking"
+    },
+    {
+      "source": "knowledge-management#zettelkasten-method",
+      "target": "tagging"
+    },
+    {
+      "source": "knowledge-management#zettelkasten-method",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#building-a-second-brain",
+      "target": "progressive-summarization"
+    },
+    {
+      "source": "knowledge-management#building-a-second-brain",
+      "target": "projects-oriented"
+    },
+    {
+      "source": "knowledge-management#building-a-second-brain",
+      "target": "actionable"
+    },
+    {
+      "source": "knowledge-management#building-a-second-brain",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#related-concepts",
+      "target": "building-a-second-brain"
+    },
+    {
+      "source": "knowledge-management#related-concepts",
+      "target": "note-taking-systems"
+    },
+    {
+      "source": "knowledge-management#related-concepts",
+      "target": "information-architecture"
+    },
+    {
+      "source": "knowledge-management#related-concepts",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "productivity#getting-things-done-gtd",
+      "target": "gtd"
+    },
+    {
+      "source": "productivity#getting-things-done-gtd",
+      "target": "productivity"
+    },
+    {
+      "source": "productivity#time-blocking",
+      "target": "time-blocking"
+    },
+    {
+      "source": "productivity#time-blocking",
+      "target": "productivity"
+    },
+    {
+      "source": "productivity#the-pomodoro-technique",
+      "target": "pomodoro-technique"
+    },
+    {
+      "source": "productivity#the-pomodoro-technique",
+      "target": "productivity"
+    },
+    {
+      "source": "productivity#digital-tools",
+      "target": "task-management"
+    },
+    {
+      "source": "productivity#digital-tools",
+      "target": "note-taking"
+    },
+    {
+      "source": "productivity#digital-tools",
+      "target": "calendar"
+    },
+    {
+      "source": "productivity#digital-tools",
+      "target": "productivity"
+    },
+    {
+      "source": "productivity#related-concepts",
+      "target": "deep-work"
+    },
+    {
+      "source": "productivity#related-concepts",
+      "target": "atomic-habits"
+    },
+    {
+      "source": "productivity#related-concepts",
+      "target": "minimalism"
+    },
+    {
+      "source": "productivity#related-concepts",
+      "target": "productivity"
+    },
+    {
+      "source": "reading-list#productivity--work",
+      "target": "deep-work"
+    },
+    {
+      "source": "reading-list#productivity--work",
+      "target": "productivity-systems"
+    },
+    {
+      "source": "reading-list#productivity--work",
+      "target": "gtd"
+    },
+    {
+      "source": "reading-list#productivity--work",
+      "target": "reading-list"
+    },
+    {
+      "source": "reading-list#learning--memory",
+      "target": "learning-methods"
+    },
+    {
+      "source": "reading-list#learning--memory",
+      "target": "feynman-technique"
+    },
+    {
+      "source": "reading-list#learning--memory",
+      "target": "reading-list"
+    },
+    {
+      "source": "reading-list#knowledge-management",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "reading-list#knowledge-management",
+      "target": "reading-list"
+    },
+    {
+      "source": "reading-list#technology--digital-life",
+      "target": "digital-minimalism"
+    },
+    {
+      "source": "reading-list#technology--digital-life",
+      "target": "reading-list"
+    },
+    {
+      "source": "reading-list#philosophy--thinking",
+      "target": "reading-list"
+    },
+    {
+      "source": "reading-list#reading-strategies",
+      "target": "active-reading"
+    },
+    {
+      "source": "reading-list#reading-strategies",
+      "target": "speed-reading"
+    },
+    {
+      "source": "reading-list#reading-strategies",
+      "target": "note-taking"
+    },
+    {
+      "source": "reading-list#reading-strategies",
+      "target": "reading-list"
+    },
+    {
+      "source": "reading-list#current-reading",
+      "target": "zettelkasten"
+    },
+    {
+      "source": "reading-list#current-reading",
+      "target": "spaced-repetition"
+    },
+    {
+      "source": "reading-list#current-reading",
+      "target": "knowledge-graph"
+    },
+    {
+      "source": "reading-list#current-reading",
+      "target": "reading-list"
+    },
+    {
+      "source": "about",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "another-note",
+      "target": "notes"
+    }
+  ]
+}
