@@ -1,21 +1,26 @@
 :root {
-  --bg-color: #0a0a0a;
-  --text-color: #e0e0e0;
-  --accent-color: #4a90e2;
-  --border-color: #333;
-  --card-bg: #1a1a1a;
-  --link-color: #4a90e2;
-  --link-hover: #7ab0f0;
-  --code-bg: #2a2a2a;
-  --code-color: #e0e0e0;
+  /* Sherwin Williams 2025 Color Capsule Palette */
+  
+  /* Primary Colors */
+  --bg-color: #F5F2EA; /* Sunbleached SW 9585 - warm light neutral */
+  --text-color: #785B47; /* Grounded SW 6089 - rich warm brown */
+  --accent-color: #7A8B99; /* Rain Cloud SW 9639 - warm muted blue-gray */
+  --border-color: #5A4A3A; /* Darker Grounded - borders and dividers */
+  --card-bg: #FFFFFF; /* White Snow SW 9541 - clean white */
+  
+  /* Accent Colors */
+  --link-color: #5A4A3A; /* Darker Grounded - better contrast */
+  --link-hover: #785B47; /* Grounded for hover - slightly lighter */
+  --code-bg: #F0E8D8; /* Warm cream for code blocks */
+  --code-color: #785B47; /* Grounded for code text */
   
   /* Graph-specific colors */
-  --graph-bg: #be490f;
-  --graph-node-bg: #1eaa7b;
-  --graph-node-border: #4a90e2;
-  --graph-link-color: #4a90e2;
-  --graph-text-color: #e0e0e0;
-  --graph-hover-color: #4a90e2;
+  --graph-bg: #F5F2EA; /* Sunbleached background */
+  --graph-node-bg: #FFFFFF; /* White Snow nodes */
+  --graph-node-border: #7A8B99; /* Rain Cloud borders */
+  --graph-link-color: #5A4A3A; /* Darker Grounded for better visibility */
+  --graph-text-color: #785B47; /* Grounded text */
+  --graph-hover-color: #E1D286; /* Chartreuse accent for hover */
 }
 
 * {
@@ -53,7 +58,7 @@ header {
   color: var(--text-color);
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 2.5rem; /* Match h1 for consistency */
   letter-spacing: 1px;
 }
 
@@ -77,9 +82,9 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
 }
 
-h1 { font-size: 2rem; }
-h2 { font-size: 1.75rem; }
-h3 { font-size: 1.5rem; }
+h1 { font-size: 2.5rem; } /* Site title - largest */
+h2 { font-size: 1.8rem; } /* Page titles - smaller than site title */
+h3 { font-size: 1.5rem; } /* Section headers */
 
 p {
   margin-bottom: 1rem;
@@ -132,7 +137,8 @@ blockquote {
   border-left: 3px solid var(--accent-color);
   padding-left: 1rem;
   margin: 1.5rem 0;
-  color: #aaa;
+  color: var(--text-color);
+  opacity: 0.8;
   font-style: italic;
 }
 
@@ -152,7 +158,8 @@ blockquote {
   display: inline-block;
   margin-bottom: 1rem;
   font-size: 0.9rem;
-  color: #888;
+  color: var(--text-color);
+  opacity: 0.7;
 }
 
 .backlinks {
@@ -166,7 +173,8 @@ blockquote {
 .backlinks h2 {
   margin-top: 0;
   font-size: 1.2rem;
-  color: #aaa;
+  color: var(--text-color);
+  opacity: 0.8;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -208,7 +216,8 @@ blockquote {
 }
 
 .note-card p {
-  color: #aaa;
+  color: var(--text-color);
+  opacity: 0.8;
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
@@ -231,32 +240,33 @@ blockquote {
 .graph {
   height: 400px;
   width: 100%;
-  background-color: var(--bg-color);
+  background-color: var(--graph-bg);
   border: 1px solid var(--border-color);
   margin-top: 1rem;
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666;
+  color: var(--text-color);
+  opacity: 0.6;
 }
 
 /* Graph Section */
 .graph-section {
     margin: 2rem 0;
     padding: 1rem;
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--border-color);
 }
 
 .graph-section h2 {
-    color: #00ff00;
+    color: var(--accent-color);
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
 
 .force-graph-container {
-    background: #1a1a1a;
-    border: 1px solid #333;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     height: 400px;
     position: relative;
@@ -273,11 +283,11 @@ blockquote {
 .works-cited {
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--border-color);
 }
 
 .works-cited h2 {
-  color: #00ff00;
+  color: var(--accent-color);
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
 }
@@ -289,22 +299,23 @@ blockquote {
 
 .works-cited em {
   font-style: italic;
-  color: #ccc;
+  color: var(--text-color);
+  opacity: 0.8;
 }
 
 .works-cited strong {
   font-weight: bold;
-  color: #00ff00;
+  color: var(--accent-color);
 }
 
 /* Bibliography Page */
 .bibliography h1 {
-  color: #00ff00;
+  color: var(--accent-color);
   margin-bottom: 2rem;
 }
 
 .bibliography h2 {
-  color: #00ff00;
+  color: var(--accent-color);
   margin: 2rem 0 1rem 0;
   font-size: 1.2rem;
 }
@@ -313,7 +324,7 @@ blockquote {
   margin-bottom: 1rem;
   line-height: 1.6;
   padding-left: 1rem;
-  border-left: 2px solid #333;
+  border-left: 2px solid var(--border-color);
 }
 
 /* Force-Directed Graph Styles */
@@ -350,7 +361,8 @@ blockquote {
   align-items: center;
   justify-content: center;
   height: 400px;
-  color: #666;
+  color: var(--text-color);
+  opacity: 0.6;
 }
 
 .force-graph-error div {
