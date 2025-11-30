@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     graphHTML += `<div style="margin: 0.5rem 0; font-size: 0.9rem;">`;
                     graphHTML += `<a href="${node.url}" style="color: var(--link-color);">${node.label}</a>`;
                     if (connections.length > 0) {
-                        graphHTML += ` <span style="color: #666;">(${connections.length} connections)</span>`;
+                        graphHTML += ` <span style="color: var(--text-color); opacity: 0.6;">(${connections.length} connections)</span>`;
                     }
                     graphHTML += `</div>`;
                 });
