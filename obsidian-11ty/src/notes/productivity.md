@@ -1,6 +1,6 @@
 ---
 title: Productivity Systems
-layout: layouts/note.njk
+layout: note.njk
 ---
 
 # Productivity Systems

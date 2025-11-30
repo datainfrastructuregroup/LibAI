@@ -1,6 +1,6 @@
 ---
 title: Reading List
-layout: layouts/note.njk
+layout: note.njk
 ---
 
 # Reading List

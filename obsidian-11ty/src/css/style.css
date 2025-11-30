@@ -261,6 +261,53 @@ blockquote {
     height: 100%;
 }
 
+/* Citations Styling */
+.works-cited {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+}
+
+.works-cited h2 {
+  color: #00ff00;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.works-cited p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.works-cited em {
+  font-style: italic;
+  color: #ccc;
+}
+
+.works-cited strong {
+  font-weight: bold;
+  color: #00ff00;
+}
+
+/* Bibliography Page */
+.bibliography h1 {
+  color: #00ff00;
+  margin-bottom: 2rem;
+}
+
+.bibliography h2 {
+  color: #00ff00;
+  margin: 2rem 0 1rem 0;
+  font-size: 1.2rem;
+}
+
+.bibliography p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  padding-left: 1rem;
+  border-left: 2px solid #333;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   body {

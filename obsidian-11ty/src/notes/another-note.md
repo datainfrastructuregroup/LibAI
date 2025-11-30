@@ -1,6 +1,6 @@
 ---
 title: Another Note
-layout: layouts/note.njk
+layout: note.njk
 ---
 
 # Another Note

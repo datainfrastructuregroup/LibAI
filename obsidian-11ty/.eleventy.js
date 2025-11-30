@@ -1,18 +1,25 @@
-const markdownIt = require('markdown-it');
-const markdownItWikilinks = require('markdown-it-wikilinks')({
-  baseURL: '/notes/',
-  makeAllLinksAbsolute: true
-});
+import markdownIt from 'markdown-it';
+import markdownItWikilinks from 'markdown-it-wikilinks';
+import citationsPlugin from 'eleventy-plugin-citations';
+import bibliographyGenerator from './src/_data/bibliography-generator.js';
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   // Add markdown plugins
   let markdownLib = markdownIt({
     html: true,
     linkify: true,
     typographer: true
-  }).use(markdownItWikilinks);
+  }).use(markdownItWikilinks({
+    baseURL: '/notes/',
+    makeAllLinksAbsolute: true
+  }));
 
   eleventyConfig.setLibrary('md', markdownLib);
+
+  // Add citations plugin
+  eleventyConfig.addPlugin(citationsPlugin, {
+    bibliography: ['./src/_data/libAI.bib']
+  });
 
   // Create a collection for all notes
   eleventyConfig.addCollection('notes', function(collectionApi) {
@@ -34,7 +41,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('getNotes', function(allNotes) {
     return allNotes.filter(note => 
       note.inputPath.startsWith('src/notes/') && 
-      note.inputPath !== 'src/notes.md'
+      note.url !== '/notes/' // Exclude the notes index
     );
   });
 
@@ -51,15 +58,22 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  // Add global data for complete bibliography
+  eleventyConfig.addGlobalData('completeBibliography', function() {
+    return bibliographyGenerator.generateCompleteBibliography();
+  });
+
   return {
     dir: {
       input: 'src',
       output: '_site',
       includes: '_includes',
-      data: '_data',
+      layouts: '_includes/layouts',
+      data: '_data'
     },
+    templateFormats: ['md', 'njk', 'html'],
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
-    templateFormats: ['md', 'njk', 'html'],
+    dataTemplateEngine: 'njk'
   };
 };

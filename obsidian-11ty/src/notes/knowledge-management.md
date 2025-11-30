@@ -1,6 +1,6 @@
 ---
 title: Knowledge Management
-layout: layouts/note.njk
+layout: note.njk
 ---
 
 # Knowledge Management

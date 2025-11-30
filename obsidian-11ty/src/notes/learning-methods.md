@@ -1,6 +1,6 @@
 ---
 title: Learning Methods
-layout: layouts/note.njk
+layout: note.njk
 ---
 
 # Learning Methods

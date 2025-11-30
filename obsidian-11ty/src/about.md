@@ -1,6 +1,6 @@
 ---
 title: About
-layout: layouts/base.njk
+layout: base.njk
 ---
 
 # About Obsidian 11ty
