@@ -18,7 +18,7 @@ export default function(eleventyConfig) {
 
   // Add citations plugin
   eleventyConfig.addPlugin(citationsPlugin, {
-    bibliography: ['./src/_data/libAI.bib']
+    bibliography: ['src/_data/libAI.bib']
   });
 
   // Create a collection for all notes

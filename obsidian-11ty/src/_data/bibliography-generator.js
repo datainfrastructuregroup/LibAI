@@ -25,6 +25,12 @@ export function generateCompleteBibliography() {
     // Get all citation keys from the bibliography data
     const allKeys = Object.keys(bibliography.data);
     
+    // Cite all entries so they get formatted
+    bibliography.cite(allKeys.map(key => ({ id: key })));
+    
+    // Build the bibliography to format all entries
+    bibliography.build();
+    
     // Generate bibliography HTML with all entries
     let bibliographyHTML = '<div class="bibliography-list">\n';
     
@@ -71,6 +77,12 @@ export function generateBibliographyWithAllCitations() {
     
     // Get all citation keys
     const allKeys = Object.keys(bibliography.data);
+    
+    // Cite all entries so they get formatted
+    bibliography.cite(allKeys.map(key => ({ id: key })));
+    
+    // Build the bibliography to format all entries
+    bibliography.build();
     
     // Create mock content with all citations
     const mockContent = allKeys.map(key => `[@${key}]`).join(' ');

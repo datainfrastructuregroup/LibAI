@@ -14,6 +14,16 @@ layout: base.njk
         {{ content | safe }}
     </div>
     
+    <!-- Works Cited Section - Added by citations plugin -->
+    {% if referencesByPage and referencesByPage[page.url] %}
+    <section class="works-cited">
+        <h2>Works Cited</h2>
+        {% for reference in referencesByPage[page.url] %}
+            <p>{{ reference.entry | safe }}</p>
+        {% endfor %}
+    </section>
+    {% endif %}
+    
     {% set backlinks = collections.all | getBacklinks(page) %}
     {% if backlinks.length > 0 %}
     <aside class="backlinks">

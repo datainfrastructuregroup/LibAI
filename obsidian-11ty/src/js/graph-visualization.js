@@ -2,6 +2,10 @@
 import * as d3 from 'https://cdn.skypack.dev/d3@7';
 import * as PIXI from 'https://cdn.skypack.dev/pixi.js@7';
 
+// Check if citations plugin is working
+console.log('referencesByPage:', referencesByPage);
+console.log('Current page citations:', referencesByPage?.[window.location.pathname]);
+
 class ForceDirectedGraph {
   constructor(containerId) {
     this.container = document.getElementById(containerId);
