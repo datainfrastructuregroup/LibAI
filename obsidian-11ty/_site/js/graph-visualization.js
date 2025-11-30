@@ -24,51 +24,231 @@ class ForceDirectedGraph {
     this.nodeGraphics = new PIXI.Container();
     this.linkGraphics = new PIXI.Container();
     
-    this.app.stage.addChild(this.linkGraphics);
-    this.app.stage.addChild(this.nodeGraphics);
+    // Create a main container for zoom/pan functionality
+    this.mainContainer = new PIXI.Container();
+    this.app.stage.addChild(this.mainContainer);
+    this.mainContainer.addChild(this.linkGraphics);
+    this.mainContainer.addChild(this.nodeGraphics);
+    
+    // Zoom and pan variables
+    this.scale = 1;
+    this.minScale = 0.1;
+    this.maxScale = 5;
+    this.isDragging = false;
+    this.lastPointerPos = { x: 0, y: 0 };
+    this.panStart = { x: 0, y: 0 };
 
+    this.setupInteractions();
+    
     // Handle resize
     window.addEventListener('resize', () => this.handleResize());
   }
 
-  async loadGraphData() {
-    try {
-      const response = await fetch('/.garden-graph.json', {
-        headers: { 'Accept': 'application/json' }
-      });      const data = await response.json();
+  setupInteractions() {
+    // Enable interaction on the main container
+    this.mainContainer.eventMode = 'static';
+    this.mainContainer.hitArea = this.app.screen;
+    
+    // Wheel event for zooming
+    this.app.view.addEventListener('wheel', (event) => {
+      event.preventDefault();
       
-      // Transform the garden graph data to our format
-      const nodesMap = new Map();
+      const delta = event.deltaY > 0 ? 0.9 : 1.1;
+      const newScale = Math.max(this.minScale, Math.min(this.maxScale, this.scale * delta));
       
-      // Process nodes (convert object to array)
-      const nodesArray = Object.entries(data.nodes).map(([id, node]) => ({
-        id: id,
-        label: node.label || id,
-        url: node.url || `#${id}`,
-        x: Math.random() * this.app.screen.width,
-        y: Math.random() * this.app.screen.height
-      }));
-
-this.nodes = nodesArray;
-
-      // Process links
-      const links = data.links.map(link => ({
-        source: link.source,
-        target: link.target
-      })).filter(link => 
-        nodesMap.has(link.source) && nodesMap.has(link.target)
-      );
-
-      this.links = links;
+      // Get the pointer position in world coordinates
+      const pointer = this.app.renderer.events.pointer.global;
+      const worldPos = {
+        x: (pointer.x - this.mainContainer.x) / this.scale,
+        y: (pointer.y - this.mainContainer.y) / this.scale
+      };
       
-      this.createSimulation();
-      this.render();
+      // Update scale
+      this.scale = newScale;
+      this.mainContainer.scale.set(this.scale);
       
-    } catch (error) {
-      console.error('Error loading graph data:', error);
-      this.showError();
-    }
+      // Adjust position to zoom towards pointer
+      const newWorldPos = {
+        x: (pointer.x - this.mainContainer.x) / this.scale,
+        y: (pointer.y - this.mainContainer.y) / this.scale
+      };
+      
+      this.mainContainer.x += (newWorldPos.x - worldPos.x) * this.scale;
+      this.mainContainer.y += (newWorldPos.y - worldPos.y) * this.scale;
+    });
+    
+    // Mouse/touch events for panning
+    this.app.stage.eventMode = 'static';
+    
+    this.app.stage.on('pointerdown', (event) => {
+      // Check if clicking on a node (don't pan if clicking a node)
+      if (event.target.parent && event.target.parent.parent === this.nodeGraphics) {
+        return;
+      }
+      
+      this.isDragging = true;
+      this.lastPointerPos = { x: event.global.x, y: event.global.y };
+      this.panStart = { x: this.mainContainer.x, y: this.mainContainer.y };
+    });
+    
+    this.app.stage.on('pointermove', (event) => {
+      if (!this.isDragging) return;
+      
+      const deltaX = event.global.x - this.lastPointerPos.x;
+      const deltaY = event.global.y - this.lastPointerPos.y;
+      
+      this.mainContainer.x = this.panStart.x + deltaX;
+      this.mainContainer.y = this.panStart.y + deltaY;
+    });
+    
+    this.app.stage.on('pointerup', () => {
+      this.isDragging = false;
+    });
+    
+    this.app.stage.on('pointerupoutside', () => {
+      this.isDragging = false;
+    });
+    
+    // Add zoom controls
+    this.addZoomControls();
   }
+
+  addZoomControls() {
+    // Create zoom control buttons
+    const controlsContainer = document.createElement('div');
+    controlsContainer.style.cssText = `
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      z-index: 1000;
+    `;
+    
+    // Zoom in button
+    const zoomInBtn = document.createElement('button');
+    zoomInBtn.innerHTML = '+';
+    zoomInBtn.style.cssText = `
+      width: 30px;
+      height: 30px;
+      background: #333;
+      color: #00ff00;
+      border: 1px solid #00ff00;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    `;
+    zoomInBtn.addEventListener('click', () => this.zoom(1.2));
+    
+    // Zoom out button
+    const zoomOutBtn = document.createElement('button');
+    zoomOutBtn.innerHTML = '-';
+    zoomOutBtn.style.cssText = `
+      width: 30px;
+      height: 30px;
+      background: #333;
+      color: #00ff00;
+      border: 1px solid #00ff00;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    `;
+    zoomOutBtn.addEventListener('click', () => this.zoom(0.8));
+    
+    // Reset button
+    const resetBtn = document.createElement('button');
+    resetBtn.innerHTML = '⟲';
+    resetBtn.style.cssText = `
+      width: 30px;
+      height: 30px;
+      background: #333;
+      color: #00ff00;
+      border: 1px solid #00ff00;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+    `;
+    resetBtn.addEventListener('click', () => this.resetView());
+    
+    controlsContainer.appendChild(zoomInBtn);
+    controlsContainer.appendChild(zoomOutBtn);
+    controlsContainer.appendChild(resetBtn);
+    this.container.appendChild(controlsContainer);
+  }
+
+  zoom(factor) {
+    const newScale = Math.max(this.minScale, Math.min(this.maxScale, this.scale * factor));
+    
+    // Zoom towards center
+    const centerX = this.app.screen.width / 2;
+    const centerY = this.app.screen.height / 2;
+    
+    const worldPos = {
+      x: (centerX - this.mainContainer.x) / this.scale,
+      y: (centerY - this.mainContainer.y) / this.scale
+    };
+    
+    this.scale = newScale;
+    this.mainContainer.scale.set(this.scale);
+    
+    const newWorldPos = {
+      x: (centerX - this.mainContainer.x) / this.scale,
+      y: (centerY - this.mainContainer.y) / this.scale
+    };
+    
+    this.mainContainer.x += (newWorldPos.x - worldPos.x) * this.scale;
+    this.mainContainer.y += (newWorldPos.y - worldPos.y) * this.scale;
+  }
+
+  resetView() {
+    this.scale = 1;
+    this.mainContainer.scale.set(this.scale);
+    this.mainContainer.x = 0;
+    this.mainContainer.y = 0;
+  }
+
+  
+  async loadGraphData() {
+  try {
+    const response = await fetch('/.garden-graph.json', {
+      headers: { 'Accept': 'application/json' }
+    });
+    const data = await response.json();
+    
+    // Process nodes (convert object to array)
+    const nodesArray = Object.entries(data.nodes).map(([id, node]) => ({
+      id: id,
+      label: node.label || id,
+      url: node.url || `#${id}`,
+      x: Math.random() * this.app.screen.width,
+      y: Math.random() * this.app.screen.height
+    }));
+
+    this.nodes = nodesArray;
+
+    // Process links - filter using the actual nodes array
+    const nodeIds = new Set(nodesArray.map(node => node.id));
+    const links = data.links.map(link => ({
+      source: link.source,
+      target: link.target
+    })).filter(link => 
+      nodeIds.has(link.source) && nodeIds.has(link.target)
+    );
+
+    this.links = links;
+    
+    this.createSimulation();
+    this.render();
+    
+  } catch (error) {
+    console.error('Error loading graph data:', error);
+    this.showError();
+  }
+}
 
   createSimulation() {
     this.simulation = d3.forceSimulation(this.nodes)
@@ -181,6 +361,8 @@ this.nodes = nodesArray;
 
   handleResize() {
     this.app.renderer.resize(this.container.offsetWidth, 400);
+    this.mainContainer.hitArea = this.app.screen;
+    
     if (this.simulation) {
       this.simulation
         .force('center', d3.forceCenter(this.app.screen.width / 2, this.app.screen.height / 2))
