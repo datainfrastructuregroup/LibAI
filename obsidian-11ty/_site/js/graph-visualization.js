@@ -49,6 +49,8 @@ class ForceDirectedGraph {
     // Dragging state
     this.draggedNode = null;
     this.dragOffset = { x: 0, y: 0 };
+    this.dragStartPos = { x: 0, y: 0 };
+    this.dragThreshold = 5; // pixels
     
     // Create a main container for zoom/pan functionality
     this.mainContainer = new PIXI.Container();
@@ -343,7 +345,8 @@ class ForceDirectedGraph {
       });
       
       // Click navigation (only if not dragged)
-      container.on('pointerup', () => {
+      container.on('pointerup', (event) => {
+        this.endNodeDrag();
         if (!this.wasDragged) {
           if (node.url.startsWith('#')) {
             window.location.hash = node.url.substring(1);
@@ -380,6 +383,13 @@ class ForceDirectedGraph {
     this.draggedNode = node;
     this.wasDragged = false;
     
+    // Store initial position for drag detection
+    const worldPos = this.app.renderer.events.pointer.global;
+    this.dragStartPos = {
+      x: (worldPos.x - this.mainContainer.x) / this.scale,
+      y: (worldPos.y - this.mainContainer.y) / this.scale
+    };
+    
     // Add visual feedback
     this.container.classList.add('force-graph-node-dragging');
     const container = this.nodeGraphics.children.find(c => c.nodeData === node);
@@ -388,11 +398,9 @@ class ForceDirectedGraph {
     }
     
     // Calculate offset from node center to pointer position
-    const pointer = event.global;
-    const worldPos = this.app.renderer.events.pointer.global;
     this.dragOffset = {
-      x: (worldPos.x - this.mainContainer.x) / this.scale - node.x,
-      y: (worldPos.y - this.mainContainer.y) / this.scale - node.y
+      x: this.dragStartPos.x - node.x,
+      y: this.dragStartPos.y - node.y
     };
     
     // Fix the node position during drag
@@ -411,14 +419,25 @@ class ForceDirectedGraph {
   handleNodeDrag = (event) => {
     if (!this.draggedNode) return;
     
-    this.wasDragged = true;
-    
     // Convert pointer position to world coordinates
     const worldPos = this.app.renderer.events.pointer.global;
-    const newX = (worldPos.x - this.mainContainer.x) / this.scale - this.dragOffset.x;
-    const newY = (worldPos.y - this.mainContainer.y) / this.scale - this.dragOffset.y;
+    const currentX = (worldPos.x - this.mainContainer.x) / this.scale;
+    const currentY = (worldPos.y - this.mainContainer.y) / this.scale;
     
-    // Update node fixed position
+    // Check if we've moved beyond the drag threshold
+    const distance = Math.sqrt(
+      Math.pow(currentX - this.dragStartPos.x, 2) + 
+      Math.pow(currentY - this.dragStartPos.y, 2)
+    );
+    
+    if (distance > this.dragThreshold) {
+      this.wasDragged = true;
+    }
+    
+    // Update node position
+    const newX = currentX - this.dragOffset.x;
+    const newY = currentY - this.dragOffset.y;
+    
     this.draggedNode.fx = newX;
     this.draggedNode.fy = newY;
     this.draggedNode.x = newX;
@@ -455,10 +474,14 @@ class ForceDirectedGraph {
     // Clear dragged node
     this.draggedNode = null;
     
-    // Remove global drag listeners
-    this.app.stage.off('pointermove', this.handleNodeDrag);
-    this.app.stage.off('pointerup', this.endNodeDrag);
-    this.app.stage.off('pointerupoutside', this.endNodeDrag);
+    // Remove global drag listeners (if they exist)
+    try {
+      this.app.stage.off('pointermove', this.handleNodeDrag);
+      this.app.stage.off('pointerup', this.endNodeDrag);
+      this.app.stage.off('pointerupoutside', this.endNodeDrag);
+    } catch (e) {
+      // Ignore if listeners are already removed
+    }
     
     // Give simulation a little boost to settle
     this.simulation.alpha(0.1).restart();
