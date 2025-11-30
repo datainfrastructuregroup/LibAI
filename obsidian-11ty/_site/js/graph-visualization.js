@@ -211,7 +211,38 @@ class ForceDirectedGraph {
     this.mainContainer.y = 0;
   }
 
-  
+  generateNodeUrl(nodeId) {
+    // Handle different node ID formats and map to actual pages
+    if (nodeId === 'readme' || nodeId === 'home') {
+      return '/';
+    }
+    
+    // Handle section anchors (like "readme#features")
+    if (nodeId.includes('#')) {
+      const [page, anchor] = nodeId.split('#');
+      if (page === 'readme') {
+        return `/#${anchor}`;
+      }
+    }
+    
+    // Handle notes pages
+    if (nodeId === 'about') {
+      return '/about/';
+    }
+    
+    if (nodeId === 'notes') {
+      return '/notes/';
+    }
+    
+    // For note files, convert to URL format
+    if (!nodeId.includes('#') && !nodeId.includes('/')) {
+      return `/notes/${nodeId}/`;
+    }
+    
+    // Default fallback
+    return `#${nodeId}`;
+  }
+
   async loadGraphData() {
   try {
     const response = await fetch('/.garden-graph.json', {
@@ -223,7 +254,7 @@ class ForceDirectedGraph {
     const nodesArray = Object.entries(data.nodes).map(([id, node]) => ({
       id: id,
       label: node.label || id,
-      url: node.url || `#${id}`,
+      url: this.generateNodeUrl(id),
       x: Math.random() * this.app.screen.width,
       y: Math.random() * this.app.screen.height
     }));
@@ -268,7 +299,7 @@ class ForceDirectedGraph {
     // Draw links
     this.links.forEach(link => {
       const graphics = new PIXI.Graphics();
-      graphics.lineStyle(1, 0x666666, 0.6);
+      graphics.lineStyle(2, 0x00ff00, 0.8); // Make links more visible
       
       const sourceNode = this.nodes.find(n => n.id === link.source);
       const targetNode = this.nodes.find(n => n.id === link.target);
@@ -342,7 +373,7 @@ class ForceDirectedGraph {
       
       if (sourceNode && targetNode) {
         graphics.clear();
-        graphics.lineStyle(1, 0x666666, 0.6);
+        graphics.lineStyle(2, 0x00ff00, 0.8); // Match render style
         graphics.moveTo(sourceNode.x, sourceNode.y);
         graphics.lineTo(targetNode.x, targetNode.y);
       }
