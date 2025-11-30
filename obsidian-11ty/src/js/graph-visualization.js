@@ -2,19 +2,37 @@
 import * as d3 from 'https://cdn.skypack.dev/d3@7';
 import * as PIXI from 'https://cdn.skypack.dev/pixi.js@7';
 
-// Check if citations plugin is working
-console.log('referencesByPage:', referencesByPage);
-console.log('Current page citations:', referencesByPage?.[window.location.pathname]);
+// Graph color constants (matching CSS variables)
+function hexToPixiColor(hex) {
+  return parseInt(hex.replace('#', ''), 16);
+}
+
+// Get colors from CSS variables
+function getGraphColors() {
+  const style = getComputedStyle(document.documentElement);
+  return {
+    background: hexToPixiColor(style.getPropertyValue('--graph-bg')),
+    cardBg: hexToPixiColor(style.getPropertyValue('--graph-node-bg')),
+    accent: hexToPixiColor(style.getPropertyValue('--graph-node-border')),
+    text: hexToPixiColor(style.getPropertyValue('--graph-text-color')),
+    border: hexToPixiColor(style.getPropertyValue('--border-color'))
+  };
+}
+
+let GRAPH_COLORS = getGraphColors();
 
 class ForceDirectedGraph {
   constructor(containerId) {
     this.container = document.getElementById(containerId);
     if (!this.container) return;
 
+    // Refresh colors from CSS
+    GRAPH_COLORS = getGraphColors();
+
     this.app = new PIXI.Application({
       width: this.container.offsetWidth,
       height: 400,
-      backgroundColor: 0x1a1a1a,
+      backgroundColor: GRAPH_COLORS.background,
       antialias: true,
       resolution: window.devicePixelRatio || 1
     });
@@ -27,6 +45,10 @@ class ForceDirectedGraph {
     this.simulation = null;
     this.nodeGraphics = new PIXI.Container();
     this.linkGraphics = new PIXI.Container();
+    
+    // Dragging state
+    this.draggedNode = null;
+    this.dragOffset = { x: 0, y: 0 };
     
     // Create a main container for zoom/pan functionality
     this.mainContainer = new PIXI.Container();
@@ -87,7 +109,7 @@ class ForceDirectedGraph {
     this.app.stage.on('pointerdown', (event) => {
       // Check if clicking on a node (don't pan if clicking a node)
       if (event.target.parent && event.target.parent.parent === this.nodeGraphics) {
-        return;
+        return; // Let node handle the drag
       }
       
       this.isDragging = true;
@@ -120,62 +142,24 @@ class ForceDirectedGraph {
   addZoomControls() {
     // Create zoom control buttons
     const controlsContainer = document.createElement('div');
-    controlsContainer.style.cssText = `
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      z-index: 1000;
-    `;
+    controlsContainer.className = 'force-graph-controls';
     
     // Zoom in button
     const zoomInBtn = document.createElement('button');
     zoomInBtn.innerHTML = '+';
-    zoomInBtn.style.cssText = `
-      width: 30px;
-      height: 30px;
-      background: #333;
-      color: #00ff00;
-      border: 1px solid #00ff00;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-    `;
+    zoomInBtn.className = 'force-graph-control-btn';
     zoomInBtn.addEventListener('click', () => this.zoom(1.2));
     
     // Zoom out button
     const zoomOutBtn = document.createElement('button');
     zoomOutBtn.innerHTML = '-';
-    zoomOutBtn.style.cssText = `
-      width: 30px;
-      height: 30px;
-      background: #333;
-      color: #00ff00;
-      border: 1px solid #00ff00;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-    `;
+    zoomOutBtn.className = 'force-graph-control-btn';
     zoomOutBtn.addEventListener('click', () => this.zoom(0.8));
     
     // Reset button
     const resetBtn = document.createElement('button');
     resetBtn.innerHTML = '⟲';
-    resetBtn.style.cssText = `
-      width: 30px;
-      height: 30px;
-      background: #333;
-      color: #00ff00;
-      border: 1px solid #00ff00;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: bold;
-    `;
+    resetBtn.className = 'force-graph-control-btn';
     resetBtn.addEventListener('click', () => this.resetView());
     
     controlsContainer.appendChild(zoomInBtn);
@@ -300,10 +284,13 @@ class ForceDirectedGraph {
     this.nodeGraphics.removeChildren();
     this.linkGraphics.removeChildren();
 
+    // Store link graphics for updates
+    this.linkGraphicsArray = [];
+
     // Draw links
     this.links.forEach(link => {
       const graphics = new PIXI.Graphics();
-      graphics.lineStyle(2, 0x00ff00, 0.8); // Make links more visible
+      graphics.lineStyle(2, GRAPH_COLORS.accent, 0.8);
       
       const sourceNode = this.nodes.find(n => n.id === link.source);
       const targetNode = this.nodes.find(n => n.id === link.target);
@@ -314,6 +301,7 @@ class ForceDirectedGraph {
       }
       
       this.linkGraphics.addChild(graphics);
+      this.linkGraphicsArray.push(graphics);
     });
 
     // Draw nodes
@@ -322,16 +310,16 @@ class ForceDirectedGraph {
       
       // Node circle
       const graphics = new PIXI.Graphics();
-      graphics.beginFill(0x333333);
-      graphics.lineStyle(2, 0x00ff00, 0.8);
+      graphics.beginFill(GRAPH_COLORS.cardBg);
+      graphics.lineStyle(2, GRAPH_COLORS.accent, 0.8);
       graphics.drawCircle(0, 0, 15);
       graphics.endFill();
       
       // Node text
       const text = new PIXI.Text(node.label, {
-        fontFamily: 'monospace',
+        fontFamily: 'Courier New, monospace',
         fontSize: 10,
-        fill: 0xffffff,
+        fill: GRAPH_COLORS.text,
         align: 'center'
       });
       text.anchor.set(0.5);
@@ -345,43 +333,205 @@ class ForceDirectedGraph {
       // Make interactive
       container.interactive = true;
       container.buttonMode = true;
-      container.on('pointerdown', () => {
-        if (node.url.startsWith('#')) {
-          window.location.hash = node.url.substring(1);
-        } else {
-          window.location.href = node.url;
+      
+      // Store reference to node data
+      container.nodeData = node;
+      
+      // Node dragging events
+      container.on('pointerdown', (event) => {
+        this.startNodeDrag(node, event);
+      });
+      
+      // Click navigation (only if not dragged)
+      container.on('pointerup', () => {
+        if (!this.wasDragged) {
+          if (node.url.startsWith('#')) {
+            window.location.hash = node.url.substring(1);
+          } else {
+            window.location.href = node.url;
+          }
         }
       });
       
       container.on('pointerover', () => {
-        graphics.tint = 0x00ff00;
+        graphics.tint = GRAPH_COLORS.accent;
+        if (!this.draggedNode) {
+          this.container.style.cursor = 'pointer';
+        }
       });
       
       container.on('pointerout', () => {
         graphics.tint = 0xffffff;
+        if (!this.draggedNode) {
+          this.container.style.cursor = 'default';
+        }
+      });
+      
+      // Add cursor change on drag start
+      container.on('pointerdown', () => {
+        this.container.style.cursor = 'grabbing';
       });
       
       this.nodeGraphics.addChild(container);
     });
   }
 
-  updatePositions() {
-    // Update link positions
-    let linkIndex = 0;
-    this.linkGraphics.children.forEach(graphics => {
-      const link = this.links[linkIndex++];
-      if (!link) return;
-      
-      const sourceNode = this.nodes.find(n => n.id === link.source);
-      const targetNode = this.nodes.find(n => n.id === link.target);
-      
-      if (sourceNode && targetNode) {
-        graphics.clear();
-        graphics.lineStyle(2, 0x00ff00, 0.8); // Match render style
-        graphics.moveTo(sourceNode.x, sourceNode.y);
-        graphics.lineTo(targetNode.x, targetNode.y);
+  startNodeDrag(node, event) {
+    this.draggedNode = node;
+    this.wasDragged = false;
+    
+    // Add visual feedback
+    this.container.classList.add('force-graph-node-dragging');
+    const container = this.nodeGraphics.children.find(c => c.nodeData === node);
+    if (container) {
+      container.scale.set(1.1);
+    }
+    
+    // Calculate offset from node center to pointer position
+    const pointer = event.global;
+    const worldPos = this.app.renderer.events.pointer.global;
+    this.dragOffset = {
+      x: (worldPos.x - this.mainContainer.x) / this.scale - node.x,
+      y: (worldPos.y - this.mainContainer.y) / this.scale - node.y
+    };
+    
+    // Fix the node position during drag
+    node.fx = node.x;
+    node.fy = node.y;
+    
+    // Restart simulation with lower alpha for smoother dragging
+    this.simulation.alpha(0.3).restart();
+    
+    // Add global drag listeners
+    this.app.stage.on('pointermove', this.handleNodeDrag);
+    this.app.stage.on('pointerup', this.endNodeDrag);
+    this.app.stage.on('pointerupoutside', this.endNodeDrag);
+  }
+
+  handleNodeDrag = (event) => {
+    if (!this.draggedNode) return;
+    
+    this.wasDragged = true;
+    
+    // Convert pointer position to world coordinates
+    const worldPos = this.app.renderer.events.pointer.global;
+    const newX = (worldPos.x - this.mainContainer.x) / this.scale - this.dragOffset.x;
+    const newY = (worldPos.y - this.mainContainer.y) / this.scale - this.dragOffset.y;
+    
+    // Update node fixed position
+    this.draggedNode.fx = newX;
+    this.draggedNode.fy = newY;
+    this.draggedNode.x = newX;
+    this.draggedNode.y = newY;
+    
+    // Update visual position immediately
+    const container = this.nodeGraphics.children.find(c => c.nodeData === this.draggedNode);
+    if (container) {
+      container.x = newX;
+      container.y = newY;
+    }
+    
+    // Update links connected to this node
+    this.updateConnectedLinks(this.draggedNode);
+  }
+
+  endNodeDrag = () => {
+    if (!this.draggedNode) return;
+    
+    // Remove visual feedback
+    this.container.classList.remove('force-graph-node-dragging');
+    const container = this.nodeGraphics.children.find(c => c.nodeData === this.draggedNode);
+    if (container) {
+      container.scale.set(1.0);
+    }
+    
+    // Release the node fixed position
+    this.draggedNode.fx = null;
+    this.draggedNode.fy = null;
+    
+    // Reset cursor
+    this.container.style.cursor = 'default';
+    
+    // Clear dragged node
+    this.draggedNode = null;
+    
+    // Remove global drag listeners
+    this.app.stage.off('pointermove', this.handleNodeDrag);
+    this.app.stage.off('pointerup', this.endNodeDrag);
+    this.app.stage.off('pointerupoutside', this.endNodeDrag);
+    
+    // Give simulation a little boost to settle
+    this.simulation.alpha(0.1).restart();
+  }
+
+  updateConnectedLinks(node) {
+    if (!this.linkGraphicsArray) return;
+    
+    this.links.forEach((link, index) => {
+      if (link.source === node.id || link.target === node.id) {
+        const graphics = this.linkGraphicsArray[index];
+        if (!graphics) return;
+        
+        const sourceNode = this.nodes.find(n => n.id === link.source);
+        const targetNode = this.nodes.find(n => n.id === link.target);
+        
+        if (sourceNode && targetNode) {
+          graphics.clear();
+          graphics.lineStyle(2, GRAPH_COLORS.accent, 0.8);
+          graphics.moveTo(sourceNode.x, sourceNode.y);
+          graphics.lineTo(targetNode.x, targetNode.y);
+        }
       }
     });
+  }
+
+  updatePositions() {
+    // Skip position updates for the dragged node (it's handled manually)
+    if (this.draggedNode) {
+      // Only update non-dragged nodes
+      this.nodeGraphics.children.forEach(container => {
+        if (container.nodeData !== this.draggedNode) {
+          container.x = container.nodeData.x;
+          container.y = container.nodeData.y;
+        }
+      });
+      
+      // Update all links (dragged node links are updated separately)
+      this.linkGraphicsArray.forEach((graphics, index) => {
+        const link = this.links[index];
+        if (!link) return;
+        
+        const sourceNode = this.nodes.find(n => n.id === link.source);
+        const targetNode = this.nodes.find(n => n.id === link.target);
+        
+        if (sourceNode && targetNode) {
+          graphics.clear();
+          graphics.lineStyle(2, GRAPH_COLORS.accent, 0.8);
+          graphics.moveTo(sourceNode.x, sourceNode.y);
+          graphics.lineTo(targetNode.x, targetNode.y);
+        }
+      });
+      return;
+    }
+    
+    // Normal position updates when not dragging
+    // Update link positions using stored graphics array
+    if (this.linkGraphicsArray) {
+      this.linkGraphicsArray.forEach((graphics, index) => {
+        const link = this.links[index];
+        if (!link) return;
+        
+        const sourceNode = this.nodes.find(n => n.id === link.source);
+        const targetNode = this.nodes.find(n => n.id === link.target);
+        
+        if (sourceNode && targetNode) {
+          graphics.clear();
+          graphics.lineStyle(2, GRAPH_COLORS.accent, 0.8);
+          graphics.moveTo(sourceNode.x, sourceNode.y);
+          graphics.lineTo(targetNode.x, targetNode.y);
+        }
+      });
+    }
 
     // Update node positions
     let nodeIndex = 0;
@@ -408,8 +558,8 @@ class ForceDirectedGraph {
 
   showError() {
     this.container.innerHTML = `
-      <div style="display: flex; align-items: center; justify-content: center; height: 400px; color: #666;">
-        <div style="text-align: center;">
+      <div class="force-graph-error">
+        <div>
           <p>Unable to load graph data</p>
           <small>Run <code>npx markdown-graph</code> to generate the graph</small>
         </div>
