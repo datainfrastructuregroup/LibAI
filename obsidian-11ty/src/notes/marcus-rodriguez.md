@@ -2,7 +2,7 @@
 title: Marcus Rodriguez
 layout: person.njk
 description: Data scientist and researcher specializing in algorithmic bias and fairness
-headshot: /assets/marcus-rodriguez.png
+headshot: /assets/headshot-placeholder.jpg
 subtitle: Data Scientist
 tags:
   - person

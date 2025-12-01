@@ -9,7 +9,6 @@ tags:
   - contributor
 ---
 
-# Dr. Amara Okonkwo
 
 Dr. Amara Okonkwo is a productivity researcher and consultant who helps individuals and organizations optimize their workflows and implement deep work methodologies. Her research combines psychology, neuroscience, and practical productivity techniques.
 
