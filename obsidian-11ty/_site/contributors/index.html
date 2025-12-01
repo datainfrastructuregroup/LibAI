@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contributors</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="module" src="/js/graph-visualization.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="/" class="logo">Obsidian 11ty</a></h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/notes">All Notes</a>
+                <a href="/contributors">Contributors</a>
+                <a href="/about">About</a>
+                <a href="/bibliography">Bibliography</a>
+            </nav>
+        </header>
+        
+        <main>
+            <h1>Contributors</h1>
+<p>Meet the people who contribute to this knowledge base through writing, editing, and collaboration.</p>
+<div class="contributors-grid">
+<p><div class="contributor-card">
+<h3><a href="/notes/sarah-chen/">Dr. Sarah Chen</a></h3></p>
+<p><p>AI researcher specializing in natural language processing and ethical AI</p></p>
+<p><div class="contributor-stats"></p>
+<p><span class="stat">1 authored</span></p>
+<p><span class="stat">2 contributed</span></p>
+<p></div>
+</div></p>
+<p><div class="contributor-card">
+<h3><a href="/notes/marcus-rodriguez/">Marcus Rodriguez</a></h3></p>
+<p><p>Software engineer and open-source contributor focused on developer tools</p></p>
+<p><div class="contributor-stats"></p>
+<p><span class="stat">2 contributed</span></p>
+<p><span class="stat">1 edited</span></p>
+<p></div>
+</div></p>
+<p><div class="contributor-card">
+<h3><a href="/notes/elena-volkov/">Dr. Elena Volkov</a></h3></p>
+<p><p>Cognitive psychologist specializing in learning methodologies and knowledge management</p></p>
+<p><div class="contributor-stats"></p>
+<p><span class="stat">2 authored</span></p>
+<p><span class="stat">1 contributed</span></p>
+<p><span class="stat">1 edited</span></p>
+<p></div>
+</div></p>
+<p><div class="contributor-card">
+<h3><a href="/notes/james-thompson/">James Thompson</a></h3></p>
+<p><p>Technical writer and editor specializing in developer documentation and technical communication</p></p>
+<p><div class="contributor-stats"></p>
+<p><span class="stat">1 contributed</span></p>
+<p><span class="stat">3 edited</span></p>
+<p></div>
+</div></p>
+<p><div class="contributor-card">
+<h3><a href="/notes/amara-okonkwo/">Dr. Amara Okonkwo</a></h3></p>
+<p><p>Productivity researcher and consultant focused on workflow optimization and deep work methodologies</p></p>
+<p><div class="contributor-stats"></p>
+<p><span class="stat">2 authored</span></p>
+<p><span class="stat">1 contributed</span></p>
+<p></div>
+</div></p>
+</div>
+<style>
+.contributors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.contributor-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.contributor-card:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contributor-card h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.contributor-card h3 a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.contributor-card h3 a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.contributor-card p {
+  color: var(--text-color);
+  opacity: 0.8;
+  margin: 0.5rem 0;
+}
+
+.contributor-stats {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: var(--code-bg);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--text-color);
+}
+</style>
+
+        </main>
+        
+        <section class="graph-section">
+            <h2>Knowledge Graph</h2>
+            <div id="force-graph" class="force-graph-container"></div>
+        </section>
+        
+        <footer>
+            <p>Built with <a href="https://www.11ty.dev/" target="_blank">11ty</a></p>
+        </footer>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html>
