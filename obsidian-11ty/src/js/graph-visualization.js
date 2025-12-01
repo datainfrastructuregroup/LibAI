@@ -20,7 +20,44 @@ function getGraphColors() {
   };
 }
 
-let GRAPH_COLORS = getGraphColors();
+const GRAPH_CONFIG = {
+  physics: {
+    linkDistance: 120,
+    linkStrength: 0.6,
+    chargeStrength: -600,
+    chargeDistanceMax: 300,
+    centerStrength: 0.1,
+    collisionStrength: 0.8,
+    xStrength: 0.05,
+    yStrength: 0.05,
+    alphaDecay: 0.01,
+    velocityDecay: 0.3,
+  },
+  colors: getGraphColors(),
+  nodes: {
+    minRadius: 8,
+    maxRadius: 16,
+    connectionBonus: 2,
+    maxConnectionBonus: 12,
+    glowOpacity: 0.1,
+    shadowOpacity: 0.2,
+    shadowOffset: 2,
+    lineOpacity: 0.8,
+    innerCircleOpacity: 0.5,
+    fontFamily: 'system-ui, -apple-system, sans-serif',
+    fontSize: 12,
+    fontWeight: '500',
+    textResolution: 2,
+  },
+  links: {
+    lineOpacity: 1,
+  },
+  zoom: {
+    minScale: 0.1,
+    maxScale: 8,
+    zoomFactor: 1.2,
+  },
+};
 
 class ForceDirectedGraph {
   constructor(containerId) {
@@ -28,12 +65,12 @@ class ForceDirectedGraph {
     if (!this.container) return;
 
     // Refresh colors from CSS
-    GRAPH_COLORS = getGraphColors();
+    GRAPH_CONFIG.colors = getGraphColors();
 
     this.app = new PIXI.Application({
       width: this.container.offsetWidth,
       height: 400,
-      backgroundColor: GRAPH_COLORS.background,
+      backgroundColor: GRAPH_CONFIG.colors.background,
       antialias: true,
       resolution: window.devicePixelRatio || 1,
       powerPreference: 'high-performance'
@@ -73,8 +110,8 @@ class ForceDirectedGraph {
     
     // Zoom and pan state
     this.scale = 1;
-    this.minScale = 0.1;
-    this.maxScale = 8;
+    this.minScale = GRAPH_CONFIG.zoom.minScale;
+    this.maxScale = GRAPH_CONFIG.zoom.maxScale;
     this.isDragging = false;
     this.lastPointerPos = { x: 0, y: 0 };
     this.panStart = { x: 0, y: 0 };
@@ -278,8 +315,25 @@ class ForceDirectedGraph {
         if (targetNode) targetNode.connections++;
       });
 
-      this.nodes = nodesArray;
-      this.links = links;
+      const connectedNodeIds = new Set();
+      links.forEach(link => {
+        connectedNodeIds.add(link.source);
+        connectedNodeIds.add(link.target);
+      });
+
+      const uniqueNodes = nodesArray.filter((node, index, self) => 
+        index === self.findIndex(n => n.id === node.id)
+      );
+
+      const connectedNodes = uniqueNodes.filter(node => connectedNodeIds.has(node.id));
+
+      const validLinks = links.filter(link => 
+        connectedNodes.some(node => node.id === link.source) && 
+        connectedNodes.some(node => node.id === link.target)
+      );
+
+      this.nodes = connectedNodes;
+      this.links = validLinks;
       
       this.createOptimizedSimulation();
       this.renderOptimized();
@@ -294,14 +348,14 @@ class ForceDirectedGraph {
   createOptimizedSimulation() {
     // Optimized physics with better parameters
     this.simulation = d3.forceSimulation(this.nodes)
-      .force('link', d3.forceLink(this.links).id(d => d.id).distance(100).strength(0.5))
-      .force('charge', d3.forceManyBody().strength(-400).distanceMax(200))
-      .force('center', d3.forceCenter(this.app.screen.width / 2, this.app.screen.height / 2).strength(0.1))
-      .force('collision', d3.forceCollide().radius(d => d.radius + 10).strength(0.7))
-      .force('x', d3.forceX(this.app.screen.width / 2).strength(0.05))
-      .force('y', d3.forceY(this.app.screen.height / 2).strength(0.05))
-      .alphaDecay(0.02) // Slower decay for smoother animation
-      .velocityDecay(0.4); // Better velocity damping
+      .force('link', d3.forceLink(this.links).id(d => d.id).distance(GRAPH_CONFIG.physics.linkDistance).strength(GRAPH_CONFIG.physics.linkStrength))
+      .force('charge', d3.forceManyBody().strength(GRAPH_CONFIG.physics.chargeStrength).distanceMax(GRAPH_CONFIG.physics.chargeDistanceMax))
+      .force('center', d3.forceCenter(this.app.screen.width / 2, this.app.screen.height / 2).strength(GRAPH_CONFIG.physics.centerStrength))
+      .force('collision', d3.forceCollide().radius(d => d.radius + 15).strength(GRAPH_CONFIG.physics.collisionStrength))
+      .force('x', d3.forceX(this.app.screen.width / 2).strength(GRAPH_CONFIG.physics.xStrength))
+      .force('y', d3.forceY(this.app.screen.height / 2).strength(GRAPH_CONFIG.physics.yStrength))
+      .alphaDecay(GRAPH_CONFIG.physics.alphaDecay)
+      .velocityDecay(GRAPH_CONFIG.physics.velocityDecay);
 
     this.simulation.on('tick', () => this.updateOptimizedPositions());
   }
@@ -321,7 +375,7 @@ class ForceDirectedGraph {
       const graphics = new PIXI.Graphics();
       
       // Create gradient-like effect with multiple lines
-      graphics.lineStyle(1, GRAPH_COLORS.accent, 0.3);
+      graphics.lineStyle(1, GRAPH_CONFIG.colors.accent, GRAPH_CONFIG.links.lineOpacity);
       
       this.linkGraphics.addChild(graphics);
       this.linkGraphicsArray.push(graphics);
@@ -333,29 +387,29 @@ class ForceDirectedGraph {
       
       // Node size based on connections (visual hierarchy)
       const baseRadius = node.radius;
-      const connectionBonus = Math.min(node.connections * 2, 12);
+      const connectionBonus = Math.min(node.connections * GRAPH_CONFIG.nodes.connectionBonus, GRAPH_CONFIG.nodes.maxConnectionBonus);
       const finalRadius = baseRadius + connectionBonus;
       
       // Create gradient effect with multiple circles
       const glowGraphics = new PIXI.Graphics();
-      glowGraphics.beginFill(GRAPH_COLORS.hover, 0.1);
+      glowGraphics.beginFill(GRAPH_CONFIG.colors.hover, GRAPH_CONFIG.nodes.glowOpacity);
       glowGraphics.drawCircle(0, 0, finalRadius + 8);
       glowGraphics.endFill();
       
       const shadowGraphics = new PIXI.Graphics();
-      shadowGraphics.beginFill(0x000000, 0.2);
-      shadowGraphics.drawCircle(2, 2, finalRadius);
+      shadowGraphics.beginFill(0x000000, GRAPH_CONFIG.nodes.shadowOpacity);
+      shadowGraphics.drawCircle(GRAPH_CONFIG.nodes.shadowOffset, GRAPH_CONFIG.nodes.shadowOffset, finalRadius);
       shadowGraphics.endFill();
       
       const mainGraphics = new PIXI.Graphics();
-      mainGraphics.beginFill(GRAPH_COLORS.cardBg);
-      mainGraphics.lineStyle(2, GRAPH_COLORS.accent, 0.8);
+      mainGraphics.beginFill(GRAPH_CONFIG.colors.cardBg);
+      mainGraphics.lineStyle(2, GRAPH_CONFIG.colors.accent, GRAPH_CONFIG.nodes.lineOpacity);
       mainGraphics.drawCircle(0, 0, finalRadius);
       mainGraphics.endFill();
       
       // Add inner circle for depth
       const innerGraphics = new PIXI.Graphics();
-      innerGraphics.beginFill(GRAPH_COLORS.background, 0.5);
+      innerGraphics.beginFill(GRAPH_CONFIG.colors.background, GRAPH_CONFIG.nodes.innerCircleOpacity);
       innerGraphics.drawCircle(-finalRadius/4, -finalRadius/4, finalRadius/3);
       innerGraphics.endFill();
       
@@ -366,16 +420,16 @@ class ForceDirectedGraph {
       
       // Optimized text rendering
       const text = new PIXI.Text(node.label, {
-        fontFamily: 'system-ui, -apple-system, sans-serif',
-        fontSize: 12,
-        fill: GRAPH_COLORS.text,
+        fontFamily: GRAPH_CONFIG.nodes.fontFamily,
+        fontSize: GRAPH_CONFIG.nodes.fontSize,
+        fill: GRAPH_CONFIG.colors.text,
         align: 'center',
-        fontWeight: '500'
+        fontWeight: GRAPH_CONFIG.nodes.fontWeight
       });
       
       text.anchor.set(0.5);
       text.y = finalRadius + 15;
-      text.resolution = 2; // Crisper text
+      text.resolution = GRAPH_CONFIG.nodes.textResolution; // Crisper text
       
       container.addChild(text);
       container.x = node.x;
@@ -430,7 +484,7 @@ class ForceDirectedGraph {
   createHoverEffect(container, radius) {
     // Create hover animation
     const hoverGraphics = new PIXI.Graphics();
-    hoverGraphics.beginFill(GRAPH_COLORS.hover, 0.3);
+    hoverGraphics.beginFill(GRAPH_CONFIG.colors.hover, 0.3);
     hoverGraphics.drawCircle(0, 0, radius + 12);
     hoverGraphics.endFill();
     
@@ -548,7 +602,7 @@ class ForceDirectedGraph {
         
         if (sourceNode && targetNode) {
           graphics.clear();
-          graphics.lineStyle(1, GRAPH_COLORS.accent, 0.3);
+          graphics.lineStyle(1, GRAPH_CONFIG.colors.accent, GRAPH_CONFIG.links.lineOpacity);
           graphics.moveTo(sourceNode.x, sourceNode.y);
           graphics.lineTo(targetNode.x, targetNode.y);
         }
@@ -577,7 +631,7 @@ class ForceDirectedGraph {
         
         if (sourceNode && targetNode) {
           graphics.clear();
-          graphics.lineStyle(1, GRAPH_COLORS.accent, 0.3);
+          graphics.lineStyle(1, GRAPH_CONFIG.colors.accent, GRAPH_CONFIG.links.lineOpacity);
           graphics.moveTo(sourceNode.x, sourceNode.y);
           graphics.lineTo(targetNode.x, targetNode.y);
         }
@@ -595,7 +649,7 @@ class ForceDirectedGraph {
       
       if (sourceNode && targetNode) {
         graphics.clear();
-        graphics.lineStyle(1, GRAPH_COLORS.accent, 0.3);
+        graphics.lineStyle(1, GRAPH_CONFIG.colors.accent, GRAPH_CONFIG.links.lineOpacity);
         graphics.moveTo(sourceNode.x, sourceNode.y);
         graphics.lineTo(targetNode.x, targetNode.y);
       }

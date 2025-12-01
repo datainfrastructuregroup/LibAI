@@ -1,7 +1,9 @@
 ---
 title: Dr. Sarah Chen
 layout: person.njk
-description: AI researcher specializing in natural language processing and ethical AI
+description: Human-computer interaction (HCI) researcher focused on designing ethical and user-centric AI systems
+headshot: /assets/headshot-placeholder.jpg
+subtitle: HCI Researcher
 tags:
   - person
   - contributor
