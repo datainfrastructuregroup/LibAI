@@ -2,6 +2,12 @@
 title: "Citations Example"
 description: "Example of how to use citations in notes"
 layout: note.njk
+authors: 
+  - [[sarah-chen]]
+contributors:
+  - [[james-thompson]]
+editors:
+  - [[marcus-rodriguez]]
 ---
 
 # Citations Example

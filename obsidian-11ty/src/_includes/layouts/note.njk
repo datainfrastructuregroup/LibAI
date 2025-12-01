@@ -8,6 +8,43 @@ layout: base.njk
         <div class="meta">
             <a href="/notes" class="back-link">← Back to all notes</a>
         </div>
+        
+        {% if authors or contributors or editors %}
+        <div class="note-byline">
+            {% if authors %}
+            <div class="byline-section">
+                <span class="byline-label">Written by:</span>
+                <span class="byline-content">
+                    {% for author in authors %}
+                        {{ author | safe }}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </span>
+            </div>
+            {% endif %}
+            
+            {% if contributors %}
+            <div class="byline-section">
+                <span class="byline-label">Additional contributions by:</span>
+                <span class="byline-content">
+                    {% for contributor in contributors %}
+                        {{ contributor | safe }}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </span>
+            </div>
+            {% endif %}
+            
+            {% if editors %}
+            <div class="byline-section">
+                <span class="byline-label">Edited by:</span>
+                <span class="byline-content">
+                    {% for editor in editors %}
+                        {{ editor | safe }}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </span>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
     </header>
     
     <div class="content">
