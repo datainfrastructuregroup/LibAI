@@ -48,9 +48,11 @@ body {
 }
 
 header {
+  position: relative;
   border-bottom: 1px solid var(--border-color);
   margin-bottom: 2rem;
 }
+
 
 .header-title {
   text-align: center;
@@ -776,15 +778,15 @@ blockquote {
 
 .contributor-card {
   background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 0; /* Removed rounded corners */
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 4px 4px 10px 0px rgba(0, 240, 255, 0.2); /* Sharper, bottom-right glow */
 }
 
 .contributor-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px) translateX(-2px);
+  box-shadow: 6px 6px 15px 0px rgba(0, 240, 255, 0.35); /* More pronounced glow on hover */
 }
 
 .contributor-card a {
@@ -802,39 +804,40 @@ blockquote {
 }
 
 .contributor-info {
-  padding: 1.5rem;
+  padding: 1.2rem;
 }
 
 .contributor-title {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.5rem;
+  margin: 0 0 0.25rem 0;
+  font-size: 1.4rem;
 }
 
 .contributor-subtitle {
-  margin: 0.5rem 0;
+  margin: 0 0 0.75rem 0;
   font-style: italic;
   color: var(--accent-color);
+  font-size: 1rem;
 }
 
 .contributor-description {
-  margin: 0;
+  margin: 0 0 1rem 0;
   font-size: 0.9rem;
   opacity: 0.8;
 }
 
 .contributor-stats {
   margin-top: 1rem;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
 }
 
-.stat {
-  background: var(--code-bg);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
+.stat-line {
   font-size: 0.85rem;
   color: var(--text-color);
+  opacity: 0.7;
+  margin: 0;
+}
+
+.stat-separator {
+  color: var(--link-color);
 }
 
 @media (max-width: 1024px) {

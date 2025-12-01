@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=JetBrains+Mono&display=swap');
+
+:root {
+  /* Minimalist Modern Palette */
+
+  /* Primary Colors */
+  --bg-color: #f4f4f4; /* Very Light Gray */
+  --text-color: #222222; /* Very Dark Gray */
+  --accent-color: #E07A5F; /* Muted Terracotta */
+  --border-color: #dddddd; /* Light Gray */
+  --card-bg: #ffffff; /* White */
+
+  /* Accent Colors */
+  --link-color: #E07A5F;
+  --link-hover: #222222;
+  --code-bg: #eeeeee;
+  --code-color: #222222;
+
+  /* Graph-specific colors */
+  --graph-bg: #f4f4f4;
+  --graph-node-bg: #ffffff;
+  --graph-node-border: #E07A5F;
+  --graph-link-color: #222222;
+  --graph-text-color: #222222;
+  --graph-hover-color: #E07A5F;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  color: var(--text-color);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+  border: 1px solid var(--border-color);
+}

@@ -23,7 +23,7 @@ layout: base.njk
                 {% set authoredArticles = [] %}
                 {% set contributedArticles = [] %}
                 {% set editedArticles = [] %}
-                
+
                 {% for note in collections.notes %}
                     {% if note.data.authors %}
                         {% for author in note.data.authors %}
@@ -49,18 +49,21 @@ layout: base.njk
                         {% endfor %}
                     {% endif %}
                 {% endfor %}
-                
+
+                {% set stats = [] %}
+                {% if authoredArticles.length > 0 %}{% set stats = stats.concat([authoredArticles.length ~ ' Authored']) %}{% endif %}
+                {% if contributedArticles.length > 0 %}{% set stats = stats.concat([contributedArticles.length ~ ' Contributed']) %}{% endif %}
+                {% if editedArticles.length > 0 %}{% set stats = stats.concat([editedArticles.length ~ ' Edited']) %}{% endif %}
+
+                {% if stats.length > 0 %}
                 <div class="contributor-stats">
-                    {% if authoredArticles.length > 0 %}
-                    <span class="stat">{{ authoredArticles.length }} authored</span>
-                    {% endif %}
-                    {% if contributedArticles.length > 0 %}
-                    <span class="stat">{{ contributedArticles.length }} contributed</span>
-                    {% endif %}
-                    {% if editedArticles.length > 0 %}
-                    <span class="stat">{{ editedArticles.length }} edited</span>
-                    {% endif %}
+                    <p class="stat-line">
+                        {% for stat in stats %}
+                            {{ stat }}{% if not loop.last %}<span class="stat-separator"> • </span>{% endif %}
+                        {% endfor %}
+                    </p>
                 </div>
+                {% endif %}
             </div>
         </a>
     </div>

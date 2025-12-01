@@ -22,16 +22,16 @@ function getGraphColors() {
 
 const GRAPH_CONFIG = {
   physics: {
-    linkDistance: 120,
-    linkStrength: 0.6,
-    chargeStrength: -600,
-    chargeDistanceMax: 300,
-    centerStrength: 0.1,
-    collisionStrength: 0.8,
+    linkDistance: 100,
+    linkStrength: 0.5,
+    chargeStrength: -400,
+    chargeDistanceMax: 400,
+    centerStrength: 0.2,
+    collisionStrength: 0.5,
     xStrength: 0.05,
     yStrength: 0.05,
-    alphaDecay: 0.01,
-    velocityDecay: 0.3,
+    alphaDecay: 0.05, /* Increased for faster settling */
+    velocityDecay: 0.6, /* Increased for more friction */
   },
   colors: getGraphColors(),
   nodes: {
