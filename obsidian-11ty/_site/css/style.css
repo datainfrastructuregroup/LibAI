@@ -383,6 +383,42 @@ blockquote {
   padding-top: 2rem;
 }
 
+/* 404 Page Styles */
+.not-found-container {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.not-found-container h1 {
+  font-size: 6rem;
+  margin: 0;
+}
+
+.not-found-container h2 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.not-found-container p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+#random-note-btn {
+  background-color: var(--accent-color);
+  color: var(--card-bg);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#random-note-btn:hover {
+  background-color: var(--link-hover);
+}
+
 .person-articles h2 {
   color: var(--accent-color);
   margin-bottom: 1.5rem;

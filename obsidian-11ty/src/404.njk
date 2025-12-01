@@ -1,0 +1,28 @@
+---
+layout: base.njk
+permalink: 404.html
+---
+
+<div class="not-found-container">
+    <h1>404</h1>
+    <h2>Page Not Found</h2>
+    <p>The page you're looking for doesn't exist.</p>
+    <button id="random-note-btn">take me to a random page</button>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const allNotes = [
+            {% for note in collections.notes %}
+                "{{ note.url }}",
+            {% endfor %}
+        ];
+
+        const randomNoteBtn = document.getElementById('random-note-btn');
+        randomNoteBtn.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * allNotes.length);
+            const randomUrl = allNotes[randomIndex];
+            window.location.href = randomUrl;
+        });
+    });
+</script>
