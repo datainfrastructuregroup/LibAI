@@ -10,18 +10,12 @@ layout: base.njk
         </div>
     </header>
     
-    <div class="person-card">
-        <div class="person-headshot">
-            <img src="{{ headshot }}" alt="{{ title }}" />
-        </div>
-        <div class="person-info">
-            <h2 class="person-title">{{ title }}</h2>
-            <p class="person-subtitle">{{ subtitle }}</p>
-            <p class="person-description">{{ description }}</p>
-        </div>
-    </div>
-
     <div class="content">
+        <div class="person-profile">
+            <img src="{{ headshot }}" alt="{{ title }}" class="person-headshot-inline" />
+            <p><strong>{{ subtitle }}</strong></p>
+            <p><em>{{ description }}</em></p>
+        </div>
         {{ content | safe }}
     </div>
     

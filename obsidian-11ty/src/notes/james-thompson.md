@@ -2,7 +2,7 @@
 title: James Thompson
 layout: person.njk
 description: Investigative journalist focused on the impact of technology on society
-headshot: /assets/james-thompson.png
+headshot: /assets/headshot-placeholder.jpg
 subtitle: Investigative Journalist
 tags:
   - person

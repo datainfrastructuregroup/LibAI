@@ -2,14 +2,13 @@
 title: Dr. Elena Volkov
 layout: person.njk
 description: Cognitive psychologist specializing in learning methodologies and knowledge management
-headshot: /assets/elena-volkov.png
+headshot: /assets/headshot-placeholder.jpg
 subtitle: Cognitive Psychologist
 tags:
   - person
   - contributor
 ---
 
-# Dr. Elena Volkov
 
 Dr. Elena Volkov is a cognitive psychologist dedicated to understanding how people learn and organize information. Her research focuses on effective learning methodologies and knowledge management systems.
 
