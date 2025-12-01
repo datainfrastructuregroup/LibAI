@@ -30,6 +30,7 @@ export default function(eleventyConfig) {
   // Copy assets
   eleventyConfig.addPassthroughCopy('src/css');
   eleventyConfig.addPassthroughCopy('src/js');
+  eleventyConfig.addPassthroughCopy('src/assets');
   eleventyConfig.addPassthroughCopy('.garden-graph.json');
 
   // Add string contains filter

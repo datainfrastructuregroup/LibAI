@@ -2,6 +2,8 @@
 title: Dr. Elena Volkov
 layout: person.njk
 description: Cognitive psychologist specializing in learning methodologies and knowledge management
+headshot: /assets/elena-volkov.png
+subtitle: Cognitive Psychologist
 tags:
   - person
   - contributor

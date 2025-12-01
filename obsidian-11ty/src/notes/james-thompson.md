@@ -1,7 +1,9 @@
 ---
 title: James Thompson
 layout: person.njk
-description: Technical writer and editor specializing in developer documentation and technical communication
+description: Investigative journalist focused on the impact of technology on society
+headshot: /assets/james-thompson.png
+subtitle: Investigative Journalist
 tags:
   - person
   - contributor

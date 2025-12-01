@@ -1,7 +1,9 @@
 ---
 title: Dr. Amara Okonkwo
 layout: person.njk
-description: Productivity researcher and consultant focused on workflow optimization and deep work methodologies
+description: AI ethicist and policy advisor focused on fairness and accountability in machine learning systems
+headshot: /assets/headshot-placeholder.jpg
+subtitle: AI Ethicist
 tags:
   - person
   - contributor

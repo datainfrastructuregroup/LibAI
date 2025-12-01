@@ -1,7 +1,9 @@
 ---
 title: Marcus Rodriguez
 layout: person.njk
-description: Software engineer and open-source contributor focused on developer tools
+description: Data scientist and researcher specializing in algorithmic bias and fairness
+headshot: /assets/marcus-rodriguez.png
+subtitle: Data Scientist
 tags:
   - person
   - contributor
