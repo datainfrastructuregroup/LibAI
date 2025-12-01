@@ -142,6 +142,40 @@ blockquote {
   font-style: italic;
 }
 
+/* Notes listing styles */
+.notes-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+}
+
+.notes-entry {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.notes-entry::before {
+  content: "•";
+  color: var(--accent-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.notes-entry a {
+  color: var(--link-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.notes-entry a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
 /* Note specific styles */
 .note {
   max-width: 800px;
