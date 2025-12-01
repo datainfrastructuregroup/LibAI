@@ -5,15 +5,15 @@ layout: base.njk
 
 # All Notes
 
-<div class="notes-grid">
+<ul class="notes-list">
 {% for note in collections.notes %}
-    <article class="note-card">
-        <h3><a href="{{ note.url }}">{{ note.data.title | default(note.fileSlug) }}</a></h3>
+    <li class="notes-entry">
+        <a href="{{ note.url }}">{{ note.data.title | default(note.fileSlug) }}</a>
         {% if note.data.description %}
-        <p>{{ note.data.description }}</p>
+        - {{ note.data.description }}
         {% endif %}
-    </article>
+    </li>
 {% else %}
-    <p>No notes found.</p>
+    <li>No notes found.</li>
 {% endfor %}
-</div>
+</ul>
