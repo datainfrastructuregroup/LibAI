@@ -68,6 +68,13 @@ export default function(eleventyConfig) {
     });
   });
 
+  // Add filter to get entry by URL
+  eleventyConfig.addFilter('getEntryByUrl', function(collection, url) {
+    if (!collection || !url) return null;
+    
+    return collection.find(item => item.url === url);
+  });
+
   // Add global data for complete bibliography
   eleventyConfig.addGlobalData('completeBibliography', function() {
     return bibliographyGenerator.generateCompleteBibliography();

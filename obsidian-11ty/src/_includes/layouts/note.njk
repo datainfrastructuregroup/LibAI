@@ -16,7 +16,13 @@ layout: base.njk
                 <span class="byline-label">Written by:</span>
                 <span class="byline-content">
                     {% for author in authors %}
-                        {{ author | safe }}{% if not loop.last %}, {% endif %}
+                        {% set authorName = author | replace("[[", "") | replace("]]", "") %}
+                        {% set authorPage = collections.all | getEntryByUrl("/notes/" + authorName + "/") %}
+                        {% if authorPage %}
+                            <a href="/notes/{{ authorName | slugify }}/">{{ authorPage.data.title }}</a>{% if not loop.last %}, {% endif %}
+                        {% else %}
+                            <a href="/notes/{{ authorName | slugify }}/">{{ authorName }}</a>{% if not loop.last %}, {% endif %}
+                        {% endif %}
                     {% endfor %}
                 </span>
             </div>
@@ -27,7 +33,13 @@ layout: base.njk
                 <span class="byline-label">Additional contributions by:</span>
                 <span class="byline-content">
                     {% for contributor in contributors %}
-                        {{ contributor | safe }}{% if not loop.last %}, {% endif %}
+                        {% set contributorName = contributor | replace("[[", "") | replace("]]", "") %}
+                        {% set contributorPage = collections.all | getEntryByUrl("/notes/" + contributorName + "/") %}
+                        {% if contributorPage %}
+                            <a href="/notes/{{ contributorName | slugify }}/">{{ contributorPage.data.title }}</a>{% if not loop.last %}, {% endif %}
+                        {% else %}
+                            <a href="/notes/{{ contributorName | slugify }}/">{{ contributorName }}</a>{% if not loop.last %}, {% endif %}
+                        {% endif %}
                     {% endfor %}
                 </span>
             </div>
@@ -38,7 +50,13 @@ layout: base.njk
                 <span class="byline-label">Edited by:</span>
                 <span class="byline-content">
                     {% for editor in editors %}
-                        {{ editor | safe }}{% if not loop.last %}, {% endif %}
+                        {% set editorName = editor | replace("[[", "") | replace("]]", "") %}
+                        {% set editorPage = collections.all | getEntryByUrl("/notes/" + editorName + "/") %}
+                        {% if editorPage %}
+                            <a href="/notes/{{ editorName | slugify }}/">{{ editorPage.data.title }}</a>{% if not loop.last %}, {% endif %}
+                        {% else %}
+                            <a href="/notes/{{ editorName | slugify }}/">{{ editorName }}</a>{% if not loop.last %}, {% endif %}
+                        {% endif %}
                     {% endfor %}
                 </span>
             </div>
