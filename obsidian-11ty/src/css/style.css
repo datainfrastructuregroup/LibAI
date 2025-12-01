@@ -327,6 +327,28 @@ blockquote {
   border-left: 2px solid var(--border-color);
 }
 
+.bibliography-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+}
+
+.bibliography-entry {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.bibliography-entry::before {
+  content: "•";
+  color: var(--accent-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 /* Force-Directed Graph Styles */
 .force-graph-controls {
   position: absolute;

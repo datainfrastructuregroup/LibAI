@@ -31,19 +31,19 @@ export function generateCompleteBibliography() {
     // Build the bibliography to format all entries
     bibliography.build();
     
-    // Generate bibliography HTML with all entries
-    let bibliographyHTML = '<div class="bibliography-list">\n';
+    // Generate bibliography HTML with all entries as a bulleted list
+    let bibliographyHTML = '<ul class="bibliography-list">\n';
     
     for (const key of allKeys) {
       const formattedEntry = bibliography.format(key);
       if (formattedEntry && formattedEntry.entry) {
-        bibliographyHTML += `<div class="bibliography-entry" id="${key}">\n`;
+        bibliographyHTML += `<li class="bibliography-entry" id="${key}">\n`;
         bibliographyHTML += formattedEntry.entry;
-        bibliographyHTML += '\n</div>\n\n';
+        bibliographyHTML += '\n</li>\n\n';
       }
     }
     
-    bibliographyHTML += '</div>\n';
+    bibliographyHTML += '</ul>\n';
     
     // Clean up temporary file
     fs.unlinkSync(tempBibPath);
@@ -88,19 +88,19 @@ export function generateBibliographyWithAllCitations() {
     const mockContent = allKeys.map(key => `[@${key}]`).join(' ');
     
     // Process citations (this would normally be done by the plugin's filter)
-    // For now, we'll generate the bibliography directly
-    let bibliographyHTML = '<div class="bibliography-list">\n';
+    // For now, we'll generate the bibliography directly as a bulleted list
+    let bibliographyHTML = '<ul class="bibliography-list">\n';
     
     for (const key of allKeys) {
       const formattedEntry = bibliography.format(key);
       if (formattedEntry && formattedEntry.entry) {
-        bibliographyHTML += `<div class="bibliography-entry" id="${key}">\n`;
+        bibliographyHTML += `<li class="bibliography-entry" id="${key}">\n`;
         bibliographyHTML += formattedEntry.entry;
-        bibliographyHTML += '\n</div>\n\n';
+        bibliographyHTML += '\n</li>\n\n';
       }
     }
     
-    bibliographyHTML += '</div>\n';
+    bibliographyHTML += '</ul>\n';
     
     // Clean up temporary file
     fs.unlinkSync(tempBibPath);
