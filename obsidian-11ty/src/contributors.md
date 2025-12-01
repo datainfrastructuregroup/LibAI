@@ -5,7 +5,7 @@ layout: base.njk
 
 <h1>Contributors</h1>
 
-<p>Meet the people who contribute to this knowledge base through writing, editing, and collaboration.</p>
+<p></p>
 
 {% set contributors = collections.all | getTaggedItems("contributor") %}
 

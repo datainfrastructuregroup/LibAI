@@ -46,12 +46,34 @@ body {
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
   border-bottom: 1px solid var(--border-color);
   margin-bottom: 2rem;
+}
+
+.header-title {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.header-title h1 {
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  margin: 0;
+  font-style: italic;
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-color);
+  gap: 2rem;
 }
 
 .logo {
@@ -65,7 +87,6 @@ header {
 nav a {
   color: var(--link-color);
   text-decoration: none;
-  margin-left: 1.5rem;
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
