@@ -1,6 +1,13 @@
 ---
 title: Knowledge Management
 layout: note.njk
+authors: 
+  - [[elena-volkov]]
+contributors:
+  - [[marcus-rodriguez]]
+  - [[sarah-chen]]
+editors:
+  - [[james-thompson]]
 ---
 
 # Knowledge Management

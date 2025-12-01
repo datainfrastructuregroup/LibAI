@@ -1,6 +1,12 @@
 ---
 title: Deep Work
 layout: note.njk
+authors: 
+  - [[amara-okonkwo]]
+contributors:
+  - [[elena-volkov]]
+editors:
+  - [[james-thompson]]
 ---
 
 # Deep Work

@@ -1,6 +1,13 @@
 ---
 title: Learning Methods
 layout: note.njk
+authors: 
+  - [[elena-volkov]]
+contributors:
+  - [[sarah-chen]]
+  - [[amara-okonkwo]]
+editors:
+  - [[james-thompson]]
 ---
 
 # Learning Methods

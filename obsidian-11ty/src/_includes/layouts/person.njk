@@ -1,0 +1,117 @@
+---
+layout: base.njk
+---
+
+<article class="person">
+    <header>
+        <h1>{{ title }}</h1>
+        <div class="meta">
+            <a href="/notes" class="back-link">← Back to all notes</a>
+        </div>
+    </header>
+    
+    <div class="content">
+        {{ content | safe }}
+    </div>
+    
+    {% set personId = page.fileSlug %}
+    
+    <!-- Articles by this person -->
+    <section class="person-articles">
+        <h2>Entries by {{ title }}</h2>
+        
+        {% set authoredArticles = [] %}
+        {% set contributedArticles = [] %}
+        {% set editedArticles = [] %}
+        
+        {% for note in collections.notes %}
+            {% if note.data.authors %}
+                {% for author in note.data.authors %}
+                    {% if author == "[[" ~ personId ~ "]]" or author == personId %}
+                        {% set authoredArticles = authoredArticles.concat([note]) %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            
+            {% if note.data.contributors %}
+                {% for contributor in note.data.contributors %}
+                    {% if contributor == "[[" ~ personId ~ "]]" or contributor == personId %}
+                        {% set contributedArticles = contributedArticles.concat([note]) %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            
+            {% if note.data.editors %}
+                {% for editor in note.data.editors %}
+                    {% if editor == "[[" ~ personId ~ "]]" or editor == personId %}
+                        {% set editedArticles = editedArticles.concat([note]) %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+        
+        {% if authoredArticles.length > 0 %}
+        <div class="articles-section">
+            <h3>Authored ({{ authoredArticles.length }})</h3>
+            <ul class="articles-list">
+                {% for article in authoredArticles %}
+                <li>
+                    <a href="{{ article.url }}">{{ article.data.title }}</a>
+                    {% if article.data.description %}
+                    <p class="article-description">{{ article.data.description }}</p>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        {% if contributedArticles.length > 0 %}
+        <div class="articles-section">
+            <h3>Contributed to ({{ contributedArticles.length }})</h3>
+            <ul class="articles-list">
+                {% for article in contributedArticles %}
+                <li>
+                    <a href="{{ article.url }}">{{ article.data.title }}</a>
+                    {% if article.data.description %}
+                    <p class="article-description">{{ article.data.description }}</p>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        {% if editedArticles.length > 0 %}
+        <div class="articles-section">
+            <h3>Edited ({{ editedArticles.length }})</h3>
+            <ul class="articles-list">
+                {% for article in editedArticles %}
+                <li>
+                    <a href="{{ article.url }}">{{ article.data.title }}</a>
+                    {% if article.data.description %}
+                    <p class="article-description">{{ article.data.description }}</p>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        {% if authoredArticles.length == 0 and contributedArticles.length == 0 and editedArticles.length == 0 %}
+        <p>No articles found for this person.</p>
+        {% endif %}
+    </section>
+    
+    {% set backlinks = collections.all | getBacklinks(page) %}
+    {% if backlinks.length > 0 %}
+    <aside class="backlinks">
+        <h2>Backlinks</h2>
+        <ul>
+            {% for backlink in backlinks %}
+            <li><a href="{{ backlink.url }}">{{ backlink.data.title | default(backlink.fileSlug) }}</a></li>
+            {% endfor %}
+        </ul>
+    </aside>
+    {% endif %}
+</article>

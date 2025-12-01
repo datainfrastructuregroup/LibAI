@@ -1,6 +1,12 @@
 ---
 title: Productivity Systems
 layout: note.njk
+authors: 
+  - [[amara-okonkwo]]
+contributors:
+  - [[marcus-rodriguez]]
+editors:
+  - [[elena-volkov]]
 ---
 
 # Productivity Systems
