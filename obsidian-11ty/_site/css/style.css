@@ -1,26 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@700&family=Roboto+Mono&display=swap');
+
 :root {
-  /* Sherwin Williams 2025 Color Capsule Palette */
-  
+  /* Retro 90s/00s Techno Palette */
+
   /* Primary Colors */
-  --bg-color: #F5F2EA; /* Sunbleached SW 9585 - warm light neutral */
-  --text-color: #785B47; /* Grounded SW 6089 - rich warm brown */
-  --accent-color: #7A8B99; /* Rain Cloud SW 9639 - warm muted blue-gray */
-  --border-color: #5A4A3A; /* Darker Grounded - borders and dividers */
-  --card-bg: #FFFFFF; /* White Snow SW 9541 - clean white */
-  
+  --bg-color: #1a1a2e; /* Deep Navy */
+  --text-color: #e0e0e0; /* Off-white */
+  --accent-color: #00f0ff; /* Electric Cyan */
+  --border-color: #4a4a5e; /* Muted Purple/Gray */
+  --card-bg: #2a2a3e; /* Darker Navy/Purple */
+
   /* Accent Colors */
-  --link-color: #5A4A3A; /* Darker Grounded - better contrast */
-  --link-hover: #785B47; /* Grounded for hover - slightly lighter */
-  --code-bg: #F0E8D8; /* Warm cream for code blocks */
-  --code-color: #785B47; /* Grounded for code text */
-  
+  --link-color: #f038ff; /* Vibrant Magenta */
+  --link-hover: #00f0ff; /* Electric Cyan */
+  --code-bg: #101020; /* Even Darker Navy */
+  --code-color: #00f0ff; /* Electric Cyan */
+
   /* Graph-specific colors */
-  --graph-bg: #F5F2EA; /* Sunbleached background */
-  --graph-node-bg: #FFFFFF; /* White Snow nodes */
-  --graph-node-border: #7A8B99; /* Rain Cloud borders */
-  --graph-link-color: #5A4A3A; /* Darker Grounded for better visibility */
-  --graph-text-color: #785B47; /* Grounded text */
-  --graph-hover-color: #E1D286; /* Chartreuse accent for hover */
+  --graph-bg: #1a1a2e;
+  --graph-node-bg: #2a2a3e;
+  --graph-node-border: #00f0ff;
+  --graph-link-color: #f038ff;
+  --graph-text-color: #e0e0e0;
+  --graph-hover-color: #f038ff;
 }
 
 * {
@@ -30,14 +32,14 @@
 }
 
 body {
-  font-family: 'Courier New', monospace;
-  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
   color: var(--text-color);
   background-color: var(--bg-color);
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .container {
@@ -98,9 +100,12 @@ nav a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 1.5rem 0 1rem;
-  line-height: 1.2;
-  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+  margin: 2rem 0 1rem;
+  line-height: 1.3;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 h1 { font-size: 2.5rem; } /* Site title - largest */
@@ -133,12 +138,13 @@ li {
 }
 
 code {
-  font-family: 'Courier New', monospace;
+  font-family: 'Roboto Mono', monospace;
   background-color: var(--code-bg);
   color: var(--code-color);
   padding: 0.2rem 0.4rem;
-  border-radius: 3px;
+  border-radius: 4px;
   font-size: 0.9em;
+  border: 1px solid var(--border-color);
 }
 
 pre {
