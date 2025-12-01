@@ -51,7 +51,7 @@ export default function(eleventyConfig) {
     
     const currentUrl = currentPage.url;
     return notes.filter(note => {
-      if (!note.templateContent) return false;
+      if (!note.templateContent || note.url === currentUrl) return false;
       const content = note.templateContent.toLowerCase();
       const noteUrl = note.url.toLowerCase();
       return content.includes(currentUrl) && noteUrl !== currentUrl;
