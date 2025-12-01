@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian 11ty</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="module" src="/js/graph-visualization.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-title">
+                <h1><a href="/" class="logo">Liberation + AI Think Tank</a></h1>
+                <p class="subtitle">we are asking questions</p>
+            </div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/notes">All Entries</a>
+                <a href="/contributors">Contributors</a>
+                <a href="/about">About</a>
+                <a href="/bibliography">Bibliography</a>
+            </nav>
+        </header>
+        
+        <main>
+            
+<div class="not-found-container">
+    <h1>404</h1>
+    <h2>Page Not Found</h2>
+    <p>The page you're looking for doesn't exist.</p>
+    <button id="random-note-btn">take me to a random page</button>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const allNotes = [
+            
+                "/notes/productivity/",
+            
+                "/notes/deep-work/",
+            
+                "/notes/learning-methods/",
+            
+                "/notes/knowledge-management/",
+            
+                "/notes/reading-list/",
+            
+                "/notes/citations-example/",
+            
+                "/notes/sarah-chen/",
+            
+                "/notes/marcus-rodriguez/",
+            
+                "/notes/elena-volkov/",
+            
+                "/notes/james-thompson/",
+            
+                "/notes/amara-okonkwo/",
+            
+                "/notes/ai-resistance/",
+            
+                "/notes/intelligence-consciousness/",
+            
+                "/notes/ai-ethics/",
+            
+                "/notes/technology-power/",
+            
+                "/notes/surveillance-privacy/",
+            
+                "/notes/digital-rights/",
+            
+                "/notes/ai-hype/",
+            
+                "/notes/human-machine-collaboration/",
+            
+                "/notes/technology-governance/",
+            
+                "/notes/critical-media-literacy/",
+            
+        ];
+
+        const randomNoteBtn = document.getElementById('random-note-btn');
+        randomNoteBtn.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * allNotes.length);
+            const randomUrl = allNotes[randomIndex];
+            window.location.href = randomUrl;
+        });
+    });
+</script>
+
+        </main>
+        
+        <section class="graph-section">
+            <h2>Knowledge Graph</h2>
+            <div id="force-graph" class="force-graph-container"></div>
+        </section>
+        
+        <footer>
+            <p>Built with <3 by students at MIT and Smith College.</p>
+        </footer>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html>
