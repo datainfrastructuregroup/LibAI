@@ -58,6 +58,16 @@ export default function(eleventyConfig) {
     });
   });
 
+  // Add filter to get items by tag
+  eleventyConfig.addFilter('getTaggedItems', function(items, tag) {
+    if (!items || !tag) return [];
+    
+    return items.filter(item => {
+      if (!item.data || !item.data.tags) return false;
+      return item.data.tags.includes(tag);
+    });
+  });
+
   // Add global data for complete bibliography
   eleventyConfig.addGlobalData('completeBibliography', function() {
     return bibliographyGenerator.generateCompleteBibliography();
