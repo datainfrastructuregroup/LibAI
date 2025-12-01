@@ -1,0 +1,19 @@
+{
+  "name": "obsidian-11ty",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "An 11ty site with Obsidian Publish-like functionality",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "build:gh-pages": "ELEVENTY_BASEPATH=/[REPOSITORY_NAME] eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@adaptivekind/markdown-graph": "^0.0.17",
+    "clean-css": "^5.3.2",
+    "eleventy-plugin-citations": "^0.1.10",
+    "markdown-it": "^13.0.1",
+    "markdown-it-wikilinks": "^1.1.1"
+  }
+}
