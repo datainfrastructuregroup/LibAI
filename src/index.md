@@ -3,7 +3,7 @@ title: Liberation + AI Think Tank
 layout: base.njk
 ---
 
-# Something about the Content
+# TESTING TESTING
 
 ## Recently Added... 
 
