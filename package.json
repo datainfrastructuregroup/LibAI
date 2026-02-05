@@ -13,8 +13,8 @@
     "node": ">=18"
   },
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy --input=. --output=_site",
+    "start": "eleventy --serve --port=9090",
+    "build": "eleventy",
     "build:gh-pages": "npm run build"
   },
   "dependencies": {
