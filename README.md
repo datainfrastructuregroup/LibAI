@@ -1,12 +1,11 @@
 # Obsidian 11ty
 
-A digital garden built with 11ty, inspired by Obsidian Publish. This static site generator creates a networked thought repository with automatic backlinks and a clean, monochromatic interface.
+The new Liberation + AI site...built with 11ty, inspired by Obsidian Publish. 
 
 ## Features
-
 - **Wikilinks**: Link between notes using `[[note-name]]` syntax
 - **Backlinks**: Automatically generated backlinks show connections between notes
-- **Graph View**: Visualize relationships between notes (placeholder implementation)
+- **Graph View**: Visualize relationships between notes (placeholder implementation - in development)
 - **Responsive Design**: Works on desktop and mobile devices
 - **Markdown Support**: Write content in Markdown with full support for code blocks, lists, and more
 
@@ -77,9 +76,4 @@ Edit the styles in `src/css/style.css` to customize the appearance of your site.
 Modify `.eleventy.js` to change site-wide settings and add custom filters or shortcodes.
 
 ## License
-
-
-## Graph Implementation
-- https://github.com/barrettotte/md-graph (python)
-- https://github.com/adaptivekind/markdown-graph?tab=readme-ov-file (npm) + graph/viz partner https://adaptivekind.github.io/graph-gizmo/ 
-- https://www.shedloadofcode.com/blog/searching-markdown-files-for-internal-links-and-visualising-with-a-pyvis-network-graph
+(tbd)
