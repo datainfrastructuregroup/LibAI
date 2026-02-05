@@ -9,37 +9,31 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-      
+      with:
+        fetch-depth: 0
+
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
         cache: 'npm'
-        
+
     - name: Install dependencies
       run: npm ci
-      
-    - name: Setup Eleventy
-      run: |
-        # Get repository name for path prefix
-        REPO_NAME=$(basename $GITHUB_REPOSITORY)
-        echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
-        
-        # Update package.json with correct repository name
-        sed -i "s/\\[REPOSITORY_NAME\\]/$REPO_NAME/g" package.json
-        
+
     - name: Build site
-      run: npm run build:gh-pages
+      run: npm run build
       env:
-        ELEVENTY_BASEPATH: /${{ github.event.repository.name }}
-        
+        ELEVENTY_BASEPATH: '/${{ github.event.repository.name }}'
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_site
+        # optional: keep_history: true

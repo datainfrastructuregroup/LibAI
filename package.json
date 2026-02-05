@@ -1,12 +1,21 @@
 {
-  "name": "obsidian-11ty",
+  "name": "libai",
   "version": "1.0.0",
+  "private": false,
+  "description": "The new text-based Liberation + AI website.",
   "type": "module",
-  "description": "An 11ty site with Obsidian Publish-like functionality",
+  "homepage": "https://datainfrastructuregroup.github.io/LibAI",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/datainfrastructuregroup/LibAI.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy",
-    "build:gh-pages": "eleventy"
+    "build": "eleventy --input=. --output=_site",
+    "build:gh-pages": "npm run build"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
