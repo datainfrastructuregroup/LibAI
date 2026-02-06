@@ -34,7 +34,7 @@ Start the development server with hot-reload:
 npm start
 ```
 
-The site will be available at [http://localhost:8080](http://localhost:8080)
+The site will be available at [http://localhost:9090](http://localhost:9090)
 
 ### Creating New Notes
 

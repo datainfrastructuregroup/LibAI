@@ -6,7 +6,7 @@ layout: base.njk
     <header>
         <h1>{{ title }}</h1>
         <div class="meta">
-            <a href="/notes" class="back-link">← Back to all notes</a>
+            <a href="{{ "/notes" | url }}" class="back-link">← Back to all notes</a>
         </div>
         
         {% if authors or contributors or editors %}
@@ -19,9 +19,9 @@ layout: base.njk
                         {% set authorName = author | replace("[[", "") | replace("]]", "") %}
                         {% set authorPage = collections.all | getEntryByUrl("/notes/" + authorName + "/") %}
                         {% if authorPage %}
-                            <a href="/notes/{{ authorName | slugify }}/">{{ authorPage.data.title }}</a>{% if not loop.last %}, {% endif %}
+                            <a href="{{ "/notes/" | url }}{{ authorName | slugify }}/">{{ authorPage.data.title }}</a>{% if not loop.last %}, {% endif %}
                         {% else %}
-                            <a href="/notes/{{ authorName | slugify }}/">{{ authorName }}</a>{% if not loop.last %}, {% endif %}
+                            <a href="{{ "/notes/" | url }}{{ authorName | slugify }}/">{{ authorName }}</a>{% if not loop.last %}, {% endif %}
                         {% endif %}
                     {% endfor %}
                 </span>
@@ -36,9 +36,9 @@ layout: base.njk
                         {% set contributorName = contributor | replace("[[", "") | replace("]]", "") %}
                         {% set contributorPage = collections.all | getEntryByUrl("/notes/" + contributorName + "/") %}
                         {% if contributorPage %}
-                            <a href="/notes/{{ contributorName | slugify }}/">{{ contributorPage.data.title }}</a>{% if not loop.last %}, {% endif %}
+                            <a href="{{ "/notes/" | url }}{{ contributorName | slugify }}/">{{ contributorPage.data.title }}</a>{% if not loop.last %}, {% endif %}
                         {% else %}
-                            <a href="/notes/{{ contributorName | slugify }}/">{{ contributorName }}</a>{% if not loop.last %}, {% endif %}
+                            <a href="{{ "/notes/" | url }}{{ contributorName | slugify }}/">{{ contributorName }}</a>{% if not loop.last %}, {% endif %}
                         {% endif %}
                     {% endfor %}
                 </span>
@@ -53,9 +53,9 @@ layout: base.njk
                         {% set editorName = editor | replace("[[", "") | replace("]]", "") %}
                         {% set editorPage = collections.all | getEntryByUrl("/notes/" + editorName + "/") %}
                         {% if editorPage %}
-                            <a href="/notes/{{ editorName | slugify }}/">{{ editorPage.data.title }}</a>{% if not loop.last %}, {% endif %}
+                            <a href="{{ "/notes/" | url }}{{ editorName | slugify }}/">{{ editorPage.data.title }}</a>{% if not loop.last %}, {% endif %}
                         {% else %}
-                            <a href="/notes/{{ editorName | slugify }}/">{{ editorName }}</a>{% if not loop.last %}, {% endif %}
+                            <a href="{{ "/notes/" | url }}{{ editorName | slugify }}/">{{ editorName }}</a>{% if not loop.last %}, {% endif %}
                         {% endif %}
                     {% endfor %}
                 </span>

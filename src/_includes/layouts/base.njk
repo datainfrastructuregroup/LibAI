@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or 'Obsidian 11ty' }}</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="module" src="/js/graph-visualization.js"></script>
+    <link rel="stylesheet" href="{{ "/" | url }}css/style.css">
+    <script type="module" src="{{ "/" | url }}js/graph-visualization.js"></script>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="header-title">
-                <h1><a href="/" class="logo">Liberation + AI Think Tank</a></h1>
+                <h1><a href="{{ "/" | url }}" class="logo">Liberation + AI Think Tank</a></h1>
                 <p class="subtitle">we are asking questions</p>
             </div>
             <nav>
-                <a href="/">Home</a>
-                <a href="/notes">All Entries</a>
-                <a href="/contributors">Contributors</a>
-                <a href="/about">About</a>
-                <a href="/bibliography">Bibliography</a>
+                <a href="{{ "/" | url }}">Home</a>
+                <a href="{{ "/notes" | url }}">All Entries</a>
+                <a href="{{ "/contributors" | url }}">Contributors</a>
+                <a href="{{ "/about" | url }}">About</a>
+                <a href="{{ "/bibliography" | url }}">Bibliography</a>
             </nav>
         </header>
         
@@ -36,6 +36,6 @@
             <p>Built with <3 by students at MIT and Smith College.</p>
         </footer>
     </div>
-    <script src="/js/main.js"></script>
+    <script src="{{ "/" | url }}js/main.js"></script>
 </body>
 </html>

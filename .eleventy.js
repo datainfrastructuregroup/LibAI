@@ -10,7 +10,7 @@ export default function(eleventyConfig) {
     linkify: true,
     typographer: true
   }).use(markdownItWikilinks({
-    baseURL: '/notes/',
+    baseURL: `${process.env.ELEVENTY_BASEPATH || ''}/notes/`,
     makeAllLinksAbsolute: true
   }));
 
