@@ -1,0 +1,3164 @@
+{
+  "nodes": {
+    "readme": {
+      "label": "Obsidian 11ty"
+    },
+    "readme#features": {
+      "label": "Features"
+    },
+    "readme#getting-started": {
+      "label": "Getting Started"
+    },
+    "readme#prerequisites": {
+      "label": "Prerequisites"
+    },
+    "readme#installation": {
+      "label": "Installation"
+    },
+    "readme#development-server": {
+      "label": "Development Server"
+    },
+    "readme#creating-new-notes": {
+      "label": "Creating New Notes"
+    },
+    "readme#building-for-production": {
+      "label": "Building for Production"
+    },
+    "readme#project-structure": {
+      "label": "Project Structure"
+    },
+    "readme#customization": {
+      "label": "Customization"
+    },
+    "readme#styling": {
+      "label": "Styling"
+    },
+    "readme#configuration": {
+      "label": "Configuration"
+    },
+    "readme#license": {
+      "label": "License"
+    },
+    "readme#graph-implementation": {
+      "label": "Graph Implementation"
+    },
+    "bibliography": {
+      "label": "Complete Bibliography",
+      "meta": {
+        "title": "Bibliography",
+        "description": "Complete bibliography of all cited works",
+        "layout": "base.njk"
+      }
+    },
+    "about": {
+      "label": "About Obsidian 11ty",
+      "meta": {
+        "title": "About",
+        "layout": "base.njk"
+      }
+    },
+    "about#what-is-a-digital-garden": {
+      "label": "What is a Digital Garden?",
+      "meta": {
+        "title": "About",
+        "layout": "base.njk"
+      }
+    },
+    "about#features": {
+      "label": "Features",
+      "meta": {
+        "title": "About",
+        "layout": "base.njk"
+      }
+    },
+    "about#getting-started": {
+      "label": "Getting Started",
+      "meta": {
+        "title": "About",
+        "layout": "base.njk"
+      }
+    },
+    "about#technology": {
+      "label": "Technology",
+      "meta": {
+        "title": "About",
+        "layout": "base.njk"
+      }
+    },
+    "contributors": {
+      "label": "{% set contributors = collections.all | getTaggedItems(\"contributor\") %}",
+      "meta": {
+        "title": "Contributors",
+        "layout": "base.njk"
+      }
+    },
+    "index": {
+      "label": "Welcome to Obsidian 11ty",
+      "meta": {
+        "title": "Welcome to Obsidian 11ty",
+        "layout": "base.njk"
+      }
+    },
+    "index#recent-notes": {
+      "label": "Recent Notes",
+      "meta": {
+        "title": "Welcome to Obsidian 11ty",
+        "layout": "base.njk"
+      }
+    },
+    "index#getting-started": {
+      "label": "Getting Started",
+      "meta": {
+        "title": "Welcome to Obsidian 11ty",
+        "layout": "base.njk"
+      }
+    },
+    "index#example-notes": {
+      "label": "Example Notes",
+      "meta": {
+        "title": "Welcome to Obsidian 11ty",
+        "layout": "base.njk"
+      }
+    },
+    "ai-hype": {
+      "label": "AI Hype and Techno-Futurism",
+      "meta": {
+        "title": "AI Hype and Techno-Futurism",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "james-thompson",
+        "editors.0": "sarah-chen"
+      }
+    },
+    "ai-hype#millenarian-narratives": {
+      "label": "Millenarian Narratives",
+      "meta": {
+        "title": "AI Hype and Techno-Futurism",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "james-thompson",
+        "editors.0": "sarah-chen"
+      }
+    },
+    "ai-hype#ai-as-salvation": {
+      "label": "AI as Salvation",
+      "meta": {
+        "title": "AI Hype and Techno-Futurism",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "james-thompson",
+        "editors.0": "sarah-chen"
+      }
+    },
+    "ai-hype#emily-gorcenskis-analysis": {
+      "label": "Emily Gorcenski's Analysis",
+      "meta": {
+        "title": "AI Hype and Techno-Futurism",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "james-thompson",
+        "editors.0": "sarah-chen"
+      }
+    },
+    "ai-hype#techno-futurist-ideology": {
+      "label": "Techno-Futurist Ideology",
+      "meta": {
+        "title": "AI Hype and Techno-Futurism",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "james-thompson",
+        "editors.0": "sarah-chen"
+      }
+    },
+    "ai-hype#core-beliefs": {
+      "label": "Core Beliefs",
+      "meta": {
+        "title": "AI Hype and Techno-Futurism",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "james-thompson",
+        "editors.0": "sarah-chen"
+      }
+    },
+    "ai-hype#manifest-destiny": {
+      "label": "Manifest Destiny",
+      "meta": {
+        "title": "AI Hype and Techno-Futurism",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "james-thompson",
+        "editors.0": "sarah-chen"
+      }
+    },
+    "ai-hype#critical-perspectives": {
+      "label": "Critical Perspectives",
+      "meta": {
+        "title": "AI Hype and Techno-Futurism",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "james-thompson",
+        "editors.0": "sarah-chen"
+      }
+    },
+    "ai-hype#alternative-frameworks": {
+      "label": "Alternative Frameworks",
+      "meta": {
+        "title": "AI Hype and Techno-Futurism",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "james-thompson",
+        "editors.0": "sarah-chen"
+      }
+    },
+    "ai-hype#resistance-to-hype": {
+      "label": "Resistance to Hype",
+      "meta": {
+        "title": "AI Hype and Techno-Futurism",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "james-thompson",
+        "editors.0": "sarah-chen"
+      }
+    },
+    "ai-hype#related-concepts": {
+      "label": "Related Concepts",
+      "meta": {
+        "title": "AI Hype and Techno-Futurism",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "james-thompson",
+        "editors.0": "sarah-chen"
+      }
+    },
+    "ai-ethics": {
+      "label": "AI Ethics and Governance",
+      "meta": {
+        "title": "AI Ethics and Governance",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "james-thompson"
+      }
+    },
+    "ai-ethics#critical-ai-studies": {
+      "label": "Critical AI Studies",
+      "meta": {
+        "title": "AI Ethics and Governance",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "james-thompson"
+      }
+    },
+    "ai-ethics#ethical-frameworks": {
+      "label": "Ethical Frameworks",
+      "meta": {
+        "title": "AI Ethics and Governance",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "james-thompson"
+      }
+    },
+    "ai-ethics#governance-structures": {
+      "label": "Governance Structures",
+      "meta": {
+        "title": "AI Ethics and Governance",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "james-thompson"
+      }
+    },
+    "ai-ethics#regulatory-approaches": {
+      "label": "Regulatory Approaches",
+      "meta": {
+        "title": "AI Ethics and Governance",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "james-thompson"
+      }
+    },
+    "ai-ethics#participatory-governance": {
+      "label": "Participatory Governance",
+      "meta": {
+        "title": "AI Ethics and Governance",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "james-thompson"
+      }
+    },
+    "ai-ethics#technologies-of-resistance": {
+      "label": "Technologies of Resistance",
+      "meta": {
+        "title": "AI Ethics and Governance",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "james-thompson"
+      }
+    },
+    "ai-ethics#alternative-systems": {
+      "label": "Alternative Systems",
+      "meta": {
+        "title": "AI Ethics and Governance",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "james-thompson"
+      }
+    },
+    "ai-ethics#critical-questions": {
+      "label": "Critical Questions",
+      "meta": {
+        "title": "AI Ethics and Governance",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "james-thompson"
+      }
+    },
+    "ai-ethics#related-concepts": {
+      "label": "Related Concepts",
+      "meta": {
+        "title": "AI Ethics and Governance",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "james-thompson"
+      }
+    },
+    "ai-resistance": {
+      "label": "AI Resistance and Technology Studies",
+      "meta": {
+        "title": "AI Resistance and Technology Studies",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "editors.0": "james-thompson"
+      }
+    },
+    "ai-resistance#technologies-of-resistance": {
+      "label": "Technologies of Resistance",
+      "meta": {
+        "title": "AI Resistance and Technology Studies",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "editors.0": "james-thompson"
+      }
+    },
+    "ai-resistance#forms-of-resistance": {
+      "label": "Forms of Resistance",
+      "meta": {
+        "title": "AI Resistance and Technology Studies",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "editors.0": "james-thompson"
+      }
+    },
+    "ai-resistance#critical-technology-studies": {
+      "label": "Critical Technology Studies",
+      "meta": {
+        "title": "AI Resistance and Technology Studies",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "editors.0": "james-thompson"
+      }
+    },
+    "ai-resistance#methodological-approaches": {
+      "label": "Methodological Approaches",
+      "meta": {
+        "title": "AI Resistance and Technology Studies",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "editors.0": "james-thompson"
+      }
+    },
+    "ai-resistance#related-concepts": {
+      "label": "Related Concepts",
+      "meta": {
+        "title": "AI Resistance and Technology Studies",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "editors.0": "james-thompson"
+      }
+    },
+    "amara-okonkwo": {
+      "label": "Dr. Amara Okonkwo",
+      "meta": {
+        "title": "Dr. Amara Okonkwo",
+        "layout": "person.njk",
+        "description": "Productivity researcher and consultant focused on workflow optimization and deep work methodologies",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "amara-okonkwo#research-areas": {
+      "label": "Research Areas",
+      "meta": {
+        "title": "Dr. Amara Okonkwo",
+        "layout": "person.njk",
+        "description": "Productivity researcher and consultant focused on workflow optimization and deep work methodologies",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "amara-okonkwo#consulting-work": {
+      "label": "Consulting Work",
+      "meta": {
+        "title": "Dr. Amara Okonkwo",
+        "layout": "person.njk",
+        "description": "Productivity researcher and consultant focused on workflow optimization and deep work methodologies",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "amara-okonkwo#background": {
+      "label": "Background",
+      "meta": {
+        "title": "Dr. Amara Okonkwo",
+        "layout": "person.njk",
+        "description": "Productivity researcher and consultant focused on workflow optimization and deep work methodologies",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "citations-example": {
+      "label": "Citations Example",
+      "meta": {
+        "title": "Citations Example",
+        "description": "Example of how to use citations in notes",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "james-thompson",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "citations-example#how-to-use-citations": {
+      "label": "How to Use Citations",
+      "meta": {
+        "title": "Citations Example",
+        "description": "Example of how to use citations in notes",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "james-thompson",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "citations-example#example-citations": {
+      "label": "Example Citations",
+      "meta": {
+        "title": "Citations Example",
+        "description": "Example of how to use citations in notes",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "james-thompson",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "citations-example#multiple-citations": {
+      "label": "Multiple Citations",
+      "meta": {
+        "title": "Citations Example",
+        "description": "Example of how to use citations in notes",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "james-thompson",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "citations-example#what-happens-automatically": {
+      "label": "What Happens Automatically",
+      "meta": {
+        "title": "Citations Example",
+        "description": "Example of how to use citations in notes",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "james-thompson",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "critical-media-literacy": {
+      "label": "Critical Media Literacy",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "critical-media-literacy#understanding-media-literacy": {
+      "label": "Understanding Media Literacy",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "critical-media-literacy#traditional-media-literacy": {
+      "label": "Traditional Media Literacy",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "critical-media-literacy#digital-challenges": {
+      "label": "Digital Challenges",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "critical-media-literacy#critical-frameworks": {
+      "label": "Critical Frameworks",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "critical-media-literacy#media-analysis-approaches": {
+      "label": "Media Analysis Approaches",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "critical-media-literacy#ai-specific-literacy": {
+      "label": "AI-Specific Literacy",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "critical-media-literacy#skills-and-competencies": {
+      "label": "Skills and Competencies",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "critical-media-literacy#analytical-skills": {
+      "label": "Analytical Skills",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "critical-media-literacy#technical-skills": {
+      "label": "Technical Skills",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "critical-media-literacy#pedagogical-approaches": {
+      "label": "Pedagogical Approaches",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "critical-media-literacy#learning-strategies": {
+      "label": "Learning Strategies",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "critical-media-literacy#educational-contexts": {
+      "label": "Educational Contexts",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "critical-media-literacy#resistance-and-alternatives": {
+      "label": "Resistance and Alternatives",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "critical-media-literacy#alternative-media": {
+      "label": "Alternative Media",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "critical-media-literacy#digital-practices": {
+      "label": "Digital Practices",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "critical-media-literacy#related-concepts": {
+      "label": "Related Concepts",
+      "meta": {
+        "title": "Critical Media Literacy",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "james-thompson",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "digital-rights": {
+      "label": "Digital Rights and Freedom",
+      "meta": {
+        "title": "Digital Rights and Freedom",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "amara-okonkwo",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "digital-rights#fundamental-digital-rights": {
+      "label": "Fundamental Digital Rights",
+      "meta": {
+        "title": "Digital Rights and Freedom",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "amara-okonkwo",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "digital-rights#access-and-participation": {
+      "label": "Access and Participation",
+      "meta": {
+        "title": "Digital Rights and Freedom",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "amara-okonkwo",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "digital-rights#privacy-and-autonomy": {
+      "label": "Privacy and Autonomy",
+      "meta": {
+        "title": "Digital Rights and Freedom",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "amara-okonkwo",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "digital-rights#digital-rights-frameworks": {
+      "label": "Digital Rights Frameworks",
+      "meta": {
+        "title": "Digital Rights and Freedom",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "amara-okonkwo",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "digital-rights#international-approaches": {
+      "label": "International Approaches",
+      "meta": {
+        "title": "Digital Rights and Freedom",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "amara-okonkwo",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "digital-rights#implementation-challenges": {
+      "label": "Implementation Challenges",
+      "meta": {
+        "title": "Digital Rights and Freedom",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "amara-okonkwo",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "digital-rights#threats-to-digital-rights": {
+      "label": "Threats to Digital Rights",
+      "meta": {
+        "title": "Digital Rights and Freedom",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "amara-okonkwo",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "digital-rights#surveillance-and-control": {
+      "label": "Surveillance and Control",
+      "meta": {
+        "title": "Digital Rights and Freedom",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "amara-okonkwo",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "digital-rights#economic-barriers": {
+      "label": "Economic Barriers",
+      "meta": {
+        "title": "Digital Rights and Freedom",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "amara-okonkwo",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "digital-rights#resistance-and-advocacy": {
+      "label": "Resistance and Advocacy",
+      "meta": {
+        "title": "Digital Rights and Freedom",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "amara-okonkwo",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "digital-rights#digital-rights-movements": {
+      "label": "Digital Rights Movements",
+      "meta": {
+        "title": "Digital Rights and Freedom",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "amara-okonkwo",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "digital-rights#technical-solutions": {
+      "label": "Technical Solutions",
+      "meta": {
+        "title": "Digital Rights and Freedom",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "amara-okonkwo",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "digital-rights#related-concepts": {
+      "label": "Related Concepts",
+      "meta": {
+        "title": "Digital Rights and Freedom",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "amara-okonkwo",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "elena-volkov": {
+      "label": "Dr. Elena Volkov",
+      "meta": {
+        "title": "Dr. Elena Volkov",
+        "layout": "person.njk",
+        "description": "Cognitive psychologist specializing in learning methodologies and knowledge management",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "elena-volkov#research-focus": {
+      "label": "Research Focus",
+      "meta": {
+        "title": "Dr. Elena Volkov",
+        "layout": "person.njk",
+        "description": "Cognitive psychologist specializing in learning methodologies and knowledge management",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "elena-volkov#academic-work": {
+      "label": "Academic Work",
+      "meta": {
+        "title": "Dr. Elena Volkov",
+        "layout": "person.njk",
+        "description": "Cognitive psychologist specializing in learning methodologies and knowledge management",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "elena-volkov#background": {
+      "label": "Background",
+      "meta": {
+        "title": "Dr. Elena Volkov",
+        "layout": "person.njk",
+        "description": "Cognitive psychologist specializing in learning methodologies and knowledge management",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "deep-work": {
+      "label": "Deep Work",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "elena-volkov",
+        "editors.0": "james-thompson"
+      }
+    },
+    "deep-work#principles": {
+      "label": "Principles",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "elena-volkov",
+        "editors.0": "james-thompson"
+      }
+    },
+    "deep-work#implementation": {
+      "label": "Implementation",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "elena-volkov",
+        "editors.0": "james-thompson"
+      }
+    },
+    "deep-work#challenges-in-the-digital-age": {
+      "label": "Challenges in the Digital Age",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "elena-volkov",
+        "editors.0": "james-thompson"
+      }
+    },
+    "deep-work#modern-workplace-expectations": {
+      "label": "Modern Workplace Expectations",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "elena-volkov",
+        "editors.0": "james-thompson"
+      }
+    },
+    "deep-work#cognitive-challenges": {
+      "label": "Cognitive Challenges",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "elena-volkov",
+        "editors.0": "james-thompson"
+      }
+    },
+    "deep-work#deep-work-and-technology": {
+      "label": "Deep Work and Technology",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "elena-volkov",
+        "editors.0": "james-thompson"
+      }
+    },
+    "deep-work#technology-as-distraction": {
+      "label": "Technology as Distraction",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "elena-volkov",
+        "editors.0": "james-thompson"
+      }
+    },
+    "deep-work#technology-for-deep-work": {
+      "label": "Technology for Deep Work",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "elena-volkov",
+        "editors.0": "james-thompson"
+      }
+    },
+    "deep-work#benefits": {
+      "label": "Benefits",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "elena-volkov",
+        "editors.0": "james-thompson"
+      }
+    },
+    "deep-work#related-concepts": {
+      "label": "Related Concepts",
+      "meta": {
+        "title": "Deep Work",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "elena-volkov",
+        "editors.0": "james-thompson"
+      }
+    },
+    "james-thompson": {
+      "label": "James Thompson",
+      "meta": {
+        "title": "James Thompson",
+        "layout": "person.njk",
+        "description": "Technical writer and editor specializing in developer documentation and technical communication",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "james-thompson#skills": {
+      "label": "Skills",
+      "meta": {
+        "title": "James Thompson",
+        "layout": "person.njk",
+        "description": "Technical writer and editor specializing in developer documentation and technical communication",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "james-thompson#experience": {
+      "label": "Experience",
+      "meta": {
+        "title": "James Thompson",
+        "layout": "person.njk",
+        "description": "Technical writer and editor specializing in developer documentation and technical communication",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "james-thompson#background": {
+      "label": "Background",
+      "meta": {
+        "title": "James Thompson",
+        "layout": "person.njk",
+        "description": "Technical writer and editor specializing in developer documentation and technical communication",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "human-machine-collaboration": {
+      "label": "Human-Machine Collaboration",
+      "meta": {
+        "title": "Human-Machine Collaboration",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "amara-okonkwo",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "human-machine-collaboration#principles-of-effective-collaboration": {
+      "label": "Principles of Effective Collaboration",
+      "meta": {
+        "title": "Human-Machine Collaboration",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "amara-okonkwo",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "human-machine-collaboration#complementary-strengths": {
+      "label": "Complementary Strengths",
+      "meta": {
+        "title": "Human-Machine Collaboration",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "amara-okonkwo",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "human-machine-collaboration#design-principles": {
+      "label": "Design Principles",
+      "meta": {
+        "title": "Human-Machine Collaboration",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "amara-okonkwo",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "human-machine-collaboration#applications-and-domains": {
+      "label": "Applications and Domains",
+      "meta": {
+        "title": "Human-Machine Collaboration",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "amara-okonkwo",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "human-machine-collaboration#creative-collaboration": {
+      "label": "Creative Collaboration",
+      "meta": {
+        "title": "Human-Machine Collaboration",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "amara-okonkwo",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "human-machine-collaboration#professional-collaboration": {
+      "label": "Professional Collaboration",
+      "meta": {
+        "title": "Human-Machine Collaboration",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "amara-okonkwo",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "human-machine-collaboration#challenges-and-considerations": {
+      "label": "Challenges and Considerations",
+      "meta": {
+        "title": "Human-Machine Collaboration",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "amara-okonkwo",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "human-machine-collaboration#technical-challenges": {
+      "label": "Technical Challenges",
+      "meta": {
+        "title": "Human-Machine Collaboration",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "amara-okonkwo",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "human-machine-collaboration#social-and-ethical-challenges": {
+      "label": "Social and Ethical Challenges",
+      "meta": {
+        "title": "Human-Machine Collaboration",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "amara-okonkwo",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "human-machine-collaboration#best-practices": {
+      "label": "Best Practices",
+      "meta": {
+        "title": "Human-Machine Collaboration",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "amara-okonkwo",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "human-machine-collaboration#implementation-strategies": {
+      "label": "Implementation Strategies",
+      "meta": {
+        "title": "Human-Machine Collaboration",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "amara-okonkwo",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "human-machine-collaboration#ethical-guidelines": {
+      "label": "Ethical Guidelines",
+      "meta": {
+        "title": "Human-Machine Collaboration",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "amara-okonkwo",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "human-machine-collaboration#related-concepts": {
+      "label": "Related Concepts",
+      "meta": {
+        "title": "Human-Machine Collaboration",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "amara-okonkwo",
+        "editors.0": "marcus-rodriguez"
+      }
+    },
+    "learning-methods": {
+      "label": "Learning Methods",
+      "meta": {
+        "title": "Learning Methods",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "amara-okonkwo",
+        "editors.0": "james-thompson"
+      }
+    },
+    "learning-methods#active-recall": {
+      "label": "Active Recall",
+      "meta": {
+        "title": "Learning Methods",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "amara-okonkwo",
+        "editors.0": "james-thompson"
+      }
+    },
+    "learning-methods#spaced-repetition": {
+      "label": "Spaced Repetition",
+      "meta": {
+        "title": "Learning Methods",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "amara-okonkwo",
+        "editors.0": "james-thompson"
+      }
+    },
+    "learning-methods#the-feynman-technique": {
+      "label": "The Feynman Technique",
+      "meta": {
+        "title": "Learning Methods",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "amara-okonkwo",
+        "editors.0": "james-thompson"
+      }
+    },
+    "learning-methods#interleaving": {
+      "label": "Interleaving",
+      "meta": {
+        "title": "Learning Methods",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "amara-okonkwo",
+        "editors.0": "james-thompson"
+      }
+    },
+    "learning-methods#elaboration": {
+      "label": "Elaboration",
+      "meta": {
+        "title": "Learning Methods",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "amara-okonkwo",
+        "editors.0": "james-thompson"
+      }
+    },
+    "learning-methods#related-topics": {
+      "label": "Related Topics",
+      "meta": {
+        "title": "Learning Methods",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "sarah-chen",
+        "contributors.1": "amara-okonkwo",
+        "editors.0": "james-thompson"
+      }
+    },
+    "intelligence-consciousness": {
+      "label": "Intelligence and Consciousness",
+      "meta": {
+        "title": "Intelligence and Consciousness",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "intelligence-consciousness#defining-intelligence": {
+      "label": "Defining Intelligence",
+      "meta": {
+        "title": "Intelligence and Consciousness",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "intelligence-consciousness#ai-and-human-intelligence": {
+      "label": "AI and Human Intelligence",
+      "meta": {
+        "title": "Intelligence and Consciousness",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "intelligence-consciousness#computational-intelligence": {
+      "label": "Computational Intelligence",
+      "meta": {
+        "title": "Intelligence and Consciousness",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "intelligence-consciousness#human-intelligence": {
+      "label": "Human Intelligence",
+      "meta": {
+        "title": "Intelligence and Consciousness",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "intelligence-consciousness#consciousness-considerations": {
+      "label": "Consciousness Considerations",
+      "meta": {
+        "title": "Intelligence and Consciousness",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "intelligence-consciousness#implications": {
+      "label": "Implications",
+      "meta": {
+        "title": "Intelligence and Consciousness",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "intelligence-consciousness#related-concepts": {
+      "label": "Related Concepts",
+      "meta": {
+        "title": "Intelligence and Consciousness",
+        "layout": "note.njk",
+        "authors.0": "sarah-chen",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "knowledge-management": {
+      "label": "Knowledge Management",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "contributors.1": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "knowledge-management#personal-knowledge-management-pkm": {
+      "label": "Personal Knowledge Management (PKM)",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "contributors.1": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "knowledge-management#pkm-challenges-in-the-digital-age": {
+      "label": "PKM Challenges in the Digital Age",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "contributors.1": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "knowledge-management#organizational-knowledge-management": {
+      "label": "Organizational Knowledge Management",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "contributors.1": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "knowledge-management#key-components": {
+      "label": "Key Components",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "contributors.1": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "knowledge-management#implementation-strategies": {
+      "label": "Implementation Strategies",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "contributors.1": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "knowledge-management#technology-and-knowledge-management": {
+      "label": "Technology and Knowledge Management",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "contributors.1": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "knowledge-management#digital-tools": {
+      "label": "Digital Tools",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "contributors.1": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "knowledge-management#ai-enhanced-km": {
+      "label": "AI-Enhanced KM",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "contributors.1": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "knowledge-management#critical-perspectives": {
+      "label": "Critical Perspectives",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "contributors.1": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "knowledge-management#power-and-access": {
+      "label": "Power and Access",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "contributors.1": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "knowledge-management#alternative-approaches": {
+      "label": "Alternative Approaches",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "contributors.1": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "knowledge-management#best-practices": {
+      "label": "Best Practices",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "contributors.1": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "knowledge-management#personal-practices": {
+      "label": "Personal Practices",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "contributors.1": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "knowledge-management#organizational-practices": {
+      "label": "Organizational Practices",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "contributors.1": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "knowledge-management#related-concepts": {
+      "label": "Related Concepts",
+      "meta": {
+        "title": "Knowledge Management",
+        "layout": "note.njk",
+        "authors.0": "elena-volkov",
+        "contributors.0": "marcus-rodriguez",
+        "contributors.1": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "reading-list": {
+      "label": "Reading List",
+      "meta": {
+        "title": "Reading List",
+        "layout": "note.njk"
+      }
+    },
+    "reading-list#productivity--work": {
+      "label": "Productivity & Work",
+      "meta": {
+        "title": "Reading List",
+        "layout": "note.njk"
+      }
+    },
+    "reading-list#learning--memory": {
+      "label": "Learning & Memory",
+      "meta": {
+        "title": "Reading List",
+        "layout": "note.njk"
+      }
+    },
+    "reading-list#knowledge-management": {
+      "label": "Knowledge Management",
+      "meta": {
+        "title": "Reading List",
+        "layout": "note.njk"
+      }
+    },
+    "reading-list#technology--digital-life": {
+      "label": "Technology & Digital Life",
+      "meta": {
+        "title": "Reading List",
+        "layout": "note.njk"
+      }
+    },
+    "reading-list#philosophy--thinking": {
+      "label": "Philosophy & Thinking",
+      "meta": {
+        "title": "Reading List",
+        "layout": "note.njk"
+      }
+    },
+    "reading-list#reading-strategies": {
+      "label": "Reading Strategies",
+      "meta": {
+        "title": "Reading List",
+        "layout": "note.njk"
+      }
+    },
+    "reading-list#current-reading": {
+      "label": "Current Reading",
+      "meta": {
+        "title": "Reading List",
+        "layout": "note.njk"
+      }
+    },
+    "marcus-rodriguez": {
+      "label": "Marcus Rodriguez",
+      "meta": {
+        "title": "Marcus Rodriguez",
+        "layout": "person.njk",
+        "description": "Software engineer and open-source contributor focused on developer tools",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "marcus-rodriguez#expertise": {
+      "label": "Expertise",
+      "meta": {
+        "title": "Marcus Rodriguez",
+        "layout": "person.njk",
+        "description": "Software engineer and open-source contributor focused on developer tools",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "marcus-rodriguez#contributions": {
+      "label": "Contributions",
+      "meta": {
+        "title": "Marcus Rodriguez",
+        "layout": "person.njk",
+        "description": "Software engineer and open-source contributor focused on developer tools",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "marcus-rodriguez#background": {
+      "label": "Background",
+      "meta": {
+        "title": "Marcus Rodriguez",
+        "layout": "person.njk",
+        "description": "Software engineer and open-source contributor focused on developer tools",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "productivity": {
+      "label": "Productivity Systems",
+      "meta": {
+        "title": "Productivity Systems",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "productivity#getting-things-done-gtd": {
+      "label": "Getting Things Done (GTD)",
+      "meta": {
+        "title": "Productivity Systems",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "productivity#time-blocking": {
+      "label": "Time Blocking",
+      "meta": {
+        "title": "Productivity Systems",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "productivity#the-pomodoro-technique": {
+      "label": "The Pomodoro Technique",
+      "meta": {
+        "title": "Productivity Systems",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "productivity#digital-tools": {
+      "label": "Digital Tools",
+      "meta": {
+        "title": "Productivity Systems",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "productivity#related-concepts": {
+      "label": "Related Concepts",
+      "meta": {
+        "title": "Productivity Systems",
+        "layout": "note.njk",
+        "authors.0": "amara-okonkwo",
+        "contributors.0": "marcus-rodriguez",
+        "editors.0": "elena-volkov"
+      }
+    },
+    "sarah-chen": {
+      "label": "Dr. Sarah Chen",
+      "meta": {
+        "title": "Dr. Sarah Chen",
+        "layout": "person.njk",
+        "description": "AI researcher specializing in natural language processing and ethical AI",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "sarah-chen#research-areas": {
+      "label": "Research Areas",
+      "meta": {
+        "title": "Dr. Sarah Chen",
+        "layout": "person.njk",
+        "description": "AI researcher specializing in natural language processing and ethical AI",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "sarah-chen#publications": {
+      "label": "Publications",
+      "meta": {
+        "title": "Dr. Sarah Chen",
+        "layout": "person.njk",
+        "description": "AI researcher specializing in natural language processing and ethical AI",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "sarah-chen#background": {
+      "label": "Background",
+      "meta": {
+        "title": "Dr. Sarah Chen",
+        "layout": "person.njk",
+        "description": "AI researcher specializing in natural language processing and ethical AI",
+        "tags.0": "person",
+        "tags.1": "contributor"
+      }
+    },
+    "surveillance-privacy": {
+      "label": "Surveillance and Privacy",
+      "meta": {
+        "title": "Surveillance and Privacy",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "surveillance-privacy#surveillance-capitalism": {
+      "label": "Surveillance Capitalism",
+      "meta": {
+        "title": "Surveillance and Privacy",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "surveillance-privacy#data-extraction": {
+      "label": "Data Extraction",
+      "meta": {
+        "title": "Surveillance and Privacy",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "surveillance-privacy#economic-implications": {
+      "label": "Economic Implications",
+      "meta": {
+        "title": "Surveillance and Privacy",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "surveillance-privacy#technical-surveillance-systems": {
+      "label": "Technical Surveillance Systems",
+      "meta": {
+        "title": "Surveillance and Privacy",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "surveillance-privacy#data-collection-methods": {
+      "label": "Data Collection Methods",
+      "meta": {
+        "title": "Surveillance and Privacy",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "surveillance-privacy#analytical-systems": {
+      "label": "Analytical Systems",
+      "meta": {
+        "title": "Surveillance and Privacy",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "surveillance-privacy#privacy-implications": {
+      "label": "Privacy Implications",
+      "meta": {
+        "title": "Surveillance and Privacy",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "surveillance-privacy#individual-autonomy": {
+      "label": "Individual Autonomy",
+      "meta": {
+        "title": "Surveillance and Privacy",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "surveillance-privacy#democratic-concerns": {
+      "label": "Democratic Concerns",
+      "meta": {
+        "title": "Surveillance and Privacy",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "surveillance-privacy#resistance-and-protection": {
+      "label": "Resistance and Protection",
+      "meta": {
+        "title": "Surveillance and Privacy",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "surveillance-privacy#technical-approaches": {
+      "label": "Technical Approaches",
+      "meta": {
+        "title": "Surveillance and Privacy",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "surveillance-privacy#social-approaches": {
+      "label": "Social Approaches",
+      "meta": {
+        "title": "Surveillance and Privacy",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "surveillance-privacy#related-concepts": {
+      "label": "Related Concepts",
+      "meta": {
+        "title": "Surveillance and Privacy",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "sarah-chen",
+        "editors.0": "james-thompson"
+      }
+    },
+    "technology-power": {
+      "label": "Technology and Power",
+      "meta": {
+        "title": "Technology and Power",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-power#power-dynamics-in-technology": {
+      "label": "Power Dynamics in Technology",
+      "meta": {
+        "title": "Technology and Power",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-power#technological-determinism-vs-social-construction": {
+      "label": "Technological Determinism vs Social Construction",
+      "meta": {
+        "title": "Technology and Power",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-power#manifestations-of-power": {
+      "label": "Manifestations of Power",
+      "meta": {
+        "title": "Technology and Power",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-power#ai-and-power-structures": {
+      "label": "AI and Power Structures",
+      "meta": {
+        "title": "Technology and Power",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-power#concentration-of-power": {
+      "label": "Concentration of Power",
+      "meta": {
+        "title": "Technology and Power",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-power#algorithmic-power": {
+      "label": "Algorithmic Power",
+      "meta": {
+        "title": "Technology and Power",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-power#resistance-and-alternatives": {
+      "label": "Resistance and Alternatives",
+      "meta": {
+        "title": "Technology and Power",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-power#alternative-approaches": {
+      "label": "Alternative Approaches",
+      "meta": {
+        "title": "Technology and Power",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-power#critical-engagement": {
+      "label": "Critical Engagement",
+      "meta": {
+        "title": "Technology and Power",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-power#related-concepts": {
+      "label": "Related Concepts",
+      "meta": {
+        "title": "Technology and Power",
+        "layout": "note.njk",
+        "authors.0": "marcus-rodriguez",
+        "contributors.0": "elena-volkov",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "notes": {
+      "label": "All Notes",
+      "meta": {
+        "title": "All Notes",
+        "layout": "base.njk"
+      }
+    },
+    "technology-governance": {
+      "label": "Technology Governance",
+      "meta": {
+        "title": "Technology Governance",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "elena-volkov",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-governance#governance-frameworks": {
+      "label": "Governance Frameworks",
+      "meta": {
+        "title": "Technology Governance",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "elena-volkov",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-governance#multi-level-governance": {
+      "label": "Multi-Level Governance",
+      "meta": {
+        "title": "Technology Governance",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "elena-volkov",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-governance#governance-approaches": {
+      "label": "Governance Approaches",
+      "meta": {
+        "title": "Technology Governance",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "elena-volkov",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-governance#regulatory-approaches": {
+      "label": "Regulatory Approaches",
+      "meta": {
+        "title": "Technology Governance",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "elena-volkov",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-governance#democratic-approaches": {
+      "label": "Democratic Approaches",
+      "meta": {
+        "title": "Technology Governance",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "elena-volkov",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-governance#ai-governance-challenges": {
+      "label": "AI Governance Challenges",
+      "meta": {
+        "title": "Technology Governance",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "elena-volkov",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-governance#technical-challenges": {
+      "label": "Technical Challenges",
+      "meta": {
+        "title": "Technology Governance",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "elena-volkov",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-governance#social-challenges": {
+      "label": "Social Challenges",
+      "meta": {
+        "title": "Technology Governance",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "elena-volkov",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-governance#best-practices": {
+      "label": "Best Practices",
+      "meta": {
+        "title": "Technology Governance",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "elena-volkov",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-governance#principles": {
+      "label": "Principles",
+      "meta": {
+        "title": "Technology Governance",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "elena-volkov",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-governance#mechanisms": {
+      "label": "Mechanisms",
+      "meta": {
+        "title": "Technology Governance",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "elena-volkov",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "amara-okonkwo"
+      }
+    },
+    "technology-governance#related-concepts": {
+      "label": "Related Concepts",
+      "meta": {
+        "title": "Technology Governance",
+        "layout": "note.njk",
+        "authors.0": "james-thompson",
+        "contributors.0": "elena-volkov",
+        "contributors.1": "marcus-rodriguez",
+        "editors.0": "amara-okonkwo"
+      }
+    }
+  },
+  "links": [
+    {
+      "source": "readme#features",
+      "target": "readme"
+    },
+    {
+      "source": "readme#getting-started",
+      "target": "readme"
+    },
+    {
+      "source": "readme#prerequisites",
+      "target": "readme"
+    },
+    {
+      "source": "readme#installation",
+      "target": "readme"
+    },
+    {
+      "source": "readme#development-server",
+      "target": "readme"
+    },
+    {
+      "source": "readme#creating-new-notes",
+      "target": "readme"
+    },
+    {
+      "source": "readme#building-for-production",
+      "target": "readme"
+    },
+    {
+      "source": "readme#project-structure",
+      "target": "readme"
+    },
+    {
+      "source": "readme#customization",
+      "target": "readme"
+    },
+    {
+      "source": "readme#styling",
+      "target": "readme"
+    },
+    {
+      "source": "readme#configuration",
+      "target": "readme"
+    },
+    {
+      "source": "readme#license",
+      "target": "readme"
+    },
+    {
+      "source": "readme#graph-implementation",
+      "target": "readme"
+    },
+    {
+      "source": "about#what-is-a-digital-garden",
+      "target": "wikilinks"
+    },
+    {
+      "source": "about#what-is-a-digital-garden",
+      "target": "backlinks"
+    },
+    {
+      "source": "about#what-is-a-digital-garden",
+      "target": "about"
+    },
+    {
+      "source": "about#features",
+      "target": "about"
+    },
+    {
+      "source": "about#getting-started",
+      "target": "all-notes"
+    },
+    {
+      "source": "about#getting-started",
+      "target": "graph-view"
+    },
+    {
+      "source": "about#getting-started",
+      "target": "about"
+    },
+    {
+      "source": "about#technology",
+      "target": "about"
+    },
+    {
+      "source": "index#recent-notes",
+      "target": "index"
+    },
+    {
+      "source": "index#getting-started",
+      "target": "index"
+    },
+    {
+      "source": "index#example-notes",
+      "target": "index"
+    },
+    {
+      "source": "ai-hype#millenarian-narratives",
+      "target": "ai-hype"
+    },
+    {
+      "source": "ai-hype#ai-as-salvation",
+      "target": "ai-hype"
+    },
+    {
+      "source": "ai-hype#emily-gorcenskis-analysis",
+      "target": "ai-hype"
+    },
+    {
+      "source": "ai-hype#techno-futurist-ideology",
+      "target": "ai-hype"
+    },
+    {
+      "source": "ai-hype#core-beliefs",
+      "target": "ai-hype"
+    },
+    {
+      "source": "ai-hype#manifest-destiny",
+      "target": "ai-hype"
+    },
+    {
+      "source": "ai-hype#critical-perspectives",
+      "target": "ai-hype"
+    },
+    {
+      "source": "ai-hype#alternative-frameworks",
+      "target": "ai-hype"
+    },
+    {
+      "source": "ai-hype#resistance-to-hype",
+      "target": "ai-hype"
+    },
+    {
+      "source": "ai-hype#related-concepts",
+      "target": "ai-ethics-and-governance"
+    },
+    {
+      "source": "ai-hype#related-concepts",
+      "target": "technology-and-power"
+    },
+    {
+      "source": "ai-hype#related-concepts",
+      "target": "ai-resistance-and-technology-studies"
+    },
+    {
+      "source": "ai-hype#related-concepts",
+      "target": "ai-hype"
+    },
+    {
+      "source": "ai-ethics#critical-ai-studies",
+      "target": "ai-ethics"
+    },
+    {
+      "source": "ai-ethics#ethical-frameworks",
+      "target": "ai-ethics"
+    },
+    {
+      "source": "ai-ethics#governance-structures",
+      "target": "ai-ethics"
+    },
+    {
+      "source": "ai-ethics#regulatory-approaches",
+      "target": "ai-ethics"
+    },
+    {
+      "source": "ai-ethics#participatory-governance",
+      "target": "ai-ethics"
+    },
+    {
+      "source": "ai-ethics#technologies-of-resistance",
+      "target": "ai-ethics"
+    },
+    {
+      "source": "ai-ethics#alternative-systems",
+      "target": "ai-ethics"
+    },
+    {
+      "source": "ai-ethics#critical-questions",
+      "target": "ai-ethics"
+    },
+    {
+      "source": "ai-ethics#related-concepts",
+      "target": "ai-resistance-and-technology-studies"
+    },
+    {
+      "source": "ai-ethics#related-concepts",
+      "target": "intelligence-and-consciousness"
+    },
+    {
+      "source": "ai-ethics#related-concepts",
+      "target": "technology-and-power"
+    },
+    {
+      "source": "ai-ethics#related-concepts",
+      "target": "ai-ethics"
+    },
+    {
+      "source": "ai-resistance#technologies-of-resistance",
+      "target": "ai-resistance"
+    },
+    {
+      "source": "ai-resistance#forms-of-resistance",
+      "target": "ai-resistance"
+    },
+    {
+      "source": "ai-resistance#critical-technology-studies",
+      "target": "ai-resistance"
+    },
+    {
+      "source": "ai-resistance#methodological-approaches",
+      "target": "ai-resistance"
+    },
+    {
+      "source": "ai-resistance#related-concepts",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "ai-resistance#related-concepts",
+      "target": "learning-methods"
+    },
+    {
+      "source": "ai-resistance#related-concepts",
+      "target": "productivity-systems"
+    },
+    {
+      "source": "ai-resistance#related-concepts",
+      "target": "ai-resistance"
+    },
+    {
+      "source": "amara-okonkwo#research-areas",
+      "target": "amara-okonkwo"
+    },
+    {
+      "source": "amara-okonkwo#consulting-work",
+      "target": "amara-okonkwo"
+    },
+    {
+      "source": "amara-okonkwo#background",
+      "target": "amara-okonkwo"
+    },
+    {
+      "source": "citations-example#how-to-use-citations",
+      "target": "citations-example"
+    },
+    {
+      "source": "citations-example#example-citations",
+      "target": "citations-example"
+    },
+    {
+      "source": "citations-example#multiple-citations",
+      "target": "citations-example"
+    },
+    {
+      "source": "citations-example#what-happens-automatically",
+      "target": "citations-example"
+    },
+    {
+      "source": "critical-media-literacy#understanding-media-literacy",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "critical-media-literacy#traditional-media-literacy",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "critical-media-literacy#digital-challenges",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "critical-media-literacy#critical-frameworks",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "critical-media-literacy#media-analysis-approaches",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "critical-media-literacy#ai-specific-literacy",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "critical-media-literacy#skills-and-competencies",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "critical-media-literacy#analytical-skills",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "critical-media-literacy#technical-skills",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "critical-media-literacy#pedagogical-approaches",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "critical-media-literacy#learning-strategies",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "critical-media-literacy#educational-contexts",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "critical-media-literacy#resistance-and-alternatives",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "critical-media-literacy#alternative-media",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "critical-media-literacy#digital-practices",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "critical-media-literacy#related-concepts",
+      "target": "ai-hype-and-techno-futurism"
+    },
+    {
+      "source": "critical-media-literacy#related-concepts",
+      "target": "digital-rights-and-freedom"
+    },
+    {
+      "source": "critical-media-literacy#related-concepts",
+      "target": "surveillance-and-privacy"
+    },
+    {
+      "source": "critical-media-literacy#related-concepts",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "digital-rights#fundamental-digital-rights",
+      "target": "digital-rights"
+    },
+    {
+      "source": "digital-rights#access-and-participation",
+      "target": "digital-rights"
+    },
+    {
+      "source": "digital-rights#privacy-and-autonomy",
+      "target": "digital-rights"
+    },
+    {
+      "source": "digital-rights#digital-rights-frameworks",
+      "target": "digital-rights"
+    },
+    {
+      "source": "digital-rights#international-approaches",
+      "target": "digital-rights"
+    },
+    {
+      "source": "digital-rights#implementation-challenges",
+      "target": "digital-rights"
+    },
+    {
+      "source": "digital-rights#threats-to-digital-rights",
+      "target": "digital-rights"
+    },
+    {
+      "source": "digital-rights#surveillance-and-control",
+      "target": "digital-rights"
+    },
+    {
+      "source": "digital-rights#economic-barriers",
+      "target": "digital-rights"
+    },
+    {
+      "source": "digital-rights#resistance-and-advocacy",
+      "target": "digital-rights"
+    },
+    {
+      "source": "digital-rights#digital-rights-movements",
+      "target": "digital-rights"
+    },
+    {
+      "source": "digital-rights#technical-solutions",
+      "target": "digital-rights"
+    },
+    {
+      "source": "digital-rights#related-concepts",
+      "target": "surveillance-and-privacy"
+    },
+    {
+      "source": "digital-rights#related-concepts",
+      "target": "technology-and-power"
+    },
+    {
+      "source": "digital-rights#related-concepts",
+      "target": "ai-ethics-and-governance"
+    },
+    {
+      "source": "digital-rights#related-concepts",
+      "target": "digital-rights"
+    },
+    {
+      "source": "elena-volkov#research-focus",
+      "target": "elena-volkov"
+    },
+    {
+      "source": "elena-volkov#academic-work",
+      "target": "elena-volkov"
+    },
+    {
+      "source": "elena-volkov#background",
+      "target": "elena-volkov"
+    },
+    {
+      "source": "deep-work#principles",
+      "target": "deep-work"
+    },
+    {
+      "source": "deep-work#implementation",
+      "target": "time-blocking"
+    },
+    {
+      "source": "deep-work#implementation",
+      "target": "pomodoro-technique"
+    },
+    {
+      "source": "deep-work#implementation",
+      "target": "digital-minimalism"
+    },
+    {
+      "source": "deep-work#implementation",
+      "target": "deep-work"
+    },
+    {
+      "source": "deep-work#challenges-in-the-digital-age",
+      "target": "deep-work"
+    },
+    {
+      "source": "deep-work#modern-workplace-expectations",
+      "target": "deep-work"
+    },
+    {
+      "source": "deep-work#cognitive-challenges",
+      "target": "deep-work"
+    },
+    {
+      "source": "deep-work#deep-work-and-technology",
+      "target": "deep-work"
+    },
+    {
+      "source": "deep-work#technology-as-distraction",
+      "target": "deep-work"
+    },
+    {
+      "source": "deep-work#technology-for-deep-work",
+      "target": "deep-work"
+    },
+    {
+      "source": "deep-work#benefits",
+      "target": "deep-work"
+    },
+    {
+      "source": "deep-work#related-concepts",
+      "target": "productivity-systems"
+    },
+    {
+      "source": "deep-work#related-concepts",
+      "target": "focus-techniques"
+    },
+    {
+      "source": "deep-work#related-concepts",
+      "target": "attention-management"
+    },
+    {
+      "source": "deep-work#related-concepts",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "deep-work#related-concepts",
+      "target": "deep-work"
+    },
+    {
+      "source": "james-thompson#skills",
+      "target": "james-thompson"
+    },
+    {
+      "source": "james-thompson#experience",
+      "target": "james-thompson"
+    },
+    {
+      "source": "james-thompson#background",
+      "target": "james-thompson"
+    },
+    {
+      "source": "human-machine-collaboration#principles-of-effective-collaboration",
+      "target": "human-machine-collaboration"
+    },
+    {
+      "source": "human-machine-collaboration#complementary-strengths",
+      "target": "human-machine-collaboration"
+    },
+    {
+      "source": "human-machine-collaboration#design-principles",
+      "target": "human-machine-collaboration"
+    },
+    {
+      "source": "human-machine-collaboration#applications-and-domains",
+      "target": "human-machine-collaboration"
+    },
+    {
+      "source": "human-machine-collaboration#creative-collaboration",
+      "target": "human-machine-collaboration"
+    },
+    {
+      "source": "human-machine-collaboration#professional-collaboration",
+      "target": "human-machine-collaboration"
+    },
+    {
+      "source": "human-machine-collaboration#challenges-and-considerations",
+      "target": "human-machine-collaboration"
+    },
+    {
+      "source": "human-machine-collaboration#technical-challenges",
+      "target": "human-machine-collaboration"
+    },
+    {
+      "source": "human-machine-collaboration#social-and-ethical-challenges",
+      "target": "human-machine-collaboration"
+    },
+    {
+      "source": "human-machine-collaboration#best-practices",
+      "target": "human-machine-collaboration"
+    },
+    {
+      "source": "human-machine-collaboration#implementation-strategies",
+      "target": "human-machine-collaboration"
+    },
+    {
+      "source": "human-machine-collaboration#ethical-guidelines",
+      "target": "human-machine-collaboration"
+    },
+    {
+      "source": "human-machine-collaboration#related-concepts",
+      "target": "intelligence-and-consciousness"
+    },
+    {
+      "source": "human-machine-collaboration#related-concepts",
+      "target": "ai-ethics-and-governance"
+    },
+    {
+      "source": "human-machine-collaboration#related-concepts",
+      "target": "productivity-systems"
+    },
+    {
+      "source": "human-machine-collaboration#related-concepts",
+      "target": "human-machine-collaboration"
+    },
+    {
+      "source": "learning-methods#active-recall",
+      "target": "spaced-repetition"
+    },
+    {
+      "source": "learning-methods#active-recall",
+      "target": "flashcards"
+    },
+    {
+      "source": "learning-methods#active-recall",
+      "target": "feynman-technique"
+    },
+    {
+      "source": "learning-methods#active-recall",
+      "target": "learning-methods"
+    },
+    {
+      "source": "learning-methods#spaced-repetition",
+      "target": "anki"
+    },
+    {
+      "source": "learning-methods#spaced-repetition",
+      "target": "learning-methods"
+    },
+    {
+      "source": "learning-methods#the-feynman-technique",
+      "target": "learning-methods"
+    },
+    {
+      "source": "learning-methods#interleaving",
+      "target": "learning-methods"
+    },
+    {
+      "source": "learning-methods#elaboration",
+      "target": "concept-maps"
+    },
+    {
+      "source": "learning-methods#elaboration",
+      "target": "analogies"
+    },
+    {
+      "source": "learning-methods#elaboration",
+      "target": "learning-methods"
+    },
+    {
+      "source": "learning-methods#related-topics",
+      "target": "memory-techniques"
+    },
+    {
+      "source": "learning-methods#related-topics",
+      "target": "study-habits"
+    },
+    {
+      "source": "learning-methods#related-topics",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "learning-methods#related-topics",
+      "target": "learning-methods"
+    },
+    {
+      "source": "intelligence-consciousness#defining-intelligence",
+      "target": "intelligence-consciousness"
+    },
+    {
+      "source": "intelligence-consciousness#ai-and-human-intelligence",
+      "target": "intelligence-consciousness"
+    },
+    {
+      "source": "intelligence-consciousness#computational-intelligence",
+      "target": "intelligence-consciousness"
+    },
+    {
+      "source": "intelligence-consciousness#human-intelligence",
+      "target": "intelligence-consciousness"
+    },
+    {
+      "source": "intelligence-consciousness#consciousness-considerations",
+      "target": "intelligence-consciousness"
+    },
+    {
+      "source": "intelligence-consciousness#implications",
+      "target": "ai-ethics"
+    },
+    {
+      "source": "intelligence-consciousness#implications",
+      "target": "technology-governance"
+    },
+    {
+      "source": "intelligence-consciousness#implications",
+      "target": "human-machine-collaboration"
+    },
+    {
+      "source": "intelligence-consciousness#implications",
+      "target": "intelligence-consciousness"
+    },
+    {
+      "source": "intelligence-consciousness#related-concepts",
+      "target": "learning-methods"
+    },
+    {
+      "source": "intelligence-consciousness#related-concepts",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "intelligence-consciousness#related-concepts",
+      "target": "intelligence-consciousness"
+    },
+    {
+      "source": "knowledge-management#personal-knowledge-management-pkm",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#pkm-challenges-in-the-digital-age",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#organizational-knowledge-management",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#key-components",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#implementation-strategies",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#technology-and-knowledge-management",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#digital-tools",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#ai-enhanced-km",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#critical-perspectives",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#power-and-access",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#alternative-approaches",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#best-practices",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#personal-practices",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#organizational-practices",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "knowledge-management#related-concepts",
+      "target": "learning-methods"
+    },
+    {
+      "source": "knowledge-management#related-concepts",
+      "target": "human-machine-collaboration"
+    },
+    {
+      "source": "knowledge-management#related-concepts",
+      "target": "technology-governance"
+    },
+    {
+      "source": "knowledge-management#related-concepts",
+      "target": "critical-media-literacy"
+    },
+    {
+      "source": "knowledge-management#related-concepts",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "reading-list#productivity--work",
+      "target": "deep-work"
+    },
+    {
+      "source": "reading-list#productivity--work",
+      "target": "productivity-systems"
+    },
+    {
+      "source": "reading-list#productivity--work",
+      "target": "gtd"
+    },
+    {
+      "source": "reading-list#productivity--work",
+      "target": "reading-list"
+    },
+    {
+      "source": "reading-list#learning--memory",
+      "target": "learning-methods"
+    },
+    {
+      "source": "reading-list#learning--memory",
+      "target": "feynman-technique"
+    },
+    {
+      "source": "reading-list#learning--memory",
+      "target": "reading-list"
+    },
+    {
+      "source": "reading-list#knowledge-management",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "reading-list#knowledge-management",
+      "target": "reading-list"
+    },
+    {
+      "source": "reading-list#technology--digital-life",
+      "target": "digital-minimalism"
+    },
+    {
+      "source": "reading-list#technology--digital-life",
+      "target": "reading-list"
+    },
+    {
+      "source": "reading-list#philosophy--thinking",
+      "target": "reading-list"
+    },
+    {
+      "source": "reading-list#reading-strategies",
+      "target": "active-reading"
+    },
+    {
+      "source": "reading-list#reading-strategies",
+      "target": "speed-reading"
+    },
+    {
+      "source": "reading-list#reading-strategies",
+      "target": "note-taking"
+    },
+    {
+      "source": "reading-list#reading-strategies",
+      "target": "reading-list"
+    },
+    {
+      "source": "reading-list#current-reading",
+      "target": "zettelkasten"
+    },
+    {
+      "source": "reading-list#current-reading",
+      "target": "spaced-repetition"
+    },
+    {
+      "source": "reading-list#current-reading",
+      "target": "knowledge-graph"
+    },
+    {
+      "source": "reading-list#current-reading",
+      "target": "reading-list"
+    },
+    {
+      "source": "marcus-rodriguez#expertise",
+      "target": "marcus-rodriguez"
+    },
+    {
+      "source": "marcus-rodriguez#contributions",
+      "target": "marcus-rodriguez"
+    },
+    {
+      "source": "marcus-rodriguez#background",
+      "target": "marcus-rodriguez"
+    },
+    {
+      "source": "productivity#getting-things-done-gtd",
+      "target": "gtd"
+    },
+    {
+      "source": "productivity#getting-things-done-gtd",
+      "target": "productivity"
+    },
+    {
+      "source": "productivity#time-blocking",
+      "target": "time-blocking"
+    },
+    {
+      "source": "productivity#time-blocking",
+      "target": "productivity"
+    },
+    {
+      "source": "productivity#the-pomodoro-technique",
+      "target": "pomodoro-technique"
+    },
+    {
+      "source": "productivity#the-pomodoro-technique",
+      "target": "productivity"
+    },
+    {
+      "source": "productivity#digital-tools",
+      "target": "task-management"
+    },
+    {
+      "source": "productivity#digital-tools",
+      "target": "note-taking"
+    },
+    {
+      "source": "productivity#digital-tools",
+      "target": "calendar"
+    },
+    {
+      "source": "productivity#digital-tools",
+      "target": "productivity"
+    },
+    {
+      "source": "productivity#related-concepts",
+      "target": "deep-work"
+    },
+    {
+      "source": "productivity#related-concepts",
+      "target": "atomic-habits"
+    },
+    {
+      "source": "productivity#related-concepts",
+      "target": "minimalism"
+    },
+    {
+      "source": "productivity#related-concepts",
+      "target": "productivity"
+    },
+    {
+      "source": "sarah-chen#research-areas",
+      "target": "sarah-chen"
+    },
+    {
+      "source": "sarah-chen#publications",
+      "target": "sarah-chen"
+    },
+    {
+      "source": "sarah-chen#background",
+      "target": "sarah-chen"
+    },
+    {
+      "source": "surveillance-privacy#surveillance-capitalism",
+      "target": "surveillance-privacy"
+    },
+    {
+      "source": "surveillance-privacy#data-extraction",
+      "target": "surveillance-privacy"
+    },
+    {
+      "source": "surveillance-privacy#economic-implications",
+      "target": "surveillance-privacy"
+    },
+    {
+      "source": "surveillance-privacy#technical-surveillance-systems",
+      "target": "surveillance-privacy"
+    },
+    {
+      "source": "surveillance-privacy#data-collection-methods",
+      "target": "surveillance-privacy"
+    },
+    {
+      "source": "surveillance-privacy#analytical-systems",
+      "target": "surveillance-privacy"
+    },
+    {
+      "source": "surveillance-privacy#privacy-implications",
+      "target": "surveillance-privacy"
+    },
+    {
+      "source": "surveillance-privacy#individual-autonomy",
+      "target": "surveillance-privacy"
+    },
+    {
+      "source": "surveillance-privacy#democratic-concerns",
+      "target": "surveillance-privacy"
+    },
+    {
+      "source": "surveillance-privacy#resistance-and-protection",
+      "target": "surveillance-privacy"
+    },
+    {
+      "source": "surveillance-privacy#technical-approaches",
+      "target": "surveillance-privacy"
+    },
+    {
+      "source": "surveillance-privacy#social-approaches",
+      "target": "surveillance-privacy"
+    },
+    {
+      "source": "surveillance-privacy#related-concepts",
+      "target": "technology-and-power"
+    },
+    {
+      "source": "surveillance-privacy#related-concepts",
+      "target": "ai-ethics-and-governance"
+    },
+    {
+      "source": "surveillance-privacy#related-concepts",
+      "target": "digital-rights"
+    },
+    {
+      "source": "surveillance-privacy#related-concepts",
+      "target": "surveillance-privacy"
+    },
+    {
+      "source": "technology-power#power-dynamics-in-technology",
+      "target": "technology-power"
+    },
+    {
+      "source": "technology-power#technological-determinism-vs-social-construction",
+      "target": "technology-power"
+    },
+    {
+      "source": "technology-power#manifestations-of-power",
+      "target": "technology-power"
+    },
+    {
+      "source": "technology-power#ai-and-power-structures",
+      "target": "technology-power"
+    },
+    {
+      "source": "technology-power#concentration-of-power",
+      "target": "technology-power"
+    },
+    {
+      "source": "technology-power#algorithmic-power",
+      "target": "technology-power"
+    },
+    {
+      "source": "technology-power#resistance-and-alternatives",
+      "target": "technology-power"
+    },
+    {
+      "source": "technology-power#alternative-approaches",
+      "target": "technology-power"
+    },
+    {
+      "source": "technology-power#critical-engagement",
+      "target": "technology-power"
+    },
+    {
+      "source": "technology-power#related-concepts",
+      "target": "ai-ethics-and-governance"
+    },
+    {
+      "source": "technology-power#related-concepts",
+      "target": "ai-resistance-and-technology-studies"
+    },
+    {
+      "source": "technology-power#related-concepts",
+      "target": "surveillance-and-privacy"
+    },
+    {
+      "source": "technology-power#related-concepts",
+      "target": "technology-power"
+    },
+    {
+      "source": "technology-governance#governance-frameworks",
+      "target": "technology-governance"
+    },
+    {
+      "source": "technology-governance#multi-level-governance",
+      "target": "technology-governance"
+    },
+    {
+      "source": "technology-governance#governance-approaches",
+      "target": "technology-governance"
+    },
+    {
+      "source": "technology-governance#regulatory-approaches",
+      "target": "technology-governance"
+    },
+    {
+      "source": "technology-governance#democratic-approaches",
+      "target": "technology-governance"
+    },
+    {
+      "source": "technology-governance#ai-governance-challenges",
+      "target": "technology-governance"
+    },
+    {
+      "source": "technology-governance#technical-challenges",
+      "target": "technology-governance"
+    },
+    {
+      "source": "technology-governance#social-challenges",
+      "target": "technology-governance"
+    },
+    {
+      "source": "technology-governance#best-practices",
+      "target": "technology-governance"
+    },
+    {
+      "source": "technology-governance#principles",
+      "target": "technology-governance"
+    },
+    {
+      "source": "technology-governance#mechanisms",
+      "target": "technology-governance"
+    },
+    {
+      "source": "technology-governance#related-concepts",
+      "target": "ai-ethics-and-governance"
+    },
+    {
+      "source": "technology-governance#related-concepts",
+      "target": "digital-rights-and-freedom"
+    },
+    {
+      "source": "technology-governance#related-concepts",
+      "target": "technology-and-power"
+    },
+    {
+      "source": "technology-governance#related-concepts",
+      "target": "technology-governance"
+    },
+    {
+      "source": "about",
+      "target": "knowledge-management"
+    },
+    {
+      "source": "amara-okonkwo",
+      "target": "productivity"
+    }
+  ]
+}
