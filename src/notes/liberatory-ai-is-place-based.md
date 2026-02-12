@@ -1,0 +1,21 @@
+---
+title: Liberatory AI is place-based.
+layout: note.njk
+authors:
+  - [[Amelia Lee Doğan]]
+contributors:
+  -
+editors:
+  -
+---
+A liberatory AI ecosystem is grounded in space and place, this includes the infrastructure that is used to create and maintain it (ie: data centers) and the spaces and places it attempts to present. These places and the knowledges they produce are considered integral to the creations of this AI. Liberatory AI centers a place-based, ecosystemic approach to computing. This means attending to the flourishing of human and other kin present in the places and lands the AI touches. Rida Qadri, attempts to do this by placing communities as experts in the representation. With participants from South Asia, Qadri and co-authors identified that many text to image generators failed to recognize cultural subjects and perpetuated Western imagery over South Asian contexts. The images also reinforced harmful cultural stereotypes when creating images of cities like Peshawar and Mumbai. Instead of the iconic cultural heritage of the cities, dusty and dirty images were generated. A liberatory AI would emphasize the place-based knowledge coming from Qadri’s participants who took pride in the places they were from.
+
+By attending to the specificity of space and place, we are able to better care for different corners of the world. Paying attention to geographies allow us to imagine more possibilities and worlds rather than focus on making many tools doing the same, universal end goal. Recent work has highlighted how land-based and place-based education can put us more in conversation with Indigenous cosmologies and relationships We might learn from Āhau a Maori-led data platform that allows whānau (families) and tribal communities to share and record information in [whānau-managed databases](https://ahau.io/faqs.html) that can communicate with a Pātaka server. The database management prioritizes privacy by storing data locally on the users’ device and for passing on history to descendents. Users can also configure cultural protocols to determine who in the community can access certain data. While these projects highlight the importance of sovereignty for tribal communities, they also demonstrate how developing technology from a place and space centered development attitude can create more relevant and values-aligned technologies for communities.
+
+In a liberatory AI ecosystem, the places the AI was developed, the data is stored, and the infrastructure is present could be documented. This might in addition to already existing methods for accounting for models like model cards. This might also mean articulating how the developers of the AI tool are accountable to their local community. Being involved with people in their vicinity is necessary for developers to make sense of hyperlocal data and knowledge as researchers examining AI usage in citizen science contexts have pointed out. We must imagine a liberatory AI that allows us to account for the infrastructure of AI and the places it is used.
+
+**Further Reading:**
+
+* <https://www.tandfonline.com/doi/full/10.1080/13504622.2013.877708#d1e239>
+* <https://www.tandfonline.com/doi/full/10.1080/00131911.2023.2177260>
+* https://dl.acm.org/doi/abs/10.1145/3593013.3594016

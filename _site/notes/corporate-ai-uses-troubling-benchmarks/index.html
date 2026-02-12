@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate AI uses troubling benchmarks</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="module" src="/js/graph-visualization.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-title">
+                <h1><a href="/" class="logo">Liberation + AI Think Tank</a></h1>
+                <p class="subtitle">we are asking questions</p>
+            </div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/notes">All Entries</a>
+                <a href="/contributors">Contributors</a>
+                <a href="/about">About</a>
+                <a href="/bibliography">Bibliography</a>
+            </nav>
+        </header>
+        
+        <main>
+            
+<article class="note">
+    <header>
+        <h1>Corporate AI uses troubling benchmarks</h1>
+        <div class="meta">
+            <a href="/notes" class="back-link">← Back to all notes</a>
+        </div>
+        
+        
+        <div class="note-byline">
+            
+            <div class="byline-section">
+                <span class="byline-label">Written by:</span>
+                <span class="byline-content">
+                    
+                        
+                        
+                        
+                            <a href="/notes/yujia-gao/">Yujia Gao</a>
+                        
+                    
+                </span>
+            </div>
+            
+            
+            
+            <div class="byline-section">
+                <span class="byline-label">Additional contributions by:</span>
+                <span class="byline-content">
+                    
+                        
+                        
+                        
+                            <a href="/notes/null/"></a>
+                        
+                    
+                </span>
+            </div>
+            
+            
+            
+            <div class="byline-section">
+                <span class="byline-label">Edited by:</span>
+                <span class="byline-content">
+                    
+                        
+                        
+                        
+                            <a href="/notes/null/"></a>
+                        
+                    
+                </span>
+            </div>
+            
+        </div>
+        
+    </header>
+    
+    <div class="content">
+        <p>AI development today is primarily driven by financial incentives rather than social responsibility. Competing for funding, market dominance, and regulatory approval, companies prioritize getting high performance numbers, sometimes even gaming the system by tweaking evaluation criteria to maximize reported accuracy. This results in a culture where AI success is measured by marketability rather than functionality. For instance, autonomous vehicle companies use “miles driven without disengagements”—the distance their cars can travel without human intervention—as a measure of success. Reporting disengagement rates is required by regulators like the California Department of Motor Vehicles, and high numbers are often used to impress investors and the public. Yet, companies can inflate this metric by testing in simpler environments, such as quiet suburbs or good weather conditions, rather than actually improving vehicle safety and capabilities.</p>
+<p>This raises important questions: <strong>who gets to define what “successful” AI looks like in the first place? Whose voices are excluded from evaluations?</strong>  Today, this power remains concentrated in the hands of a smarll group of corporations and elite institutions. These entities not only build AI systems but also design the metrics and benchmarks used to measure success.</p>
+<p>To secure funding, attract customers, and influence policymakers, companies misleadingly portray AI progress with dazzling accuracy numbers—90%, 95%, 99%—achieved on tests they created themselves, even when the systems are flawed and pose harm to people. One strategy involves adjusting evaluation metrics to make their models appear more successful than they actually are. For instance, an entrepreneur interviewed by Winecoff et al. (2022) openly admitted to “tweaking” accuracy metrics by shifting from strict correctness to top-K accuracy, where a model is considered correct if the right answer appears within its top K guesses.  This framing artificially boosts reported accuracy without actually improving the model’s reliability in real-world scenarios.</p>
+<p>This problem is exacerbated by the corporate-driven culture of leaderboardism, where AI developers compete to achieve the highest performance on benchmark datasets. These clean, controlled benchmarks, often constructed by corporations themselves, often reflect Western, educated, industrialized, rich, and democratic (WEIRD) values and fail to reflect the messy and unpredictable nature of the real world. Leaderboardism incentivizes companies to chase inflated metrics rather than real-world impacts or functionalities. This centralization of power [LINK TO CENTRALIZATION] ensures that AI systems continue to serve corporate and elite interests, rather than the communities that actually interact with them.</p>
+<p>These practices and cultures not only misrepresent AI’s capabilities but also reflect a broader structural issue rooted in capitalism and power asymmetries: AI development and evaluation processes remain fundamentally disconnected with the real-world nuances and contexts, systematically undervalue human expertise and lived experiences of people who are directly affected by AI systems and or possess domain expertise. For example, OpenAI’s GPT-4 technical report claims that “GPT-4 exhibits human-level performance on the majority of these professional and academic exams,” such as the Uniform Bar Exam. While impressive on paper, this claim overlooks the critical aspects of human expertise, judgement, and context-specific decision-making that remains far beyond AI’s current capabilities.</p>
+<p>This disconnect between corporate AI evaluation metrics and real-world needs is not just an abstract issue – it shapes the world we live in. As AI systems are increasingly embedded in critical aspects of human lives, from hiring decisions to healthcare diagnoses, these flawed evaluations have tangible, material consequences, shaping who gets hired, policed, and whose labor keeps AI running behind the scenes.  For example, the experiences of the job candidates and hiring managers are rarely factors in the evaluation of hiring algorithms. This misalignment leads to harmful consequences, ones that disproportionately affect marginalized communities.</p>
+<p>A foundational paper called <em>Gender Shade</em> revealed that commercial facial recognition systems had error rates below 1% for lighter-skinned men but soared to nearly 35% for darker-skinned women (Buolamwini and Gebru, 2018). By reporting aggregate accuracy, companies hide critical failures that disproportionately harm marginalized groups through wrongful arrests, denied services, heightened surveillance, etc.</p>
+<p>Another example of corporate AI evaluation failures is <a href="https://www.reuters.com/article/world/insight-amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK0AG/">Amazon’s AI-driven recruitment system</a>, which the company discontinued in 2018 after it was revealed to systematically discriminate against female participants. Trained and benchmarked internally on Amazon’s historical hiring data, which were predominantly from men, the model was clearly deemed successful enough by Amazon to be launched. However, it learned to penalize female applicants who mentioned the word “women” in their resumes. Although the system was shut down, it has led to concrete harm. Many companies continue to use AI in hiring without scrutiny, reinforcing inequalities rather than solving them.</p>
+<p>As AI development continues to be concentrated by a few resourceful corporations, many scholars, journalists, and activists have been concerned about the disconnect between how AI systems are evaluated and their real-world impacts. Arvind Narayanan and Sayash Kapoor’s book “AI Snake Oil” exposes how the hype around AI is often exaggerated or even deceptive. They argue that high performance numbers on benchmarks does not necessarily translate into reliable or trustworthy AI in practice. Going even further, the “Fallacy of AI Functionality” paper makes an even more fundamental critique: many AI systems simply do not function as advertised. While much of the AI ethics conversation assumes AI systems function correctly but are unfair or harmful, this paper argues that the entire framing is flawed – we are debating the ethics of technologies that often fail at their most basic tasks. The authors show that poor evaluation frameworks create false confidence in AI, distorting public perception and leading to flawed regulatory decisions.</p>
+<p>Journalists have also played a critical role in exposing AI’s misleading claims, especially when it comes to public-facing models like OpenAI’s GPT-4. Outlets such as the New York Times and the Guardian have published deep dives into the evaluation of AI systems. They have pointed out OpenAI’s claim on “human-level” performance doesn’t mean AI actually understands what it’s doing – for example, lawyers don’t just memorize bar exam answers but interpret context, navigate ethical dilemmas, and engage in dynamic reasoning.</p>
+<p>Grassroots organizations and activist groups proactively investigate the ways AI harms marginalized communities. Groups like the <a href="https://www.ajl.org/">Algorithmic Justice League</a> and <a href="https://d4bl.org/">Data for Black Lives</a> have challenged biased evaluation metrics that allow AI systems to be deemed “successful” despite failing Black and Brown communities. Their work has been instrumental in bringing attention to how AI evaluation methods systematically ignore those most affected by algorithmic harm.</p>
+<p>While these critiques expose the flaws in the current AI evaluation methods, many stop there and do not explicitly call for community-centered metrics as an alternative. Current call to actions center on proposing more rigorous technical evaluation or increasing corporate transparency and accountability. Liberatory AI calls for a more radical shift: <a href="../index.html%3Fp=250.html" title="Communities decide if AI is working for them. ">giving back the power to define “success” into the hands of communities</a> impacted by the communities, prioritizing real-life impact over superficial numbers.</p>
+<h3></h3>
+<p><strong>Further Reading (Academic)</strong></p>
+<ul>
+<li>Buolamwini, J., &amp; Gebru, T. (2018). Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification. FAT.</li>
+<li>Chan, A. S. (2025). Predatory data: Eugenics in big tech and our fight for an independent future. University of California Press.</li>
+<li>Chancellor, S. (2023). Toward Practices for Human-Centered Machine Learning. Communications of the ACM, 66, 78 – 85.</li>
+<li>Miceli, M., &amp; Posada, J. (2022). The Data-Production Dispositif. Proceedings of the ACM on Human-Computer Interaction, 6, 1 – 37.</li>
+<li>Mitchell, M. (2025). Artificial intelligence learns to reason. Science, 387, eadw5211. <a href="https://doi.org/10.1126/science.adw5211Raji">https://doi.org/10.1126/science.adw5211Raji</a>, I.D., Kumar, I.E., Horowitz, A., &amp; Selbst, A.D. (2022). The Fallacy of AI Functionality. Proceedings of the 2022 ACM Conference on Fairness, Accountability, and Transparency.</li>
+<li>Winecoff, A. A., &amp; Watkins, E. A. (2022, July). Artificial concepts of artificial intelligence: Institutional compliance and resistance in AI startups. In Proceedings of the 2022 AAAI/ACM Conference on AI, Ethics, and Society (pp. 788–799). ACM.</li>
+</ul>
+<p><strong>Further Reading (Popular Press)</strong></p>
+<ul>
+<li>Angwin, J. (2024, May 15). <em>A.I. and the Silicon Valley hype machine.</em> The New York Times. <a href="https://www.nytimes.com/2024/05/15/opinion/artificial-intelligence-ai-openai-chatgpt-overrated-hype.html">https://www.nytimes.com/2024/05/15/opinion/artificial-intelligence-ai-openai-chatgpt-overrated-hype.html</a></li>
+<li>Broussard, M. (2023). More than a glitch: Confronting race, gender, and ability bias in tech. MIT Press.</li>
+<li>Hyde, M. (2025, March 15). <em>OpenAI’s story about grief nearly had me in tears, but for all the wrong reasons</em>. The Guardian.<a href="https://www.theguardian.com/commentisfree/2025/mar/15/open-ai-story-grief-sam-altman">https://www.theguardian.com/commentisfree/2025/mar/15/open-ai-story-grief-sam-altman</a></li>
+<li>Narayanan, A., &amp; Kapoor, S. (2024). <em>AI snake oil: What artificial intelligence can do, what it can’t, and how to tell the difference</em>. Princeton University Press</li>
+</ul>
+
+    </div>
+    
+    <!-- Works Cited Section - Added by citations plugin -->
+    
+    <section class="works-cited">
+        <h2>Works Cited</h2>
+        
+    </section>
+    
+    
+    
+    
+    <aside class="backlinks">
+        <h2>Backlinks</h2>
+        <ul>
+            
+            <li><a href="/404.html">404</a></li>
+            
+            <li><a href="/">Liberation + AI Think Tank</a></li>
+            
+            <li><a href="/notes/">All Notes</a></li>
+            
+        </ul>
+    </aside>
+    
+    
+
+</article>
+
+        </main>
+        
+        <section class="graph-section">
+            <h2>Knowledge Graph</h2>
+            <div id="force-graph" class="force-graph-container"></div>
+        </section>
+        
+        <footer>
+            <p>Built with <3 by students at MIT and Smith College.</p>
+        </footer>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html>
