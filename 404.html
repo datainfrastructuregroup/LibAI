@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian 11ty</title>
+    <link rel="stylesheet" href="/LibAI/css/style.css">
+    <script type="module" src="/LibAI/js/graph-visualization.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-title">
+                <h1><a href="/LibAI/" class="logo">Liberation + AI Think Tank</a></h1>
+                <p class="subtitle">we are asking questions</p>
+            </div>
+            <nav>
+                <a href="/LibAI/">Home</a>
+                <a href="/LibAI/notes">All Entries</a>
+                <a href="/LibAI/contributors">Contributors</a>
+                <a href="/LibAI/about">About</a>
+                <a href="/LibAI/bibliography">Bibliography</a>
+            </nav>
+        </header>
+        
+        <main>
+            
+<div class="not-found-container">
+    <h1>404</h1>
+    <h2>Page Not Found</h2>
+    <p>The page you're looking for doesn't exist.</p>
+    <button id="random-note-btn">take me to a random page</button>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const allNotes = [
+            
+                "/notes/ai-ethics/",
+            
+                "/notes/ai-hype/",
+            
+                "/notes/ai-resistance/",
+            
+                "/notes/amara-okonkwo/",
+            
+                "/notes/citations-example/",
+            
+                "/notes/critical-media-literacy/",
+            
+                "/notes/deep-work/",
+            
+                "/notes/digital-rights/",
+            
+                "/notes/elena-volkov/",
+            
+                "/notes/human-machine-collaboration/",
+            
+                "/notes/intelligence-consciousness/",
+            
+                "/notes/james-thompson/",
+            
+                "/notes/knowledge-management/",
+            
+                "/notes/learning-methods/",
+            
+                "/notes/marcus-rodriguez/",
+            
+                "/notes/productivity/",
+            
+                "/notes/reading-list/",
+            
+                "/notes/sarah-chen/",
+            
+                "/notes/surveillance-privacy/",
+            
+                "/notes/technology-governance/",
+            
+                "/notes/technology-power/",
+            
+        ];
+
+        const randomNoteBtn = document.getElementById('random-note-btn');
+        randomNoteBtn.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * allNotes.length);
+            const randomUrl = allNotes[randomIndex];
+            window.location.href = randomUrl;
+        });
+    });
+</script>
+
+        </main>
+        
+        <section class="graph-section">
+            <h2>Knowledge Graph</h2>
+            <div id="force-graph" class="force-graph-container"></div>
+        </section>
+        
+        <footer>
+            <p>Built with <3 by students at MIT and Smith College.</p>
+        </footer>
+    </div>
+    <script src="/LibAI/js/main.js"></script>
+</body>
+</html>
