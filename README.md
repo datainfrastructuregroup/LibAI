@@ -44,11 +44,17 @@ The site will be available at [http://localhost:9090](http://localhost:9090)
 
 ### Building for Production
 
-To create a production build:
+To create a production build (this will also regenerate the graph):
 
 ```bash
 npm run build
 ```
+
+### Rengenerating the Graph
+```bash
+node -e "const { generateGraph } = require('./scripts/generate-graph.cjs'); generateGraph();"
+```
+
 
 The built site will be available in the `_site` directory.
 
