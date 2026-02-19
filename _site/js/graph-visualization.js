@@ -23,7 +23,7 @@ export function renderForceGraph(container, data, opts = {}) {
 
   container.innerHTML = ""; // clear
 
-  // 1) Create SVG + root group (g)
+  // 1) Create SVG + root group (g) & plug into container
   //    - everything is drawn inside g
   //    - zoom/pan transforms g, not the svg itself
   const svg = d3
@@ -36,7 +36,7 @@ export function renderForceGraph(container, data, opts = {}) {
 
   const g = svg.append("g");
 
-  // 2) Enable zoom/pan
+  // 2) Enable zoom/pan for svgs
   //    - scaleExtent controls min/max zoom
   svg.call(
     d3
@@ -45,7 +45,7 @@ export function renderForceGraph(container, data, opts = {}) {
       .on("zoom", (e) => g.attr("transform", e.transform))
   );
 
-  // 3) Normalize input data
+  // 3) Normalize input data: turn graph.json to nodes array
   //    - the nodes are often an object map: { id: {...} }
   //    - D3 wants an array of node objects (with stable `id`)
   const nodesIn = data?.nodes;
@@ -75,7 +75,7 @@ export function renderForceGraph(container, data, opts = {}) {
       const title = v?.meta?.title;
       const summary = v?.label;
 
-      const isNoteOrPerson = layout === "note.njk" | layout === "person.njk";
+      const isNoteOrPerson = layout === "note.njk" || layout === "person.njk";
 
       // ---- URL rules ----
       // notes -> /notes/{id}/ ; others keep old behavior
@@ -106,7 +106,6 @@ export function renderForceGraph(container, data, opts = {}) {
         url,
       };
     });
-
   } else {
     console.error("[graph] data.nodes invalid:", nodesIn);
     return;
@@ -126,6 +125,17 @@ export function renderForceGraph(container, data, opts = {}) {
   const nodeIdSet = new Set(nodes.map((n) => n.id));
 
   const rawLinks = linksIn.map((d) => ({ ...d }));
+
+  // debugging code in order to check which nodes are missing -> which links are filtered
+  const missing = new Set();
+  for (const e of rawLinks) {
+    if (!nodeIdSet.has(e.source)) missing.add(e.source);
+    if (!nodeIdSet.has(e.target)) missing.add(e.target);
+  }
+  if (missing.size) {
+    console.warn("[graph] missing node ids:", Array.from(missing).sort());
+  }
+
   const links = rawLinks.filter(
     (e) => nodeIdSet.has(e.source) && nodeIdSet.has(e.target)
   );
@@ -155,9 +165,9 @@ export function renderForceGraph(container, data, opts = {}) {
     .selectAll("circle")
     .data(nodes)
     .join("circle")
-    .attr("r", 6)
+    .attr("r", 10)
     .attr("fill", "currentColor")
-    .attr("fill-opacity", 0.9);
+    .attr("fill-opacity", 0.1);
 
   // 5.3 Labels as text
   const label = g
@@ -174,10 +184,7 @@ export function renderForceGraph(container, data, opts = {}) {
     .style("user-select", "none")
     .style("pointer-events", "none"); // don't block clicking nodes
 
-  // ----------------------------------------
   // 6) Add simple interactions (tooltip + click navigation)
-  // ----------------------------------------
-
   // Tooltip: native SVG title on hover
   node
     .append("title")
@@ -197,9 +204,10 @@ export function renderForceGraph(container, data, opts = {}) {
   const simulation = d3
     .forceSimulation(nodes)
     .force("link", d3.forceLink(links).id((d) => d.id))
-    .force("charge", d3.forceManyBody().strength(-120))
+    .force("link", d3.forceLink(links).distance(60))
+    .force("charge", d3.forceManyBody().strength(-10))
     .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("collision", d3.forceCollide(10))
+    .force("collision", d3.forceCollide(20))
     .on("tick", ticked);
 
   // 8) Drag behavior

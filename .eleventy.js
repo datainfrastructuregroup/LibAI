@@ -31,7 +31,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/css');
   eleventyConfig.addPassthroughCopy('src/js');
   eleventyConfig.addPassthroughCopy('src/assets');
-    eleventyConfig.addPassthroughCopy('.garden-graph.json');
+  eleventyConfig.addPassthroughCopy('src/.garden-graph.json');
 
   // Add string contains filter
   eleventyConfig.addFilter('contains', function(str, search) {

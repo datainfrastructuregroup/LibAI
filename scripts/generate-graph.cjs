@@ -6,7 +6,7 @@ function generateGraph() {
   // Use absolute paths to avoid __dirname issues
   const projectRoot = path.resolve(__dirname, '..');
   const notesDir = path.join(projectRoot, 'src/notes');
-  const outputPath = path.join(projectRoot, 'src/_data/graph.json');
+  const outputPath = path.join(projectRoot, 'src/.garden-graph.json');
   
   console.log('🔍 Debug: projectRoot =', projectRoot);
   console.log('🔍 Debug: notesDir =', notesDir);
