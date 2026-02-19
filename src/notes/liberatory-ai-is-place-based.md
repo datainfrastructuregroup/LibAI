@@ -2,7 +2,7 @@
 title: Liberatory AI is place-based.
 layout: note.njk
 authors:
-  - [[Amelia Lee Doğan]]
+  - [[Amelia Lee Dogan]]
 contributors:
   -
 editors:

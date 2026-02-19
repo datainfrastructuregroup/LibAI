@@ -2,7 +2,7 @@
 title: AI can work in harmony with the environment
 layout: note.njk
 authors:
-  - [[Amelia Lee Doğan]]
+  - [[Amelia Lee Doan]]
   - [[Hongjin Lin]]
 contributors:
   -

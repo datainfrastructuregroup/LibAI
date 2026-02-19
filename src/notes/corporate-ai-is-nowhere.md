@@ -2,7 +2,7 @@
 title: Corporate AI is nowhere
 layout: note.njk
 authors:
-  - [[Amelia Lee Doğan]]
+  - [[Amelia Lee Dogan]]
 contributors:
   -
 editors:

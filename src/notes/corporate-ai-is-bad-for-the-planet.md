@@ -1,5 +1,5 @@
 ---
-title: Corporate AI is bad for the planet.
+title: Corporate AI is bad for the planet
 layout: note.njk
 authors:
   - [[Amelia Lee Doğan]]
