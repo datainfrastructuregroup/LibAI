@@ -25,9 +25,9 @@
       "description": "..."
     },
     {
-      "id": "amelia-lee-do-an",
+      "id": "amelia-lee-dogan",
       "label": "Amelia Lee Doğan",
-      "url": "/notes/amelia-lee-do-an/",
+      "url": "/notes/amelia-lee-dogan/",
       "description": "..."
     },
     {
@@ -37,9 +37,9 @@
       "description": "..."
     },
     {
-      "id": "catherine-d-ignazio",
+      "id": "catherine-dignazio",
       "label": "Catherine D'Ignazio",
-      "url": "/notes/catherine-d-ignazio/",
+      "url": "/notes/catherine-dignazio/",
       "description": "..."
     },
     {
@@ -50,7 +50,7 @@
     },
     {
       "id": "corporate-ai-is-bad-for-the-planet",
-      "label": "Corporate AI is bad for the planet.",
+      "label": "Corporate AI is bad for the planet",
       "url": "/notes/corporate-ai-is-bad-for-the-planet/",
       "description": "Corporate AI relies on extraction of the planet, people, and data contributing to the global climate crisis and environmental injustice.\n\nCorporate AI systems are often celebrated as revolutionary too..."
     },
@@ -91,9 +91,9 @@
       "description": "..."
     },
     {
-      "id": "isadora-crux-n",
+      "id": "isadora-cruxen",
       "label": "Isadora Cruxên",
-      "url": "/notes/isadora-crux-n/",
+      "url": "/notes/isadora-cruxen/",
       "description": "..."
     },
     {
@@ -157,7 +157,7 @@
     },
     {
       "source": "ai-can-work-in-harmony-with-the-environment",
-      "target": "amelia-lee-do-an",
+      "target": "amelia-lee-doan",
       "type": "author"
     },
     {
@@ -257,7 +257,7 @@
     },
     {
       "source": "corporate-ai-is-nowhere",
-      "target": "amelia-lee-do-an",
+      "target": "amelia-lee-dogan",
       "type": "author"
     },
     {
@@ -302,7 +302,7 @@
     },
     {
       "source": "liberatory-ai-is-place-based",
-      "target": "amelia-lee-do-an",
+      "target": "amelia-lee-dogan",
       "type": "author"
     },
     {
