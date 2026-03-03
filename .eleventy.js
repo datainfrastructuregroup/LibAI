@@ -1,7 +1,35 @@
 import markdownIt from 'markdown-it';
 import markdownItWikilinks from 'markdown-it-wikilinks';
-import citationsPlugin from 'eleventy-plugin-citations';
 import bibliographyGenerator from './src/_data/bibliography-generator.js';
+import fs from "fs";
+
+// parse the bibtex
+function parseBibtexFile(filePath) {
+  const content = fs.readFileSync(filePath, "utf8");
+  const entries = {};
+  const regex = /@.*?\{(.*?),([\s\S]*?)\n\}/g;
+  for (const match of content.matchAll(regex)) {
+    const key = match[1].trim();
+    const body = match[2].trim();
+    entries[key] = body;
+  }
+  return entries;
+}
+
+
+const bibliography = parseBibtexFile("src/_data/libAI.bib");
+
+// clean the bibtex formatting
+function cleanBibField(str) {
+  if (!str) return "";
+  return str.replace(/[\{\}]/g, "").replace(/\\&/g, "&").trim();
+}
+
+function getYear(str) {
+  if (!str) return "";
+  const match = str.match(/^(\d{4})/);
+  return match ? match[1] : str;
+}
 
 export default function(eleventyConfig) {
   // Add markdown plugins
@@ -16,9 +44,52 @@ export default function(eleventyConfig) {
 
   eleventyConfig.setLibrary('md', markdownLib);
 
-  // Add citations plugin
-  eleventyConfig.addPlugin(citationsPlugin, {
-    bibliography: ['src/_data/libAI.bib']
+  // convert citations to footnotes
+  eleventyConfig.addTransform("citations-to-footnotes", function(content, outputPath) {
+    if (!outputPath || !outputPath.endsWith(".html")) return content;
+
+    let citationIndex = 1;
+    const usedCitations = {};
+    const citationOrder = [];
+
+    content = content.replace(/\[\s*@\s*([^\]\s]+)\s*\]/g, (match, key) => {
+      if (!bibliography[key]) return match;
+
+      if (!usedCitations[key]) {
+        usedCitations[key] = citationIndex++;
+        citationOrder.push(key);
+      }
+
+      const number = usedCitations[key];
+      return `<sup id="cite-${number}">
+                <a href="#footnote-${number}">[${number}]</a>
+              </sup>`;
+    });
+
+    if (citationOrder.length === 0) return content;
+
+    let footnotesHTML = `<section class="footnotes"><hr><ol>`;
+    citationOrder.forEach(key => {
+      const number = usedCitations[key];
+      const entry = bibliography[key];
+
+      const titleMatch = entry.match(/title\s*=\s*\{([\s\S]*?)\}/i);
+      const orgMatch = entry.match(/organization\s*=\s*\{([\s\S]*?)\}/i);
+      const dateMatch = entry.match(/date\s*=\s*\{([\s\S]*?)\}/i);
+      const urlMatch = entry.match(/url\s*=\s*\{([\s\S]*?)\}/i);
+
+      const title = titleMatch ? cleanBibField(titleMatch[1]) : "";
+      const org = orgMatch ? cleanBibField(orgMatch[1]) : "";
+      const year = dateMatch ? getYear(cleanBibField(dateMatch[1])) : "";
+      const url = urlMatch ? cleanBibField(urlMatch[1]) : "";
+
+    footnotesHTML += `<li id="footnote-${number}">
+      <strong>${title}</strong>${org ? ". " + org : ""}${year ? ", " + year : ""}${url ? `. <a href="${url}" target="_blank">${url}</a>` : ""} <a href="#cite-${number}">↩</a>
+    </li>`;
+    });
+    footnotesHTML += `</ol></section>`;
+
+    return content + footnotesHTML;
   });
 
   // Create a collection for all notes
