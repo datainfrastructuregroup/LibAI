@@ -1,6 +1,5 @@
 ---
 title: Catherine D'Ignazio
-layout: person.njk
 position: Associate Professor of Urban Science and Planning
 description: Director of Data + Feminism Lab at MIT, scholar of feminist technology, data justice and civic engagement.
 url: 

@@ -1,6 +1,5 @@
 ---
 title: Alessandra Jungs de Almeida
-layout: person.njk
 position: Postdoctoral Associate
 description: Postdoctoral associate at MIT's Women's and Gender Studies Program and affiliated researcher at Data + Feminism Lab.
 url: 

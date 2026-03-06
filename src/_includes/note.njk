@@ -28,12 +28,19 @@ layout: base.njk
             </div>
             {% endif %}
             
-            {% set validContributors = contributors | filter(item => item and item != "") %}
-            {% if validContributors.length > 0 %}
+            {% if contributors and contributors.length > 0 %}
+            {% set hasValidContributors = false %}
+            {% for contributor in contributors %}
+                {% if contributor and contributor != "" %}
+                    {% set hasValidContributors = true %}
+                {% endif %}
+            {% endfor %}
+            {% if hasValidContributors %}
             <div class="byline-section">
                 <span class="byline-label">Additional contributions by:</span>
                 <span class="byline-content">
-                    {% for contributor in validContributors %}
+                    {% for contributor in contributors %}
+                        {% if contributor and contributor != "" %}
                         {% set contributorName = contributor | replace("[[", "") | replace("]]", "") %}
                         {% set contributorPage = collections.all | getEntryByUrl("/people/" + contributorName + "/") %}
                         {% if contributorPage %}
@@ -41,17 +48,26 @@ layout: base.njk
                         {% else %}
                             <span>{{ contributorName }}</span>{% if not loop.last %}, {% endif %}
                         {% endif %}
+                        {% endif %}
                     {% endfor %}
                 </span>
             </div>
             {% endif %}
+            {% endif %}
             
-{% set validEditors = editors | filter(item => item and item != "") %}
-            {% if validEditors.length > 0 %}
+{% if editors and editors.length > 0 %}
+            {% set hasValidEditors = false %}
+            {% for editor in editors %}
+                {% if editor and editor != "" %}
+                    {% set hasValidEditors = true %}
+                {% endif %}
+            {% endfor %}
+            {% if hasValidEditors %}
             <div class="byline-section">
                 <span class="byline-label">Edited by:</span>
                 <span class="byline-content">
-                    {% for editor in validEditors %}
+                    {% for editor in editors %}
+                        {% if editor and editor != "" %}
                         {% set editorName = editor | replace("[[", "") | replace("]]", "") %}
                         {% set editorPage = collections.all | getEntryByUrl("/people/" + editorName + "/") %}
                         {% if editorPage %}
@@ -59,9 +75,11 @@ layout: base.njk
                         {% else %}
                             <span>{{ editorName }}</span>{% if not loop.last %}, {% endif %}
                         {% endif %}
+                        {% endif %}
                     {% endfor %}
                 </span>
             </div>
+            {% endif %}
             {% endif %}
         </div>
         {% endif %}

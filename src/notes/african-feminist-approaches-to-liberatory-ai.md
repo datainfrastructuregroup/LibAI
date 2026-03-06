@@ -1,6 +1,5 @@
 ---
 title: African feminist approaches to liberatory AI
-layout: note.njk
 authors:
   - [[ololade-faniyi]]
 contributors:
@@ -9,7 +8,7 @@ editors:
   -
 tags:
   - ways-forward
-  - position
+  - position-papers
 ---
 An African feminist liberatory approach recognizes technology as inherently political rather than neutral. Rather than accepting these embedded politics as inevitable, a liberatory approach would make them explicit and subject to democratic deliberation.
 

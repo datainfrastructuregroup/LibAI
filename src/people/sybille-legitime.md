@@ -1,6 +1,5 @@
 ---
 title: Sybille Legitime
-layout: person.njk
 position: Ph.D. Student
 description: PhD student in Computer Science at Brown University researching how communities can collectively design and evaluate AI systems.
 url: 

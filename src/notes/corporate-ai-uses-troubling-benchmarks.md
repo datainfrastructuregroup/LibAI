@@ -1,6 +1,5 @@
 ---
 title: Corporate AI uses troubling benchmarks
-layout: note.njk
 authors:
   - [[yujia-gao]]
 contributors:

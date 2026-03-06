@@ -178,14 +178,82 @@ blockquote {
   margin: 1.5rem 0;
 }
 
-.notes-entry {
+/* Notes Section Grouping */
+.notes-section {
+  margin-bottom: 3rem;
+}
+
+.notes-section .notes-entry {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--background-color);
+  transition: box-shadow 0.2s ease;
+  position: static;
+  padding-left: 1.5rem;
+  line-height: 1.6;
+}
+
+.notes-section .notes-entry::before {
+  display: none;
+}
+
+.notes-section .notes-entry:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.notes-section .notes-entry h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.notes-section .notes-entry h3 a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.notes-section .notes-entry h3 a:hover {
+  color: var(--accent-color);
+}
+
+.notes-section .notes-entry p {
+  margin: 0.5rem 0;
+  color: var(--text-color);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+.note-meta {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.note-authors {
+  display: block;
+}
+
+.note-authors a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.note-authors a:hover {
+  text-decoration: underline;
+}
+
+/* Legacy Notes List */
+.notes-list .notes-entry {
   margin-bottom: 1rem;
   padding-left: 1.5rem;
   position: relative;
   line-height: 1.6;
 }
 
-.notes-entry::before {
+.notes-list .notes-entry::before {
   content: "•";
   color: var(--accent-color);
   font-weight: bold;

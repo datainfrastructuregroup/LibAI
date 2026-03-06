@@ -1,6 +1,5 @@
 ---
 title: Kendra Albert
-layout: person.njk
 position: Public Interest Technology and Media Lawyer
 description: Public interest technology and media lawyer focusing on technology and power with particular attention to gender.
 url: https://kendraalbert.com

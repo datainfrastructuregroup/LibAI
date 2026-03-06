@@ -1,6 +1,5 @@
 ---
 title: Isadora Cruxên
-layout: person.njk
 position: Research Affiliate
 description: Studies political economy of development with focus on Latin America and co-leads Data Against Feminicide project.
 url: 

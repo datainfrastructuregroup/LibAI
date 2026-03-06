@@ -1,6 +1,5 @@
 ---
 title: Corporate AI is nowhere
-layout: note.njk
 authors:
   - [[amelia-lee-dogan]]
 contributors:

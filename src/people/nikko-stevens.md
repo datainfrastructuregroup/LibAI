@@ -1,6 +1,5 @@
 ---
 title: Nikko Stevens
-layout: person.njk
 position: Assistant Professor of Statistical and Data Sciences
 description: Critical technology researcher and software engineer studying data infrastructures and social inequality.
 url: https://nikkostevens.com

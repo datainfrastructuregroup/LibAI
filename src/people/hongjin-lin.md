@@ -1,6 +1,5 @@
 ---
 title: Hongjin Lin
-layout: person.njk
 position: Ph.D. Candidate in Computer Science
 description: PhD candidate researching AI and social justice through qualitative evaluation and technology development.
 url: https://sites.google.com/g.harvard.edu/hongjinlin

@@ -1,6 +1,5 @@
 ---
 title: AI can work in harmony with the environment
-layout: note.njk
 authors:
   - [[amelia-lee-dogan]]
   - [[hongjin-lin]]

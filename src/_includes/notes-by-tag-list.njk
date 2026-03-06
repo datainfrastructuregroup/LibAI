@@ -1,0 +1,26 @@
+<div class="notes-entry">
+  <h3><a href="{{ note.url }}">{{ note.data.title | default(note.fileSlug) }}</a></h3>
+
+  {% if note.data.description %}
+    <p>{{ note.data.description }}</p>
+  {% endif %}
+
+{% if note.data.authors %}
+<div class="note-meta">
+  <span class="note-authors">By:&nbsp; 
+  {%- for author in note.data.authors -%}
+    {%- if author != "" -%}
+      {%- set authorName = author | replace("[[", "") | replace("]]", "") -%}
+      {%- set authorPage = collections.all | getEntryByUrl("/people/" + authorName + "/") -%}
+      {%- if authorPage -%}
+        <a href="{{ "/people/" | url }}{{ authorName }}/">{{ authorPage.data.title }}</a>
+      {%- else -%}
+        <span>{{ authorName }}</span>
+      {%- endif -%}
+      {%- if not loop.last %}, {% endif -%}
+    {%- endif -%}
+  {%- endfor %}
+  </span>
+</div>
+{% endif %}
+</div>

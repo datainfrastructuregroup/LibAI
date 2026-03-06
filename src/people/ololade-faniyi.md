@@ -1,6 +1,5 @@
 ---
 title: Ololade Faniyi
-layout: person.njk
 position: 
 description: 
 url: 

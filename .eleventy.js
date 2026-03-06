@@ -151,7 +151,7 @@ eleventyConfig.addPassthroughCopy('src/.garden-graph.json');
    dir: {
      input: "src",
      output: "_site",
-     includes: "_includes/layouts",
+     includes: "_includes",
      data: "_data"
    },
    templateFormats: ["md", "njk", "html"],

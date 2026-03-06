@@ -1,6 +1,5 @@
 ---
 title: Corporate AI threatens democracy
-layout: note.njk
 authors:
   - [[isadora-cruxen]]
 contributors:

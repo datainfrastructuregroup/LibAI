@@ -1,6 +1,5 @@
 ---
 title: Amelia Lee Doğan
-layout: person.njk
 position: PhD Student
 description: PhD student at University of Washington researching data systems for co-liberation and research affiliate at Data + Feminism Lab.
 url: 

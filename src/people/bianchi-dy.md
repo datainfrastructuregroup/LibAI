@@ -1,6 +1,5 @@
 ---
 title: Bianchi Dy
-layout: person.njk
 position: Data Visualization Practitioner and Urban Planner
 description: Data visualization practitioner and urban planner focused on nighttime leisure travel and participatory design.
 url: 
