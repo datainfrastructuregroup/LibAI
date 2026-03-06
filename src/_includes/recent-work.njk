@@ -1,0 +1,22 @@
+---
+layout: base.njk
+---
+
+<h1>{{ title }}</h1>
+
+{% if orcidWorks.length == 0 %}
+  <p>No works found.</p>
+{% else %}
+  <ul>
+    {% for work in orcidWorks %}
+      <li>
+        {# Show the title, then the author linked to their person page, then the year if we have one #}
+        {{ work.title }} —
+        <a href="{{ work.personUrl }}">{{ work.personName }}</a>
+        {% if work.year %}
+          ({{ work.year }})
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
