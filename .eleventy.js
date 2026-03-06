@@ -30,8 +30,15 @@ const bibliography = parseBibtexFile("src/_data/libAI.bib");
 
 // clean the bibtex formatting
 function cleanBibField(str) {
- if (!str) return "";
- return str.replace(/[\{\}]/g, "").replace(/\\&/g, "&").trim();
+  if (!str) return "";
+  return str
+    .replace(/\\mkbibemph\{([^}]*)\}/g, "$1") // Remove \mkbibemph{} commands but keep content
+    .replace(/\\textbf\{([^}]*)\}/g, "$1")     // Remove \textbf{} commands but keep content  
+    .replace(/\\textit\{([^}]*)\}/g, "$1")     // Remove \textit{} commands but keep content
+    .replace(/\\textsc\{([^}]*)\}/g, "$1")     // Remove \textsc{} commands but keep content
+    .replace(/[\{\}]/g, "")                    // Remove remaining braces
+    .replace(/\\&/g, "&")                     // Fix escaped ampersands
+    .trim();
 }
 
 
@@ -47,26 +54,27 @@ export default function(eleventyConfig) {
  const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
  eleventyConfig.setLibrary("md", md);
 
+// Move these lines outside the transform function and resolve the conflict:
+eleventyConfig.addPassthroughCopy('src/css');
+eleventyConfig.addPassthroughCopy('src/js');
+eleventyConfig.addPassthroughCopy('src/assets');
+eleventyConfig.addPassthroughCopy('src/.garden-graph.json');
 
  // convert citations to footnotes with page numbers
  eleventyConfig.addTransform("citations-to-footnotes", function(content, outputPath) {
    if (!outputPath || !outputPath.endsWith(".html")) return content;
-
 
    let citationIndex = 1;
    const usedCitations = {};
    const citationOrder = [];
    const citationPages = {}; // Track page numbers for each citation
 
-
    // First pass: count words to estimate page numbers (assuming ~250 words per page)
    let wordCount = 0;
    const WORDS_PER_PAGE = 250;
 
-
    content = content.replace(/\[\s*@\s*([^\]\s]+)\s*\]/g, (match, key) => {
      if (!bibliography[key]) return match;
-
 
      if (!usedCitations[key]) {
        usedCitations[key] = citationIndex++;
@@ -88,23 +96,23 @@ export default function(eleventyConfig) {
    });
 
    function extractBibField(entry, fieldName) {
-  const re = new RegExp(`${fieldName}\\s*=\\s*\\{`, "i");
-  const m = re.exec(entry);
-  if (!m) return "";
+    const re = new RegExp(`${fieldName}\\s*=\\s*\\{`, "i");
+    const m = re.exec(entry);
+    if (!m) return "";
 
-  let i = m.index + m[0].length; // right after the opening "{"
-  let depth = 1;
-  let out = "";
+    let i = m.index + m[0].length; // right after the opening "{"
+    let depth = 1;
+    let out = "";
 
-  while (i < entry.length && depth > 0) {
-    const ch = entry[i];
-    if (ch === "{") depth++;
-    else if (ch === "}") depth--;
-    if (depth > 0) out += ch;
-    i++;
+    while (i < entry.length && depth > 0) {
+      const ch = entry[i];
+      if (ch === "{") depth++;
+      else if (ch === "}") depth--;
+      if (depth > 0) out += ch;
+      i++;
+    }
+    return out.trim();
   }
-  return out.trim();
-}
 
 
    if (citationOrder.length === 0) return content;
