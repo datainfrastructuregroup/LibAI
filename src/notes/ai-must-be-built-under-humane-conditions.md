@@ -2,7 +2,7 @@
 title: AI must be built under humane conditions
 layout: note.njk
 authors:
-  - [[Ololade Faniyi]]
+  - [[ololade-faniyi]]
 contributors:
   -
 editors:

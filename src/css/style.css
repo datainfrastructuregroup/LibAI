@@ -851,3 +851,59 @@ blockquote {
     grid-template-columns: 1fr;
   }
 }
+
+/* Person page layout */
+.person-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.person-headshot {
+  flex: 0 0 200px;
+  max-width: 200px;
+}
+
+.person-headshot img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.person-bio {
+  flex: 1;
+  min-width: 0; /* Allows flex item to shrink below content size */
+}
+
+.person-subtitle {
+  margin: 0 0 1rem 0;
+  color: var(--accent-color);
+  font-size: 1.1rem;
+}
+
+.person-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.person-content {
+  margin-bottom: 3rem;
+}
+
+/* Responsive layout for person page */
+@media (max-width: 768px) {
+  .person-header {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .person-headshot {
+    flex: 0 0 auto;
+    max-width: 150px;
+    align-self: center;
+  }
+}

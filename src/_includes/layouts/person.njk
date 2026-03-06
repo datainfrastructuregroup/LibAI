@@ -10,12 +10,19 @@ layout: base.njk
         </div>
     </header>
     
-    <div class="content">
-        <div class="person-profile">
-            <img src="{{ headshot }}" alt="{{ title }}" class="person-headshot-inline" />
-            <p><strong>{{ subtitle }}</strong></p>
-            <p><em>{{ description }}</em></p>
+    <div class="person-header">
+        <div class="person-headshot">
+            <img src="{{ headshot }}" alt="{{ title }}" />
         </div>
+        <div class="person-bio">
+            <p class="person-subtitle"><strong>{{ subtitle }}</strong></p>
+            <div class="person-description">
+                {{ description }}
+            </div>
+        </div>
+    </div>
+    
+    <div class="person-content">
         {{ content | safe }}
     </div>
     
@@ -23,7 +30,7 @@ layout: base.njk
     
     <!-- Articles by this person -->
     <section class="person-articles">
-        <h2>Entries by {{ title }}</h2>
+        <h3>Entries by {{ title }}</h3>
         
         {% set authoredArticles = [] %}
         {% set contributedArticles = [] %}
@@ -108,15 +115,4 @@ layout: base.njk
         {% endif %}
     </section>
     
-    {% set backlinks = collections.all | getBacklinks(page) %}
-    {% if backlinks.length > 0 %}
-    <aside class="backlinks">
-        <h2>Backlinks</h2>
-        <ul>
-            {% for backlink in backlinks %}
-            <li><a href="{{ backlink.url }}">{{ backlink.data.title | default(backlink.fileSlug) }}</a></li>
-            {% endfor %}
-        </ul>
-    </aside>
-    {% endif %}
 </article>

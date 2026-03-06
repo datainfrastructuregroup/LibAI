@@ -2,7 +2,7 @@
 title: Corporate AI is Colonialist
 layout: note.njk
 authors:
-  - [[Alessandra Jungs de Almeida]]
+  - [[alessandra-jungs-de-almeida]]
 contributors:
   -
 editors:

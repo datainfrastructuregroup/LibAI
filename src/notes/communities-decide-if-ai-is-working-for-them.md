@@ -2,7 +2,7 @@
 title: Communities decide if AI is working for them.
 layout: note.njk
 authors:
-  - [[Yujia Gao]]
+  - [[yujia-gao]]
 contributors:
   -
 editors:

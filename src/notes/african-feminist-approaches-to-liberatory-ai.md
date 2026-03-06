@@ -2,7 +2,7 @@
 title: African feminist approaches to liberatory AI
 layout: note.njk
 authors:
-  - [[Ololade Faniyi]]
+  - [[ololade-faniyi]]
 contributors:
   -
 editors:

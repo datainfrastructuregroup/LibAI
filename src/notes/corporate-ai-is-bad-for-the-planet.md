@@ -2,8 +2,8 @@
 title: Corporate AI is bad for the planet
 layout: note.njk
 authors:
-  - [[Amelia Lee Doğan]]
-  - [[Hongjin Lin]]
+  - [[amelia-lee-dogan]]
+  - [[hongjin-lin]]
 contributors:
   -
 editors:

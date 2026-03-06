@@ -15,7 +15,7 @@ description: Dr. Nikko Stevens is a critical technology researcher, software eng
       Engineering_, a book about data infrastructure, software engineering, and
       the contemporary prison abolition movement. As of Fall 2025, they are an
       Assistant Professor of Statistical and Data Sciences at Smith College.
-headshot: ./Contributors - Liberatory A.I._files/cropped-Stevens-headshot-200x200.jpg
+headshot: /assets/headshot-nikko-stevens-200x200.jpg
 subtitle:
 tags:
     - person

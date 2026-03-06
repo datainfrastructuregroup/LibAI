@@ -1,12 +1,12 @@
 ---
-title: Liberatory AI is place-based.
+title: Liberatory AI is place-based
 layout: note.njk
 authors:
-  - [[Amelia Lee Dogan]]
+  - [[amelia-lee-dogan]]
 contributors:
   -
 editors:
-  -
+  - [[nikko-stevens]]
 ---
 A liberatory AI ecosystem is grounded in space and place, this includes the infrastructure that is used to create and maintain it (ie: data centers) and the spaces and places it attempts to present. These places and the knowledges they produce are considered integral to the creations of this AI. Liberatory AI centers a place-based, ecosystemic approach to computing. This means attending to the flourishing of human and other kin present in the places and lands the AI touches. Rida Qadri, attempts to do this by placing communities as experts in the representation. With participants from South Asia, Qadri and co-authors identified that many text to image generators failed to recognize cultural subjects and perpetuated Western imagery over South Asian contexts. The images also reinforced harmful cultural stereotypes when creating images of cities like Peshawar and Mumbai. Instead of the iconic cultural heritage of the cities, dusty and dirty images were generated. A liberatory AI would emphasize the place-based knowledge coming from Qadri’s participants who took pride in the places they were from.
 

@@ -3,7 +3,7 @@ title: All Notes
 layout: base.njk
 ---
 
-# All Notes
+# All Entries
 
 <ul class="notes-list">
 {% for note in collections.notes %}

@@ -2,7 +2,7 @@
 title: Corporate AI threatens democracy
 layout: note.njk
 authors:
-  - [[Isadora Cruxên]]
+  - [[isadora-cruxen]]
 contributors:
   -
 editors:
