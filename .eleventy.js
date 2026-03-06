@@ -148,6 +148,7 @@ eleventyConfig.addPassthroughCopy('src/.garden-graph.json');
  );
 
   return {
+   pathPrefix: process.env.ELEVENTY_BASEPATH || "/",
    dir: {
      input: "src",
      output: "_site",
