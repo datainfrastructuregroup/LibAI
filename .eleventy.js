@@ -1,14 +1,6 @@
 import fs from "fs";
 import MarkdownIt from "markdown-it";
 
-
-
-
-
-
-// TESTING
-
-
 // parse the bibtex
 function parseBibtexFile(filePath) {
  const content = fs.readFileSync(filePath, "utf8");
@@ -22,13 +14,9 @@ function parseBibtexFile(filePath) {
  return entries;
 }
 
-
-
-
 const bibliography = parseBibtexFile("src/_data/libAI.bib");
 
-
-// clean the bibtex formatting
+// clean the bibtex formatting (MAIN version - handles LaTeX commands)
 function cleanBibField(str) {
   if (!str) return "";
   return str
@@ -41,20 +29,18 @@ function cleanBibField(str) {
     .trim();
 }
 
-
 function getYear(str) {
  if (!str) return "";
  const match = str.match(/^(\d{4})/);
  return match ? match[1] : str;
 }
 
-
 // main function
 export default function(eleventyConfig) {
  const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
  eleventyConfig.setLibrary("md", md);
 
-// Move these lines outside the transform function and resolve the conflict:
+// Asset copying (MAIN version - fixes stylesheet issue)
 eleventyConfig.addPassthroughCopy('src/css');
 eleventyConfig.addPassthroughCopy('src/js');
 eleventyConfig.addPassthroughCopy('src/assets');
@@ -83,11 +69,9 @@ eleventyConfig.addPassthroughCopy('src/.garden-graph.json');
        citationPages[key] = Math.max(1, Math.floor(wordCount / WORDS_PER_PAGE) + 1);
      }
 
-
      // Count words before this citation for next iteration
      const textBefore = content.substring(0, content.indexOf(match));
      wordCount = textBefore.split(/\s+/).length;
-
 
      const number = usedCitations[key];
      return `<sup id="cite-${number}">
@@ -95,6 +79,7 @@ eleventyConfig.addPassthroughCopy('src/.garden-graph.json');
              </sup>`;
    });
 
+   // Helper function for field extraction (MAIN version - better handling)
    function extractBibField(entry, fieldName) {
     const re = new RegExp(`${fieldName}\\s*=\\s*\\{`, "i");
     const m = re.exec(entry);
@@ -114,9 +99,7 @@ eleventyConfig.addPassthroughCopy('src/.garden-graph.json');
     return out.trim();
   }
 
-
    if (citationOrder.length === 0) return content;
-
 
    let footnotesHTML = `<section class="footnotes"><hr><ol>`;
    citationOrder.forEach(key => {
@@ -124,48 +107,30 @@ eleventyConfig.addPassthroughCopy('src/.garden-graph.json');
      const entry = bibliography[key];
      const pageNumber = citationPages[key];
 
-
-    //  const titleMatch = entry.match(/title\s*=\s*\{([\s\S]*?)\}/i);
-    //  const orgMatch = entry.match(/organization\s*=\s*\{([\s\S]*?)\}/i);
-    //  const dateMatch = entry.match(/date\s*=\s*\{([\s\S]*?)\}/i);
-    //  const urlMatch = entry.match(/url\s*=\s*\{([\s\S]*?)\}/i);
-    //  const pagesMatch = entry.match(/pages\s*=\s*\{([\s\S]*?)\}/i);
-
-
-    //  const title = titleMatch ? cleanBibField(titleMatch[1]) : "";
-    //  const org = orgMatch ? cleanBibField(orgMatch[1]) : "";
-    //  const year = dateMatch ? getYear(cleanBibField(dateMatch[1])) : "";
-    //  const url = urlMatch ? cleanBibField(urlMatch[1]) : "";
-    //  const pages = pagesMatch ? cleanBibField(pagesMatch[1]) : "";
-
-    const title = cleanBibField(extractBibField(entry, "title"));
-    const org   = cleanBibField(extractBibField(entry, "organization"));
-    const date  = cleanBibField(extractBibField(entry, "date"));
-    const url   = cleanBibField(extractBibField(entry, "url"));
-    const pages = cleanBibField(extractBibField(entry, "pages"));
-    const year  = getYear(date);
-
+     // Use MAIN version's field extraction with enhanced cleanBibField
+     const title = cleanBibField(extractBibField(entry, "title"));
+     const org   = cleanBibField(extractBibField(entry, "organization"));
+     const date  = cleanBibField(extractBibField(entry, "date"));
+     const url   = cleanBibField(extractBibField(entry, "url"));
+     const pages = cleanBibField(extractBibField(entry, "pages"));
+     const year  = getYear(date);
 
      // Add page number to footnote (either from BibTeX or estimated)
      const pageInfo = pages ? `, pp. ${pages}` : `, p. ${pageNumber}`;
 
-
-   footnotesHTML += `<li id="footnote-${number}">
+     footnotesHTML += `<li id="footnote-${number}">
      <strong>${title}</strong>${org ? ". " + org : ""}${year ? ", " + year : ""}${pageInfo}${url ? `. <a href="${url}" target="_blank">${url}</a>` : ""} <a href="#cite-${number}">↩</a>
    </li>`;
    });
    footnotesHTML += `</ol></section>`;
 
-
    return content + footnotesHTML;
  });
-
 
   eleventyConfig.addFilter("getEntryByUrl", (collection, url) => {
    if (!collection || !url) return null;
    return collection.find(item => item.url === url);
  });
-
 
  eleventyConfig.addFilter("getBacklinks", (notes, currentPage) => {
    if (!notes || !currentPage) return [];
@@ -178,11 +143,9 @@ eleventyConfig.addPassthroughCopy('src/.garden-graph.json');
    });
  });
 
-
  eleventyConfig.addCollection("notes", collectionApi =>
    collectionApi.getFilteredByGlob("src/notes/**/*.md")
  );
-
 
   return {
    dir: {
@@ -197,6 +160,3 @@ eleventyConfig.addPassthroughCopy('src/.garden-graph.json');
    dataTemplateEngine: "njk"
  };
 };
-
-
-
