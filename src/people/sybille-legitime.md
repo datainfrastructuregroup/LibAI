@@ -4,7 +4,7 @@ layout: person.njk
 position: Ph.D. Student
 description: PhD student in Computer Science at Brown University researching how communities can collectively design and evaluate AI systems.
 url: 
-orcid: 
+orcid: 0009-0005-5882-6918
 headshot: /assets/headshot-placeholder.jpg
 subtitle:
 tags:

@@ -4,7 +4,7 @@ layout: person.njk
 position: Public Interest Technology and Media Lawyer
 description: Public interest technology and media lawyer focusing on technology and power with particular attention to gender.
 url: https://kendraalbert.com
-orcid: 
+orcid: 0000-0001-9818-4087
 headshot: /assets/headshot-kendra-albert-200x200.jpeg
 subtitle:
 tags:

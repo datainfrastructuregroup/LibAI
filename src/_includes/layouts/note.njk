@@ -9,9 +9,9 @@ layout: base.njk
             <a href="{{ "/notes" | url }}" class="back-link">← Back to all notes</a>
         </div>
         
-        {% if authors or contributors or editors %}
+        {% if authors and authors.length > 0 or contributors and contributors.length > 0 or editors and editors.length > 0 %}
         <div class="note-byline">
-            {% if authors %}
+            {% if authors and authors.length > 0 %}
             <div class="byline-section">
                 <span class="byline-label">Written by:</span>
                 <span class="byline-content">
@@ -28,7 +28,7 @@ layout: base.njk
             </div>
             {% endif %}
             
-            {% if contributors %}
+            {% if contributors and contributors.length > 0 %}
             <div class="byline-section">
                 <span class="byline-label">Additional contributions by:</span>
                 <span class="byline-content">
@@ -45,7 +45,7 @@ layout: base.njk
             </div>
             {% endif %}
             
-            {% if editors %}
+            {% if editors and editors.length > 0 %}
             <div class="byline-section">
                 <span class="byline-label">Edited by:</span>
                 <span class="byline-content">

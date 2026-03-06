@@ -4,7 +4,7 @@ layout: person.njk
 position: Ph.D. Candidate in Computer Science
 description: PhD candidate researching AI and social justice through qualitative evaluation and technology development.
 url: https://sites.google.com/g.harvard.edu/hongjinlin
-orcid: 
+orcid: 0000-0001-6207-2147
 headshot: /assets/headshot-honjin-lin-200x200.jpg
 subtitle:
 tags:

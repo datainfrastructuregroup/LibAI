@@ -4,7 +4,7 @@ layout: person.njk
 position: Assistant Professor of Statistical and Data Sciences
 description: Critical technology researcher and software engineer studying data infrastructures and social inequality.
 url: https://nikkostevens.com
-orcid: 
+orcid: 0000-0003-3811-9245
 headshot: /assets/headshot-nikko-stevens-200x200.jpg
 subtitle:
 tags:
