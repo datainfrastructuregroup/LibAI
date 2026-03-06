@@ -1,78 +1,37 @@
-// This file is a global data file for Eleventy.
-// Eleventy will automatically run this function at build time and make
-// the returned data available to all templates under the name "orcidWorks".
+// ES module imports
+import EleventyFetch from "@11ty/eleventy-fetch";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { fileURLToPath } from "url";
 
-// EleventyFetch is a helper that fetches URLs from the internet AND caches
-// the responses locally so we don't hammer the ORCID API on every build.
-const EleventyFetch = require("@11ty/eleventy-fetch");
+// ES module equivalent of __dirname
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Node's built-in file system module — lets us read files from disk.
-const fs = require("fs");
+export default async function () {
 
-// Node's built-in path module — helps us build file paths that work on
-// both Mac/Linux and Windows (e.g. handles / vs \ automatically).
-const path = require("path");
-
-// gray-matter parses the YAML front matter out of markdown files.
-// Given a .md file, it splits it into { data: {...}, content: "..." }
-// where data is the front matter fields (like orcid, title, etc.)
-const matter = require("gray-matter");
-
-// Eleventy expects a global data file to export either an object or a function.
-// We export an async function because we need to make network requests (await).
-module.exports = async function () {
-
-  // Build an absolute path to the /src/people directory.
-  // __dirname is the folder THIS file lives in (src/_data),
-  // so "../people" goes one level up then into /people.
   const peopleDir = path.join(__dirname, "../people");
-
-  // Read every file in that folder, then keep only the ones ending in ".md".
-  // This gives us an array of filenames like ["alice.md", "bob.md", ...]
   const files = fs.readdirSync(peopleDir).filter(f => f.endsWith(".md"));
 
-  // This array will hold one object per WORK (not per person).
-  // By the end of the loop it might look like:
-  // [
-  //   { personName: "Alice", personUrl: "/people/alice", title: "Some Paper", year: 2023 },
-  //   { personName: "Bob",   personUrl: "/people/bob",   title: "Other Paper", year: 2021 },
-  //   ...
-  // ]
-  const allWorks = [];
+  // We use a Map instead of an array this time.
+  // A Map lets us look up works by a unique key (the DOI, or the title as fallback).
+  // This is how we deduplicate — if two people share a work, we find it in the
+  // Map by its DOI and just add the second person as a co-author instead of
+  // creating a duplicate entry.
+  // Map structure: key = DOI string (or title), value = work object
+  const worksMap = new Map();
 
-  // Loop through each markdown file one at a time.
-  // We use for...of (not forEach) because we need to use await inside the loop.
   for (const file of files) {
-
-    // Read the full text content of the file from disk.
     const content = fs.readFileSync(path.join(peopleDir, file), "utf-8");
-
-    // Use gray-matter to parse out just the front matter fields.
-    // We use destructuring to grab only `data` (the front matter object)
-    // and ignore the markdown body content.
     const { data } = matter(content);
 
-    // If this person doesn't have an orcid field in their front matter,
-    // skip them and move on to the next file.
     if (!data.orcid) continue;
 
-    // Derive the person's page URL from their filename.
-    // e.g. "alice-smith.md" -> "/people/alice-smith"
-    // .replace() removes the ".md" extension from the filename string.
     const slug = file.replace(".md", "");
     const personUrl = `/people/${slug}`;
 
-    // Wrap the API call in try/catch so that one bad ORCID ID or network
-    // error doesn't crash the entire build — it just logs a warning.
     try {
-
-      // Build the ORCID API URL for this person's list of works.
       const url = `https://pub.orcid.org/v3.0/${data.orcid}/works`;
-
-      // Fetch the URL (or load it from local cache if we fetched it recently).
-      // duration: "1d" means "reuse the cached version for up to 1 day".
-      // type: "json" means parse the response body as JSON automatically.
-      // The Accept header tells the ORCID API we want JSON, not XML.
       const response = await EleventyFetch(url, {
         duration: "1d",
         type: "json",
@@ -81,58 +40,78 @@ module.exports = async function () {
         }
       });
 
-      // ORCID returns works grouped in an array called "group".
-      // If it's missing for some reason, fall back to an empty array
-      // so the for loop below has nothing to iterate over (rather than crashing).
       const works = response.group || [];
 
-      // Loop through each work this person has on ORCID.
       for (const group of works) {
-
-        // Each group can have multiple summaries (e.g. if the same work was
-        // added more than once). We just grab the first one [0].
         const work = group["work-summary"][0];
 
-        // Try to pull out the publication year as a number (e.g. 2023).
-        // The && checks make sure we don't crash if any of these nested
-        // fields are missing — if anything is absent, we store null instead.
+        // Extract the title string
+        const title = work.title.title.value;
+
+        // ORCID stores external identifiers (like DOIs) in an array.
+        // We look through that array for one with type "doi".
+        // If there's no external-ids field at all, we fall back to an empty array.
+        const externalIds = (work["external-ids"] && work["external-ids"]["external-id"]) || [];
+        const doiEntry = externalIds.find(id => id["external-id-type"] === "doi");
+
+        // If we found a DOI, store the raw DOI value (e.g. "10.1234/example")
+        // and build a full URL from it (e.g. "https://doi.org/10.1234/example")
+        const doi = doiEntry ? doiEntry["external-id-value"] : null;
+        const doiUrl = doi ? `https://doi.org/${doi}` : null;
+
+        // Use the DOI as our deduplication key — it's a globally unique identifier.
+        // If there's no DOI, fall back to using the title string as the key.
+        // This isn't perfect but handles works that lack a DOI.
+        const key = doi || title;
+
+        // Extract journal/venue name if ORCID has it
+        const journal = work["journal-title"] ? work["journal-title"].value : null;
+
+        // Extract year
         const year =
           work["publication-date"] && work["publication-date"].year
             ? parseInt(work["publication-date"].year.value)
             : null;
 
-        // Push a flat, simple object into allWorks for this one work.
-        // We store everything we need to render a citation line in the template.
-        allWorks.push({
-          personName: data.title || data.name, // whichever field stores their name
-          personUrl: personUrl,
-          title: work.title.title.value,
-          year: year
-        });
+        // Build a small object representing this contributor's authorship
+        const author = {
+          name: data.title,  // the person's display name from front matter
+          url: personUrl
+        };
+
+        if (worksMap.has(key)) {
+          // This work already exists in our Map (another contributor had it too).
+          // Just push this person into the existing work's authors array.
+          worksMap.get(key).authors.push(author);
+        } else {
+          // This is a new work we haven't seen before — add it to the Map.
+          worksMap.set(key, {
+            title,
+            doiUrl,   // full https://doi.org/... link, or null
+            journal,  // journal/venue name, or null
+            year,
+            authors: [author]  // start the authors array with this person
+          });
+        }
       }
 
     } catch (e) {
-      // If anything went wrong (bad network, invalid ORCID, API down, etc.),
-      // print a warning to the console but keep going through the other people.
       console.warn(`Could not fetch ORCID works for ${data.orcid}:`, e.message);
     }
   }
 
-  // Sort the flat list of all works by year, most recent first.
-  // Array.sort() takes a comparison function with two items (a, b).
-  // The rules are:
-  //   return negative → a comes first
-  //   return positive → b comes first
-  //   return 0        → order doesn't matter
-  // Works with no year (null) get pushed to the bottom.
+  // Convert the Map's values into a plain array so Eleventy/Nunjucks can loop over it.
+  // Map.values() returns an iterator, so we wrap it in Array.from() to get a real array.
+  const allWorks = Array.from(worksMap.values());
+
+  // Sort by year descending (most recent first), nulls at the bottom
   allWorks.sort((a, b) => {
-    if (a.year === null && b.year === null) return 0;  // both unknown, leave as-is
-    if (a.year === null) return 1;                     // a has no year, b goes first
-    if (b.year === null) return -1;                    // b has no year, a goes first
-    return b.year - a.year;                            // both have years, sort descending
+    if (a.year === null && b.year === null) return 0;
+    if (a.year === null) return 1;
+    if (b.year === null) return -1;
+    return b.year - a.year;
   });
 
-  // Return the completed array. Eleventy will make this available in templates
-  // as the variable `orcidWorks` (named after this file: orcidWorks.js).
-  return allWorks;
-};
+  // Only return works from 2020 onwards.
+  // Works with no year (null) are kept since we can't confirm they're too old.
+  return allWorks.filter(work => work.year === null || work.year >= 2020);};

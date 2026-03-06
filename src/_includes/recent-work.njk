@@ -10,11 +10,29 @@ layout: base.njk
   <ul>
     {% for work in orcidWorks %}
       <li>
-        {# Show the title, then the author linked to their person page, then the year if we have one #}
-        {{ work.title }} —
-        <a href="{{ work.personUrl }}">{{ work.personName }}</a>
+        {# Title — linked to DOI if we have one, plain text if not #}
+        {% if work.doiUrl %}
+          <a href="{{ work.doiUrl }}"><strong>{{ work.title }}</strong></a>
+        {% else %}
+          <strong>{{ work.title }}</strong>
+        {% endif %}
+
+        {# Journal name — only shown if ORCID has it #}
+        {% if work.journal %}
+          · <em>{{ work.journal }}</em>
+        {% endif %}
+
+        {# Authors — loop through, linking each one to their person page #}
+        ·
+        {% for author in work.authors %}
+          <a href="{{ author.url }}">{{ author.name }}</a>
+          {# Add a comma after every author except the last one #}
+          {% if not loop.last %}, {% endif %}
+        {% endfor %}
+
+        {# Year — only shown if we have one #}
         {% if work.year %}
-          ({{ work.year }})
+          · {{ work.year }}
         {% endif %}
       </li>
     {% endfor %}
