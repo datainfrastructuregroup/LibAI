@@ -5,7 +5,7 @@ layout: base.njk
 
 <h1>Contributors</h1>
 
-<p></p>
+<p>See <a href="../recent-work">recent work</a> by think tank members.</p>
 
 <div class="contributor-list">
 {% for person in collections.person %}
@@ -17,53 +17,11 @@ layout: base.njk
             <div class="contributor-info">
                 <h2 class="contributor-title">{{ person.data.title }}</h2>
                 <p class="contributor-position">{{ person.data.position }}</p>
-                <p class="contributor-subtitle">{{ person.data.description }}</p>
                 
                 {% set personId = person.fileSlug %}
-                {% set authoredArticles = [] %}
-                {% set contributedArticles = [] %}
-                {% set editedArticles = [] %}
 
-                {% for note in collections.notes %}
-                    {% if note.data.authors %}
-                        {% for author in note.data.authors %}
-                            {% if author == "[[" ~ personId ~ "]]" or author == personId %}
-                                {% set authoredArticles = authoredArticles.concat([note]) %}
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
-                    
-                    {% if note.data.contributors %}
-                        {% for contributor in note.data.contributors %}
-                            {% if contributor == "[[" ~ personId ~ "]]" or contributor == personId %}
-                                {% set contributedArticles = contributedArticles.concat([note]) %}
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
-                    
-                    {% if note.data.editors %}
-                        {% for editor in note.data.editors %}
-                            {% if editor == "[[" ~ personId ~ "]]" or editor == personId %}
-                                {% set editedArticles = editedArticles.concat([note]) %}
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
-                {% endfor %}
 
-                {% set stats = [] %}
-                {% if authoredArticles.length > 0 %}{% set stats = stats.concat([authoredArticles.length ~ ' Authored']) %}{% endif %}
-                {% if contributedArticles.length > 0 %}{% set stats = stats.concat([contributedArticles.length ~ ' Contributed']) %}{% endif %}
-                {% if editedArticles.length > 0 %}{% set stats = stats.concat([editedArticles.length ~ ' Edited']) %}{% endif %}
-
-                {% if stats.length > 0 %}
-                <div class="contributor-stats">
-                    <p class="stat-line">
-                        {% for stat in stats %}
-                            {{ stat }}{% if not loop.last %}<span class="stat-separator"> • </span>{% endif %}
-                        {% endfor %}
-                    </p>
-                </div>
-                {% endif %}
+               
             </div>
         </a>
     </div>

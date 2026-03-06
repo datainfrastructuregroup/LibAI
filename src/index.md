@@ -7,9 +7,9 @@ layout: base.njk
 
 The Liberation + AI Think Tank is a group of researchers, technology makers, and artists who are concerned about the current practices of AI development.
 
-## Recently Added... 
+<!-- ## Recently Added... 
 
 {% for note in collections.notes | reverse %}
 - [{{ note.data.title | default(note.fileSlug) }}]({{ note.url }})
 {% endfor %}
-
+ -->

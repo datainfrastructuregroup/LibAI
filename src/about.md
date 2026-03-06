@@ -3,7 +3,7 @@ title: About
 layout: base.njk
 ---
 
-<h3><strong>Introduction</strong></h3>
+<h1>Introduction</h1>
 
 <p>What is artificial intelligence? Where and how is it being used? How are its harms and benefits distributed? Is it “intelligent”? Is it inevitable? What are our alternatives?</p>
 
