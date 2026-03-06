@@ -1,0 +1,40 @@
+---
+layout: base.njk
+---
+
+<h1>{{ title }}</h1>
+
+{% if orcidWorks.length == 0 %}
+  <p>No works found.</p>
+{% else %}
+  <ul>
+    {% for work in orcidWorks %}
+      <li>
+        {# Title — linked to DOI if we have one, plain text if not #}
+        {% if work.doiUrl %}
+          <a href="{{ work.doiUrl }}"><strong>{{ work.title }}</strong></a>
+        {% else %}
+          <strong>{{ work.title }}</strong>
+        {% endif %}
+
+        {# Journal name — only shown if ORCID has it #}
+        {% if work.journal %}
+          · <em>{{ work.journal }}</em>
+        {% endif %}
+
+        {# Authors — loop through, linking each one to their person page #}
+        ·
+        {% for author in work.authors %}
+          <a href="{{ author.url }}">{{ author.name }}</a>
+          {# Add a comma after every author except the last one #}
+          {% if not loop.last %}, {% endif %}
+        {% endfor %}
+
+        {# Year — only shown if we have one #}
+        {% if work.year %}
+          · {{ work.year }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
