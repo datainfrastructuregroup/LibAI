@@ -28,11 +28,12 @@ layout: base.njk
             </div>
             {% endif %}
             
-            {% if contributors and contributors.length > 0 %}
+            {% set validContributors = contributors | filter(item => item and item != "") %}
+            {% if validContributors.length > 0 %}
             <div class="byline-section">
                 <span class="byline-label">Additional contributions by:</span>
                 <span class="byline-content">
-                    {% for contributor in contributors %}
+                    {% for contributor in validContributors %}
                         {% set contributorName = contributor | replace("[[", "") | replace("]]", "") %}
                         {% set contributorPage = collections.all | getEntryByUrl("/people/" + contributorName + "/") %}
                         {% if contributorPage %}
@@ -45,11 +46,12 @@ layout: base.njk
             </div>
             {% endif %}
             
-            {% if editors and editors.length > 0 %}
+{% set validEditors = editors | filter(item => item and item != "") %}
+            {% if validEditors.length > 0 %}
             <div class="byline-section">
                 <span class="byline-label">Edited by:</span>
                 <span class="byline-content">
-                    {% for editor in editors %}
+                    {% for editor in validEditors %}
                         {% set editorName = editor | replace("[[", "") | replace("]]", "") %}
                         {% set editorPage = collections.all | getEntryByUrl("/people/" + editorName + "/") %}
                         {% if editorPage %}
