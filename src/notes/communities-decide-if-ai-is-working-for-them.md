@@ -7,6 +7,8 @@ contributors:
   -
 editors:
   -
+tags:
+  - ways-forward
 ---
 Liberatory AI evaluation facilitates the creation of more just, effective, and community-centered technology by shifting the power of assessment into the hands of those most impacted by these systems.
 

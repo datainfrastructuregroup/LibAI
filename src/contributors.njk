@@ -16,8 +16,8 @@ layout: base.njk
             </div>
             <div class="contributor-info">
                 <h2 class="contributor-title">{{ person.data.title }}</h2>
-                <p class="contributor-subtitle">{{ person.data.subtitle }}</p>
-                <p class="contributor-description">{{ person.data.description }}</p>
+                <p class="contributor-position">{{ person.data.position }}</p>
+                <p class="contributor-subtitle">{{ person.data.description }}</p>
                 
                 {% set personId = person.fileSlug %}
                 {% set authoredArticles = [] %}

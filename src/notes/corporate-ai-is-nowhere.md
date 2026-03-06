@@ -7,6 +7,9 @@ contributors:
   -
 editors:
   -
+tags:
+  - corporate-ai
+  - position-papers
 ---
 The Center for Land Use Interpretation over a decade ago took pictures of the internet. It was not photos of people on computer screens at the libraries or cafes. Most of the photos were actually of anonymous looking office buildings and squat structures [behind manicured trees and plants](https://clui.org/newsletter/winter-2014/networked-nation-0). These photos were mostly of data centers, the specific places and spaces that the internet occupies. The internet and AI are cables buried underground, smaller cables hanging perilously through tree branches entering a house, and data centers in office parks around the country.
 

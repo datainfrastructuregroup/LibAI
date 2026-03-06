@@ -13,7 +13,7 @@ The site was rebuilt in 2025 by Nikko Stevens and programmers in the Data Infras
 
 
 ### Team
-Yuzhang Fu - Programmer & Technical Lead
-Kiara Sunil Singh - Programmer
-Chiashi Yang - Programmer
-Helen Zhou - Programmer
+- Yuzhang Fu - Programmer & Technical Lead
+- Kiara Sunil Singh - Programmer
+- Chiashi Yang - Programmer
+- Helen Zhou - Programmer

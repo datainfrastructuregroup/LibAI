@@ -15,10 +15,21 @@ layout: base.njk
             <img src="{{ headshot }}" alt="{{ title }}" />
         </div>
         <div class="person-bio">
-            <p class="person-subtitle"><strong>{{ subtitle }}</strong></p>
-            <div class="person-description">
-                {{ description }}
-            </div>
+            <p class="person-position">{{ position }}</p>
+            <p class="person-subtitle">{{ description }}</p>
+            {% if url %}
+            <p class="person-url">
+                <a href="{{ url }}" target="_blank" rel="noopener">{{ url }}</a>
+            </p>
+            {% endif %}
+            {% if orcid %}
+            <p class="person-orcid">
+                <a href="https://orcid.org/{{ orcid }}" target="_blank" rel="noopener">
+                    <img src="https://orcid.org/assets/icons/favicon.ico" alt="ORCID" width="16" height="16" />
+                    {{ orcid }}
+                </a>
+            </p>
+            {% endif %}
         </div>
     </div>
     

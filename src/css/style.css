@@ -812,11 +812,17 @@ blockquote {
   font-size: 1.4rem;
 }
 
+.contributor-position {
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
 .contributor-subtitle {
   margin: 0 0 0.75rem 0;
-  font-style: italic;
-  color: var(--accent-color);
-  font-size: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
 .contributor-description {
@@ -881,7 +887,51 @@ blockquote {
 .person-subtitle {
   margin: 0 0 1rem 0;
   color: var(--accent-color);
+  font-size: 1rem;
+}
+
+.person-position {
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
   font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.person-orcid {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.person-url {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
+}
+
+.person-url a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.person-url a:hover {
+  text-decoration: underline;
+}
+
+.person-orcid a {
+  color: var(--text-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.person-orcid a:hover {
+  color: var(--accent-color);
+}
+
+.person-orcid img {
+  width: 16px;
+  height: 16px;
 }
 
 .person-description {

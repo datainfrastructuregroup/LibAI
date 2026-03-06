@@ -7,6 +7,9 @@ contributors:
   -
 editors:
   -
+tags:
+  - corporate-ai
+  - position-papers
 ---
 To reclaim our socio-digital futures, we must challenge corporate AI’s capture of democratic politics and counter it by centering collective, solidary, and participatory forms of politics.
 

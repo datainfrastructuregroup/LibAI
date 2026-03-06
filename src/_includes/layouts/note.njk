@@ -79,17 +79,7 @@ layout: base.njk
     </section>
     {% endif %}
     
-    {% set backlinks = collections.all | getBacklinks(page) %}
-    {% if backlinks.length > 0 %}
-    <aside class="backlinks">
-        <h2>Backlinks</h2>
-        <ul>
-            {% for backlink in backlinks %}
-            <li><a href="{{ backlink.url }}">{{ backlink.data.title | default(backlink.fileSlug) }}</a></li>
-            {% endfor %}
-        </ul>
-    </aside>
-    {% endif %}
+
     
 
 </article>

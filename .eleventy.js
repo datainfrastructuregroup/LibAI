@@ -59,7 +59,7 @@ eleventyConfig.addPassthroughCopy('src/.garden-graph.json');
    let wordCount = 0;
    const WORDS_PER_PAGE = 250;
 
-   content = content.replace(/\[\s*@\s*([^\]\s]+)\s*\]/g, (match, key) => {
+   content = content.replace(/\[@\s*([^\]]+)\s*\]/g, (match, key) => {
      if (!bibliography[key]) return match;
 
      if (!usedCitations[key]) {

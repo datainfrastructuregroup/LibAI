@@ -7,6 +7,9 @@ contributors:
   -
 editors:
   -
+tags:
+  - corporate-ai
+  - position-papers 
 ---
 Corporate AI, especially LLMs, reinforce colonial and capitalist structures by privileging Western, male, and Global North perspectives while excluding localized *knowledges*.
 

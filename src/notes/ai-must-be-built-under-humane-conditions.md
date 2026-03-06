@@ -7,6 +7,9 @@ contributors:
   -
 editors:
   -
+tags:
+  - ways-forward
+  - position-papers
 ---
 A liberatory AI ecosystem would transform bad labor conditions by ensuring that those most affected by technological systems have a say in how they are designed and governed.
 

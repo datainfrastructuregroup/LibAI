@@ -8,6 +8,9 @@ contributors:
   -
 editors:
   -
+tags:
+  - corporate-ai
+  - position-papers
 ---
 Corporate AI relies on extraction of the planet, people, and data contributing to the global climate crisis and environmental injustice.
 

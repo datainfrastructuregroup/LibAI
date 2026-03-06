@@ -8,6 +8,9 @@ contributors:
   -
 editors:
   -
+tags:
+  - ways-forward
+  - position-papers
 ---
 AI development can work in alignment with environmental sustainability and ecological preservation.
 

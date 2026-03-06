@@ -7,6 +7,9 @@ contributors:
   -
 editors:
   -
+tags:
+  - corporate-ai
+  - position-papers
 ---
 AI development today is primarily driven by financial incentives rather than social responsibility. Competing for funding, market dominance, and regulatory approval, companies prioritize getting high performance numbers, sometimes even gaming the system by tweaking evaluation criteria to maximize reported accuracy. This results in a culture where AI success is measured by marketability rather than functionality. For instance, autonomous vehicle companies use “miles driven without disengagements”—the distance their cars can travel without human intervention—as a measure of success. Reporting disengagement rates is required by regulators like the California Department of Motor Vehicles, and high numbers are often used to impress investors and the public. Yet, companies can inflate this metric by testing in simpler environments, such as quiet suburbs or good weather conditions, rather than actually improving vehicle safety and capabilities.
 

@@ -11,8 +11,3 @@ layout: base.njk
 - [{{ note.data.title | default(note.fileSlug) }}]({{ note.url }})
 {% endfor %}
 
-## tech... Getting Started
-
-1. Add markdown files to the `src/notes` directory
-2. Link between notes using `\[\[note-name\]\]`
-3. Backlinks are automatically generated
