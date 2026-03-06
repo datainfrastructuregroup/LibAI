@@ -12,7 +12,7 @@ An African feminist liberatory approach recognizes technology as inherently poli
 
 Finally, and perhaps most importantly, an African feminist liberatory approach offers a fundamentally different vision of technological progress—one measured not by profit or computational capacity but by how technology contributes to the collective. In contrast to the Techno-Optimist Manifesto’s individualistic vision, African feminist epistemologies offer frameworks for understanding technology as inherently relational.
 
-Liberatory AI infrastructure is not merely theoretical—it is already emerging through the concrete actions of African feminists and technologists who are transforming how AI is governed, developed, and deployed.
+Liberatory AI infrastructure is not merely theoretical—it is already emerging through the concrete actions of African feminists and technologists who are transforming how AI is governed, developed, and deployed.[@2025Empire]
 
 [Kauna Malgwi’s testimony](https://www.linkedin.com/posts/kauna-malgwi-104b5b86_at-long-last-eu-countries-adopt-the-platform-activity-7173281970402136064-vnfy/) about content moderation conditions has had far-reaching impacts beyond Africa’s borders. Her advocacy helped lead to the European Union passing a directive protecting platform workers, demonstrating how the labor organizing of African women can reshape global technology governance. This cross-border influence reveals how African feminist resistance to exploitative tech practices creates ripple effects that benefit workers worldwide, fundamentally changing the narrative about whose imaginary can be embedded in policy and architecture of technology.
 
