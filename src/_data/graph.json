@@ -1,0 +1,319 @@
+{
+  "nodes": [
+    {
+      "id": "african-feminist-approaches-to-liberatory-ai",
+      "label": "African feminist approaches to liberatory AI",
+      "url": "/notes/african-feminist-approaches-to-liberatory-ai/",
+      "description": "An African feminist liberatory approach recognizes technology as inherently political rather than neutral. Rather than accepting these embedded politics as inevitable, a liberatory approach would make..."
+    },
+    {
+      "id": "ai-can-work-in-harmony-with-the-environment",
+      "label": "AI can work in harmony with the environment",
+      "url": "/notes/ai-can-work-in-harmony-with-the-environment/",
+      "description": "AI development can work in alignment with environmental sustainability and ecological preservation.\n\nLiberatory AI is not just about avoiding harm; it is about actively creating systems that regenerat..."
+    },
+    {
+      "id": "ai-must-be-built-under-humane-conditions",
+      "label": "AI must be built under humane conditions",
+      "url": "/notes/ai-must-be-built-under-humane-conditions/",
+      "description": "A liberatory AI ecosystem would transform bad labor conditions by ensuring that those most affected by technological systems have a say in how they are designed and governed.\n\nAI is an African feminis..."
+    },
+    {
+      "id": "alessandra-jungs-de-almeida",
+      "label": "Alessandra Jungs de Almeida",
+      "url": "/notes/alessandra-jungs-de-almeida/",
+      "description": "..."
+    },
+    {
+      "id": "amelia-lee-do-an",
+      "label": "Amelia Lee Doğan",
+      "url": "/notes/amelia-lee-do-an/",
+      "description": "..."
+    },
+    {
+      "id": "bianchi-dy",
+      "label": "Bianchi Dy",
+      "url": "/notes/bianchi-dy/",
+      "description": "..."
+    },
+    {
+      "id": "catherine-d-ignazio",
+      "label": "Catherine D'Ignazio",
+      "url": "/notes/catherine-d-ignazio/",
+      "description": "..."
+    },
+    {
+      "id": "communities-decide-if-ai-is-working-for-them",
+      "label": "Communities decide if AI is working for them.",
+      "url": "/notes/communities-decide-if-ai-is-working-for-them/",
+      "description": "Liberatory AI evaluation facilitates the creation of more just, effective, and community-centered technology by shifting the power of assessment into the hands of those most impacted by these systems...."
+    },
+    {
+      "id": "corporate-ai-is-bad-for-the-planet",
+      "label": "Corporate AI is bad for the planet.",
+      "url": "/notes/corporate-ai-is-bad-for-the-planet/",
+      "description": "Corporate AI relies on extraction of the planet, people, and data contributing to the global climate crisis and environmental injustice.\n\nCorporate AI systems are often celebrated as revolutionary too..."
+    },
+    {
+      "id": "corporate-ai-is-built-by-exploited-laborers",
+      "label": "Corporate AI is built by exploited laborers.",
+      "url": "/notes/corporate-ai-is-built-by-exploited-laborers/",
+      "description": "Corporate AI development depends on invisible labor, much of which is performed by workers in the Global South. This extractive reality stands in stark contrast to the techno-utopian promises of AI co..."
+    },
+    {
+      "id": "corporate-ai-is-colonialist",
+      "label": "Corporate AI is Colonialist",
+      "url": "/notes/corporate-ai-is-colonialist/",
+      "description": "Corporate AI, especially LLMs, reinforce colonial and capitalist structures by privileging Western, male, and Global North perspectives while excluding localized *knowledges*.\n\nCorporations have devel..."
+    },
+    {
+      "id": "corporate-ai-is-nowhere",
+      "label": "Corporate AI is nowhere",
+      "url": "/notes/corporate-ai-is-nowhere/",
+      "description": "The Center for Land Use Interpretation over a decade ago took pictures of the internet. It was not photos of people on computer screens at the libraries or cafes. Most of the photos were actually of a..."
+    },
+    {
+      "id": "corporate-ai-threatens-democracy",
+      "label": "Corporate AI threatens democracy",
+      "url": "/notes/corporate-ai-threatens-democracy/",
+      "description": "To reclaim our socio-digital futures, we must challenge corporate AI’s capture of democratic politics and counter it by centering collective, solidary, and participatory forms of politics.\n\nBusiness i..."
+    },
+    {
+      "id": "corporate-ai-uses-troubling-benchmarks",
+      "label": "Corporate AI uses troubling benchmarks",
+      "url": "/notes/corporate-ai-uses-troubling-benchmarks/",
+      "description": "AI development today is primarily driven by financial incentives rather than social responsibility. Competing for funding, market dominance, and regulatory approval, companies prioritize getting high ..."
+    },
+    {
+      "id": "hongjin-lin",
+      "label": "Hongjin Lin",
+      "url": "/notes/hongjin-lin/",
+      "description": "..."
+    },
+    {
+      "id": "isadora-crux-n",
+      "label": "Isadora Cruxên",
+      "url": "/notes/isadora-crux-n/",
+      "description": "..."
+    },
+    {
+      "id": "kendra-albert",
+      "label": "Kendra Albert",
+      "url": "/notes/kendra-albert/",
+      "description": "..."
+    },
+    {
+      "id": "lauren-klein",
+      "label": "Lauren Klein",
+      "url": "/notes/lauren-klein/",
+      "description": "..."
+    },
+    {
+      "id": "liberatory-ai-is-place-based",
+      "label": "Liberatory AI is place-based.",
+      "url": "/notes/liberatory-ai-is-place-based/",
+      "description": "A liberatory AI ecosystem is grounded in space and place, this includes the infrastructure that is used to create and maintain it (ie: data centers) and the spaces and places it attempts to present. T..."
+    },
+    {
+      "id": "nikko-stevens",
+      "label": "Nikko Stevens",
+      "url": "/notes/nikko-stevens/",
+      "description": "..."
+    },
+    {
+      "id": "ololade-faniyi",
+      "label": "Ololade Faniyi",
+      "url": "/notes/ololade-faniyi/",
+      "description": "..."
+    },
+    {
+      "id": "sybille-legitime",
+      "label": "Sybille Legitime",
+      "url": "/notes/sybille-legitime/",
+      "description": "..."
+    },
+    {
+      "id": "yujia-gao",
+      "label": "Yujia Gao",
+      "url": "/notes/yujia-gao/",
+      "description": "..."
+    }
+  ],
+  "links": [
+    {
+      "source": "african-feminist-approaches-to-liberatory-ai",
+      "target": "ololade-faniyi",
+      "type": "author"
+    },
+    {
+      "source": "african-feminist-approaches-to-liberatory-ai",
+      "target": "null",
+      "type": "contributor"
+    },
+    {
+      "source": "african-feminist-approaches-to-liberatory-ai",
+      "target": "null",
+      "type": "editor"
+    },
+    {
+      "source": "ai-can-work-in-harmony-with-the-environment",
+      "target": "amelia-lee-do-an",
+      "type": "author"
+    },
+    {
+      "source": "ai-can-work-in-harmony-with-the-environment",
+      "target": "hongjin-lin",
+      "type": "author"
+    },
+    {
+      "source": "ai-can-work-in-harmony-with-the-environment",
+      "target": "null",
+      "type": "contributor"
+    },
+    {
+      "source": "ai-can-work-in-harmony-with-the-environment",
+      "target": "null",
+      "type": "editor"
+    },
+    {
+      "source": "ai-must-be-built-under-humane-conditions",
+      "target": "ololade-faniyi",
+      "type": "author"
+    },
+    {
+      "source": "ai-must-be-built-under-humane-conditions",
+      "target": "null",
+      "type": "contributor"
+    },
+    {
+      "source": "ai-must-be-built-under-humane-conditions",
+      "target": "null",
+      "type": "editor"
+    },
+    {
+      "source": "communities-decide-if-ai-is-working-for-them",
+      "target": "yujia-gao",
+      "type": "author"
+    },
+    {
+      "source": "communities-decide-if-ai-is-working-for-them",
+      "target": "null",
+      "type": "contributor"
+    },
+    {
+      "source": "communities-decide-if-ai-is-working-for-them",
+      "target": "null",
+      "type": "editor"
+    },
+    {
+      "source": "corporate-ai-is-bad-for-the-planet",
+      "target": "amelia-lee-do-an",
+      "type": "author"
+    },
+    {
+      "source": "corporate-ai-is-bad-for-the-planet",
+      "target": "hongjin-lin",
+      "type": "author"
+    },
+    {
+      "source": "corporate-ai-is-bad-for-the-planet",
+      "target": "null",
+      "type": "contributor"
+    },
+    {
+      "source": "corporate-ai-is-bad-for-the-planet",
+      "target": "null",
+      "type": "editor"
+    },
+    {
+      "source": "corporate-ai-is-built-by-exploited-laborers",
+      "target": "ololade-faniyi",
+      "type": "author"
+    },
+    {
+      "source": "corporate-ai-is-built-by-exploited-laborers",
+      "target": "null",
+      "type": "contributor"
+    },
+    {
+      "source": "corporate-ai-is-built-by-exploited-laborers",
+      "target": "null",
+      "type": "editor"
+    },
+    {
+      "source": "corporate-ai-is-colonialist",
+      "target": "alessandra-jungs-de-almeida",
+      "type": "author"
+    },
+    {
+      "source": "corporate-ai-is-colonialist",
+      "target": "null",
+      "type": "contributor"
+    },
+    {
+      "source": "corporate-ai-is-colonialist",
+      "target": "null",
+      "type": "editor"
+    },
+    {
+      "source": "corporate-ai-is-nowhere",
+      "target": "amelia-lee-do-an",
+      "type": "author"
+    },
+    {
+      "source": "corporate-ai-is-nowhere",
+      "target": "null",
+      "type": "contributor"
+    },
+    {
+      "source": "corporate-ai-is-nowhere",
+      "target": "null",
+      "type": "editor"
+    },
+    {
+      "source": "corporate-ai-threatens-democracy",
+      "target": "isadora-crux-n",
+      "type": "author"
+    },
+    {
+      "source": "corporate-ai-threatens-democracy",
+      "target": "null",
+      "type": "contributor"
+    },
+    {
+      "source": "corporate-ai-threatens-democracy",
+      "target": "null",
+      "type": "editor"
+    },
+    {
+      "source": "corporate-ai-uses-troubling-benchmarks",
+      "target": "yujia-gao",
+      "type": "author"
+    },
+    {
+      "source": "corporate-ai-uses-troubling-benchmarks",
+      "target": "null",
+      "type": "contributor"
+    },
+    {
+      "source": "corporate-ai-uses-troubling-benchmarks",
+      "target": "null",
+      "type": "editor"
+    },
+    {
+      "source": "liberatory-ai-is-place-based",
+      "target": "amelia-lee-do-an",
+      "type": "author"
+    },
+    {
+      "source": "liberatory-ai-is-place-based",
+      "target": "null",
+      "type": "contributor"
+    },
+    {
+      "source": "liberatory-ai-is-place-based",
+      "target": "null",
+      "type": "editor"
+    }
+  ]
+}
