@@ -3,7 +3,9 @@ title: Liberation + AI Think Tank
 layout: base.njk
 ---
 
-# TESTING TESTING
+# What is the relationship between AI and Liberation?
+
+The Liberation + AI Think Tank is a group of researchers, technology makers, and artists who are concerned about the current practices of AI development.
 
 ## Recently Added... 
 
