@@ -1,5 +1,5 @@
 <div class="notes-entry">
-  <h3><a href="{{ note.url }}">{{ note.data.title | default(note.fileSlug) }}</a></h3>
+<h3><a href="{{ note.url | url }}">{{ note.data.title | default(note.fileSlug) }}</a></h3>
 
   {% if note.data.description %}
     <p>{{ note.data.description }}</p>
@@ -13,7 +13,7 @@
       {%- set authorName = author | replace("[[", "") | replace("]]", "") -%}
       {%- set authorPage = collections.all | getEntryByUrl("/people/" + authorName + "/") -%}
       {%- if authorPage -%}
-        <a href="{{ "/people/" | url }}{{ authorName }}/">{{ authorPage.data.title }}</a>
+    <a href="{{ ("/people/" + authorName + "/") | url }}">{{ authorPage.data.title }}</a>
       {%- else -%}
         <span>{{ authorName }}</span>
       {%- endif -%}

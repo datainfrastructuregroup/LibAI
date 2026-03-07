@@ -45,7 +45,7 @@ layout: base.njk
 
 
 
-<h3><strong>Dead ends</strong></h3>
+<h3>Dead ends</h3>
 
 
 
@@ -61,7 +61,7 @@ layout: base.njk
 
 
 
-<h3><strong>Ways Forward&nbsp;</strong></h3>
+<h3>Ways Forward</h3>
 
 
 
@@ -77,10 +77,7 @@ layout: base.njk
 
 
 
-<h3><strong>What’s next?</strong></h3>
-
-
+<h3>What’s next?</h3>
 
 <p>We invite you to read and engage with the essays here, including each piece’s recommendations for further reading.&nbsp; As you read, you might find topics that we’ve missed, or that you think need a different treatment.&nbsp; We would love to have you join us in writing for the project, and get your help navigating the corporate landscape and the misleading dead ends. We are especially interested in your visions for liberation with (and without) AI.</p>
 
-<p>Test wikilink: [[contributors]] should link to contributors page.</p>

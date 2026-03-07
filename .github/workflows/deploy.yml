@@ -32,7 +32,7 @@ jobs:
     - name: Build site
       run: npm run build
       env:
-        ELEVENTY_BASEPATH: '/LibAI'
+        ELEVENTY_BASEPATH: '/'
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
@@ -41,4 +41,5 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_site
         force_orphan: true
+        cname: liberationplusai.com
         # optional: keep_history: true

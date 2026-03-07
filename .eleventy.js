@@ -1,5 +1,6 @@
 import fs from "fs";
 import MarkdownIt from "markdown-it";
+import markdownItWikilinks from "markdown-it-wikilinks";
 
 // parse the bibtex
 function parseBibtexFile(filePath) {
@@ -37,8 +38,33 @@ function getYear(str) {
 
 // main function
 export default function(eleventyConfig) {
- const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
- eleventyConfig.setLibrary("md", md);
+const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
+
+// Read the base path from the environment variable (e.g. "/LibAI" on GitHub Pages,
+// empty string locally). We strip any trailing slash to avoid double-slashes in URLs.
+const basePath = (process.env.ELEVENTY_BASEPATH || "").replace(/\/$/, "");
+
+// Wire up the wikilinks plugin to the markdown-it instance.
+// This converts [[slug]] syntax into real HTML links.
+md.use(markdownItWikilinks({
+  // No baseURL prefix — we build the full path ourselves in postProcessPageName.
+  baseURL: "",
+  // Add a trailing slash so links look like /people/alice/ not /people/alice.html
+  uriSuffix: "/",
+  makeAllLinksAbsolute: true,
+  // This function runs on every wikilink slug and decides which URL to generate.
+  // It checks whether a matching file exists in src/people/ — if yes, it's a person
+  // page. If not, we assume it's a note.
+  postProcessPageName: (pageName) => {
+    const peoplePath = path.join(process.cwd(), "src/people", pageName + ".md");
+    if (fs.existsSync(peoplePath)) {
+      return basePath + "/people/" + pageName;
+    }
+    return basePath + "/notes/" + pageName;
+  }
+}));
+
+eleventyConfig.setLibrary("md", md);
 
 // Asset copying (MAIN version - fixes stylesheet issue)
 eleventyConfig.addPassthroughCopy('src/css');
