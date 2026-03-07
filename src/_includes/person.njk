@@ -51,40 +51,42 @@ layout: base.njk
     
     {% set personId = page.fileSlug %}
     
-    <!-- Articles by this person -->
+
+{% set personId = page.fileSlug %}
+
+    {% set authoredArticles = [] %}
+    {% set contributedArticles = [] %}
+    {% set editedArticles = [] %}
+
+    {% for note in collections.notes %}
+        {% if note.data.authors %}
+            {% for author in note.data.authors %}
+                {% if author == "[[" ~ personId ~ "]]" or author == personId %}
+                    {% set authoredArticles = authoredArticles.concat([note]) %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        {% if note.data.contributors %}
+            {% for contributor in note.data.contributors %}
+                {% if contributor == "[[" ~ personId ~ "]]" or contributor == personId %}
+                    {% set contributedArticles = contributedArticles.concat([note]) %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        {% if note.data.editors %}
+            {% for editor in note.data.editors %}
+                {% if editor == "[[" ~ personId ~ "]]" or editor == personId %}
+                    {% set editedArticles = editedArticles.concat([note]) %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+
+    {# Only show the section if this person has at least one article of any type #}
+    {% if authoredArticles.length > 0 or contributedArticles.length > 0 or editedArticles.length > 0 %}
     <section class="person-articles">
         <h3>Recently Here</h3>
-        
-        {% set authoredArticles = [] %}
-        {% set contributedArticles = [] %}
-        {% set editedArticles = [] %}
-        
-        {% for note in collections.notes %}
-            {% if note.data.authors %}
-                {% for author in note.data.authors %}
-                    {% if author == "[[" ~ personId ~ "]]" or author == personId %}
-                        {% set authoredArticles = authoredArticles.concat([note]) %}
-                    {% endif %}
-                {% endfor %}
-            {% endif %}
-            
-            {% if note.data.contributors %}
-                {% for contributor in note.data.contributors %}
-                    {% if contributor == "[[" ~ personId ~ "]]" or contributor == personId %}
-                        {% set contributedArticles = contributedArticles.concat([note]) %}
-                    {% endif %}
-                {% endfor %}
-            {% endif %}
-            
-            {% if note.data.editors %}
-                {% for editor in note.data.editors %}
-                    {% if editor == "[[" ~ personId ~ "]]" or editor == personId %}
-                        {% set editedArticles = editedArticles.concat([note]) %}
-                    {% endif %}
-                {% endfor %}
-            {% endif %}
-        {% endfor %}
-        
+
         {% if authoredArticles.length > 0 %}
         <div class="articles-section">
             <h3>Authored ({{ authoredArticles.length }})</h3>
@@ -100,7 +102,7 @@ layout: base.njk
             </ul>
         </div>
         {% endif %}
-        
+
         {% if contributedArticles.length > 0 %}
         <div class="articles-section">
             <h3>Contributed to ({{ contributedArticles.length }})</h3>
@@ -116,7 +118,7 @@ layout: base.njk
             </ul>
         </div>
         {% endif %}
-        
+
         {% if editedArticles.length > 0 %}
         <div class="articles-section">
             <h3>Edited ({{ editedArticles.length }})</h3>
@@ -132,11 +134,11 @@ layout: base.njk
             </ul>
         </div>
         {% endif %}
-        
-        {% if authoredArticles.length == 0 and contributedArticles.length == 0 and editedArticles.length == 0 %}
-        <p>No articles found for this person.</p>
-        {% endif %}
+
     </section>
+    {% endif %}
+
+
 
     {# Filter the global orcidWorks list down to just works by this person.
        We loop through every work, then through its authors array, checking
