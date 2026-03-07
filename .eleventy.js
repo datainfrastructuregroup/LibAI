@@ -158,6 +158,17 @@ eleventyConfig.addPassthroughCopy('src/.garden-graph.json');
    return collection.find(item => item.url === url);
  });
 
+// Given the full orcidWorks array and a person's slug,
+// return only the works that include that person as an author.
+eleventyConfig.addFilter("worksForPerson", (works, slug) => {
+  if (!works) return [];
+  return works.filter(work =>
+    work.authors && work.authors.some(author =>
+      author.url === `/people/${slug}` || author.url === `/people/${slug}/`
+    )
+  );
+});
+
  eleventyConfig.addFilter("getBacklinks", (notes, currentPage) => {
    if (!notes || !currentPage) return [];
    const currentUrl = currentPage.url;

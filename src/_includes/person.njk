@@ -53,7 +53,7 @@ layout: base.njk
     
     <!-- Articles by this person -->
     <section class="person-articles">
-        <h3>Entries by {{ title }}</h3>
+        <h3>Recently Here</h3>
         
         {% set authoredArticles = [] %}
         {% set contributedArticles = [] %}
@@ -137,5 +137,37 @@ layout: base.njk
         <p>No articles found for this person.</p>
         {% endif %}
     </section>
+
+    {# Filter the global orcidWorks list down to just works by this person.
+       We loop through every work, then through its authors array, checking
+       if any author's URL matches this person's page URL. #}
+    {% set personWorks = orcidWorks | worksForPerson(page.fileSlug) %}
+
+    {% if personWorks.length > 0 %}
+    <section class="person-articles">
+      <h3>Recently Elsewhere</h3>
+      <ul class="articles-list">
+        {% for work in personWorks %}
+          <li>
+            {# Link the title to the DOI if we have one #}
+            {% if work.doiUrl %}
+              <a href="{{ work.doiUrl }}" target="_blank" rel="noopener"><strong>{{ work.title }}</strong></a>
+            {% else %}
+              <strong>{{ work.title }}</strong>
+            {% endif %}
+
+            {# Show journal name if available #}
+            {% if work.journal %}
+              <p class="article-description"><em>{{ work.journal }}</em>
+              {# Show year if available #}
+              {% if work.year %}· {{ work.year }}{% endif %}</p>
+            {% elif work.year %}
+              <p class="article-description">{{ work.year }}</p>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
     
 </article>
