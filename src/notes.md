@@ -3,7 +3,7 @@ title: All Notes
 layout: base.njk
 ---
 
-# All Entries
+The Think Tank began by writing a series of position papers.  Theese represent our thinking about the state of AI in 2025.  As we consider artificial intelligence, our focus was not on any predefined definition of what AI _is_.  We instead focused on the nuances of AI production in the hands of multinational corporations. 
 
 
 

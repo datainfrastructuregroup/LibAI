@@ -229,20 +229,25 @@ blockquote {
   margin-top: 1rem;
   font-size: 0.9rem;
   color: var(--text-color);
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .note-authors {
   display: block;
 }
 
-.note-authors a {
-  color: var(--accent-color);
+.notes-entry .note-authors a {
+  color: var(--text-color);
   text-decoration: none;
+  font-weight: normal;
+  font-size: 1rem;
+  border-bottom: none;
 }
 
-.note-authors a:hover {
+.notes-entry .note-authors a:hover {
+  color: var(--accent-color);
   text-decoration: underline;
+  border-bottom: none;
 }
 
 /* Legacy Notes List */
