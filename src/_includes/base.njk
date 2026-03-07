@@ -6,13 +6,14 @@
     <title>{{ title or 'Obsidian 11ty' }}</title>
     <link rel="stylesheet" href="{{ "/" | url }}css/style.css">
     <script type="module" src="{{ "/" | url }}js/graph-visualization.js"></script>
+    <script src="{{ "/js/subtitles.js" | url }}" defer></script>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="header-title">
                 <h1><a href="{{ "/" | url }}" class="logo">Liberation + AI Think Tank</a></h1>
-                <p class="subtitle">researchers, technologists, and artists thinking about AI</p>
+                <p class="subtitle"><span id="rotating-subtitle">&nbsp;</span></p>           
             </div>
             <nav>
                 <a href="{{ "/" | url }}">Home</a>
