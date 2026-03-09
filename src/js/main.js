@@ -1,5 +1,5 @@
 // import graph rendering function
-import { renderForceGraph } from "./graph-visualization.js";
+import { renderForceGraph } from "./graph-bundle.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const graphElement = document.getElementById("force-graph");

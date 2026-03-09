@@ -13,9 +13,8 @@
     "node": ">=18"
   },
   "scripts": {
-    "start": "eleventy --serve --port=9090",
-    "build": "node -e \"const { generateGraph } = require('./scripts/generate-graph.cjs'); generateGraph();\" && eleventy",
-    "build:gh-pages": "npm run build",
+    "start": "esbuild src/js/graph-visualization.js --bundle --format=esm --outfile=src/js/graph-bundle.js && eleventy --serve --port=9090",
+    "build": "node -e \"const { generateGraph } = require('./scripts/generate-graph.cjs'); generateGraph();\" && esbuild src/js/graph-visualization.js --bundle --format=esm --outfile=src/js/graph-bundle.js && eleventy",    "build:gh-pages": "npm run build",
     "generate-graph": "node -e \"const { generateGraph } = require('./scripts/generate-graph.cjs'); generateGraph();\""
   },
   "dependencies": {
@@ -23,9 +22,13 @@
     "@11ty/eleventy-fetch": "^5.1.1",
     "@adaptivekind/markdown-graph": "^0.0.17",
     "clean-css": "^5.3.2",
+    "d3": "^7.9.0",
     "eleventy-plugin-citations": "^0.1.10",
     "gray-matter": "^4.0.3",
     "markdown-it": "^13.0.1",
     "markdown-it-wikilinks": "^1.1.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.3"
   }
 }
