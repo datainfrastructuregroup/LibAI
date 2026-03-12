@@ -1,0 +1,346 @@
+{
+  "nodes": [
+    {
+      "id": "african-feminist-approaches-to-liberatory-ai",
+      "label": "African feminist approaches to liberatory AI",
+      "url": "/notes/african-feminist-approaches-to-liberatory-ai/",
+      "meta": {
+        "title": "African feminist approaches to liberatory AI",
+        "layout": "note.njk"
+      },
+      "description": "An African feminist liberatory approach recognizes technology as inherently political rather than neutral. Rather than accepting these embedded politics as inevitable, a liberatory approach would make..."
+    },
+    {
+      "id": "ai-can-work-in-harmony-with-the-environment",
+      "label": "AI can work in harmony with the environment",
+      "url": "/notes/ai-can-work-in-harmony-with-the-environment/",
+      "meta": {
+        "title": "AI can work in harmony with the environment",
+        "layout": "note.njk"
+      },
+      "description": "AI development can work in alignment with environmental sustainability and ecological preservation.\n\nLiberatory AI is not just about avoiding harm; it is about actively creating systems that regenerat..."
+    },
+    {
+      "id": "ai-must-be-built-under-humane-conditions",
+      "label": "AI must be built under humane conditions",
+      "url": "/notes/ai-must-be-built-under-humane-conditions/",
+      "meta": {
+        "title": "AI must be built under humane conditions",
+        "layout": "note.njk"
+      },
+      "description": "A liberatory AI ecosystem would transform bad labor conditions by ensuring that those most affected by technological systems have a say in how they are designed and governed.\n\nAI is an African feminis..."
+    },
+    {
+      "id": "communities-decide-if-ai-is-working-for-them",
+      "label": "Communities decide if AI is working for them.",
+      "url": "/notes/communities-decide-if-ai-is-working-for-them/",
+      "meta": {
+        "title": "Communities decide if AI is working for them.",
+        "layout": "note.njk"
+      },
+      "description": "Liberatory AI evaluation facilitates the creation of more just, effective, and community-centered technology by shifting the power of assessment into the hands of those most impacted by these systems...."
+    },
+    {
+      "id": "corporate-ai-is-bad-for-the-planet",
+      "label": "Corporate AI is bad for the planet",
+      "url": "/notes/corporate-ai-is-bad-for-the-planet/",
+      "meta": {
+        "title": "Corporate AI is bad for the planet",
+        "layout": "note.njk"
+      },
+      "description": "Corporate AI relies on extraction of the planet, people, and data contributing to the global climate crisis and environmental injustice.\n\nCorporate AI systems are often celebrated as revolutionary too..."
+    },
+    {
+      "id": "corporate-ai-is-built-by-exploited-laborers",
+      "label": "Corporate AI is built by exploited laborers.",
+      "url": "/notes/corporate-ai-is-built-by-exploited-laborers/",
+      "meta": {
+        "title": "Corporate AI is built by exploited laborers.",
+        "layout": "note.njk"
+      },
+      "description": "Corporate AI development depends on invisible labor, much of which is performed by workers in the Global South. This extractive reality stands in stark contrast to the techno-utopian promises of AI co..."
+    },
+    {
+      "id": "corporate-ai-is-colonialist",
+      "label": "Corporate AI is Colonialist",
+      "url": "/notes/corporate-ai-is-colonialist/",
+      "meta": {
+        "title": "Corporate AI is Colonialist",
+        "layout": "note.njk"
+      },
+      "description": "Corporate AI, especially LLMs, reinforce colonial and capitalist structures by privileging Western, male, and Global North perspectives while excluding localized *knowledges*.\n\nCorporations have devel..."
+    },
+    {
+      "id": "corporate-ai-is-nowhere",
+      "label": "Corporate AI is nowhere",
+      "url": "/notes/corporate-ai-is-nowhere/",
+      "meta": {
+        "title": "Corporate AI is nowhere",
+        "layout": "note.njk"
+      },
+      "description": "The Center for Land Use Interpretation over a decade ago took pictures of the internet. It was not photos of people on computer screens at the libraries or cafes. Most of the photos were actually of a..."
+    },
+    {
+      "id": "corporate-ai-threatens-democracy",
+      "label": "Corporate AI threatens democracy",
+      "url": "/notes/corporate-ai-threatens-democracy/",
+      "meta": {
+        "title": "Corporate AI threatens democracy",
+        "layout": "note.njk"
+      },
+      "description": "To reclaim our socio-digital futures, we must challenge corporate AI’s capture of democratic politics and counter it by centering collective, solidary, and participatory forms of politics.\n\nBusiness i..."
+    },
+    {
+      "id": "corporate-ai-uses-troubling-benchmarks",
+      "label": "Corporate AI uses troubling benchmarks",
+      "url": "/notes/corporate-ai-uses-troubling-benchmarks/",
+      "meta": {
+        "title": "Corporate AI uses troubling benchmarks",
+        "layout": "note.njk"
+      },
+      "description": "AI development today is primarily driven by financial incentives rather than social responsibility. Competing for funding, market dominance, and regulatory approval, companies prioritize getting high ..."
+    },
+    {
+      "id": "liberatory-ai-is-place-based",
+      "label": "Liberatory AI is place-based",
+      "url": "/notes/liberatory-ai-is-place-based/",
+      "meta": {
+        "title": "Liberatory AI is place-based",
+        "layout": "note.njk"
+      },
+      "description": "A liberatory AI ecosystem is grounded in space and place, this includes the infrastructure that is used to create and maintain it (ie: data centers) and the spaces and places it attempts to present. T..."
+    },
+    {
+      "id": "alessandra-jungs-de-almeida",
+      "label": "Alessandra Jungs de Almeida",
+      "url": "/people/alessandra-jungs-de-almeida/",
+      "meta": {
+        "title": "Alessandra Jungs de Almeida",
+        "layout": "person.njk"
+      },
+      "description": "Alessandra Jungs de Almeida holds a Ph.D. in International Relations from the Federal University of Santa Catarina (UFSC), Brazil. She is a postdoctoral associate at the Women's and Gender Studies Pro..."
+    },
+    {
+      "id": "amelia-lee-dogan",
+      "label": "Amelia Lee Doğan",
+      "url": "/people/amelia-lee-dogan/",
+      "meta": {
+        "title": "Amelia Lee Doğan",
+        "layout": "person.njk"
+      },
+      "description": "Amelia Lee Doğan (they/she) is a PhD student at the University of Washington researching how data systems and tools can be used for co-liberation. Additionally, Amelia is a research affiliate of the D..."
+    },
+    {
+      "id": "bianchi-dy",
+      "label": "Bianchi Dy",
+      "url": "/people/bianchi-dy/",
+      "meta": {
+        "title": "Bianchi Dy",
+        "layout": "person.njk"
+      },
+      "description": "Bianchi Dy is a data visualization practitioner and urban planner. Her research is focused on nighttime leisure travel. In the past, she has worked on projects involving urban science, data feminism, ..."
+    },
+    {
+      "id": "catherine-dignazio",
+      "label": "Catherine D'Ignazio",
+      "url": "/people/catherine-dignazio/",
+      "meta": {
+        "title": "Catherine D'Ignazio",
+        "layout": "person.njk"
+      },
+      "description": "Catherine D'Ignazio is a hacker mama, scholar, and artist/designer who focuses on feminist technology, data justice and civic engagement. She has run women's health hackathons, designed global news re..."
+    },
+    {
+      "id": "hongjin-lin",
+      "label": "Hongjin Lin",
+      "url": "/people/hongjin-lin/",
+      "meta": {
+        "title": "Hongjin Lin",
+        "layout": "person.njk"
+      },
+      "description": "Hongjin is a Ph.D. Candidate in Computer Science, advised by Professor Krzysztof Gajos. Her research lies at the intersection of AI and social justice, through both qualitative critical evaluation and..."
+    },
+    {
+      "id": "isadora-cruxen",
+      "label": "Isadora Cruxên",
+      "url": "/people/isadora-cruxen/",
+      "meta": {
+        "title": "Isadora Cruxên",
+        "layout": "person.njk"
+      },
+      "description": "Isadora Cruxên studies the political economy of development with a focus on Latin America and Brazil. Her recent work explores the politics of market-making and private investment in water infrastruct..."
+    },
+    {
+      "id": "jessica-marie-johnson",
+      "label": "Jessica Marie Johnson",
+      "url": "/people/jessica-marie-johnson/",
+      "meta": {
+        "title": "Jessica Marie Johnson",
+        "layout": "person.njk"
+      },
+      "description": "..."
+    },
+    {
+      "id": "kendra-albert",
+      "label": "Kendra Albert",
+      "url": "/people/kendra-albert/",
+      "meta": {
+        "title": "Kendra Albert",
+        "layout": "person.njk"
+      },
+      "description": "Kendra Albert is a public interest technology and media lawyer and a recovering academic. Their scholarship focuses on the relationship between technology and power, with a particular attention to gen..."
+    },
+    {
+      "id": "lauren-klein",
+      "label": "Lauren Klein",
+      "url": "/people/lauren-klein/",
+      "meta": {
+        "title": "Lauren Klein",
+        "layout": "person.njk"
+      },
+      "description": "Lauren Klein is a Professor of Data & Decision Sciences and English at Emory University, where she directs the Digital Humanities Lab and Atlanta Interdisciplinary AI Network. Before arriving at Emory..."
+    },
+    {
+      "id": "meredith-martin",
+      "label": "Meredith Martin",
+      "url": "/people/meredith-martin/",
+      "meta": {
+        "title": "Meredith Martin",
+        "layout": "person.njk"
+      },
+      "description": "Meredith Martin is part of the Princeton Societal AI research group at Princeton University and leads the Humanities for AI Initiative at the Center for Digital Humanities, which she also directs...."
+    },
+    {
+      "id": "nikko-stevens",
+      "label": "Nikko Stevens",
+      "url": "/people/nikko-stevens/",
+      "meta": {
+        "title": "Nikko Stevens",
+        "layout": "person.njk"
+      },
+      "description": "Dr. Nikko Stevens is a critical technology researcher, software engineer, and community organizer. As an academic, Stevens studies the ways that data infrastructures–data models, databases, data struc..."
+    },
+    {
+      "id": "ololade-faniyi",
+      "label": "Ololade Faniyi",
+      "url": "/people/ololade-faniyi/",
+      "meta": {
+        "title": "Ololade Faniyi",
+        "layout": "person.njk"
+      },
+      "description": "..."
+    },
+    {
+      "id": "sybille-legitime",
+      "label": "Sybille Legitime",
+      "url": "/people/sybille-legitime/",
+      "meta": {
+        "title": "Sybille Legitime",
+        "layout": "person.njk"
+      },
+      "description": "Sybille is a first year Ph.D. student in Computer Science at Brown University, advised by Harini Suresh. She is interested in researching how communities of non-programmers –especially those tradition..."
+    },
+    {
+      "id": "thema-monroe-white",
+      "label": "Thema Monroe-White",
+      "url": "/people/thema-monroe-white/",
+      "meta": {
+        "title": "Thema Monroe-White",
+        "layout": "person.njk"
+      },
+      "description": "Thema (Tay-mah) Monroe-White, PhD is an Associate Professor of Artificial Intelligence and Innovation Policy at George Mason University, with joint appointments in the Schar School of Policy and Gover..."
+    },
+    {
+      "id": "william-r-frey",
+      "label": "William R. Frey",
+      "url": "/people/william-r-frey/",
+      "meta": {
+        "title": "William R. Frey",
+        "layout": "person.njk"
+      },
+      "description": "William R. Frey is a jointly funded Postdoctoral Research Fellow in the School of Information and the School of Social Work, and Faculty Affiliate of the Digital Studies Institute at the University of..."
+    },
+    {
+      "id": "yujia-gao",
+      "label": "Yujia Gao",
+      "url": "/people/yujia-gao/",
+      "meta": {
+        "title": "Yujia Gao",
+        "layout": "person.njk"
+      },
+      "description": "Yujia Gao is a PhD student in Computer Science of Brown University advised by Harini Suresh. Her research focuses on understanding the societal impacts of AI systems through a sociotechnical perspecti..."
+    }
+  ],
+  "links": [
+    {
+      "source": "african-feminist-approaches-to-liberatory-ai",
+      "target": "ololade-faniyi",
+      "type": "author"
+    },
+    {
+      "source": "ai-can-work-in-harmony-with-the-environment",
+      "target": "amelia-lee-dogan",
+      "type": "author"
+    },
+    {
+      "source": "ai-can-work-in-harmony-with-the-environment",
+      "target": "hongjin-lin",
+      "type": "author"
+    },
+    {
+      "source": "ai-must-be-built-under-humane-conditions",
+      "target": "ololade-faniyi",
+      "type": "author"
+    },
+    {
+      "source": "communities-decide-if-ai-is-working-for-them",
+      "target": "yujia-gao",
+      "type": "author"
+    },
+    {
+      "source": "corporate-ai-is-bad-for-the-planet",
+      "target": "amelia-lee-dogan",
+      "type": "author"
+    },
+    {
+      "source": "corporate-ai-is-bad-for-the-planet",
+      "target": "hongjin-lin",
+      "type": "author"
+    },
+    {
+      "source": "corporate-ai-is-built-by-exploited-laborers",
+      "target": "ololade-faniyi",
+      "type": "author"
+    },
+    {
+      "source": "corporate-ai-is-colonialist",
+      "target": "alessandra-jungs-de-almeida",
+      "type": "author"
+    },
+    {
+      "source": "corporate-ai-is-nowhere",
+      "target": "amelia-lee-dogan",
+      "type": "author"
+    },
+    {
+      "source": "corporate-ai-threatens-democracy",
+      "target": "isadora-cruxen",
+      "type": "author"
+    },
+    {
+      "source": "corporate-ai-uses-troubling-benchmarks",
+      "target": "yujia-gao",
+      "type": "author"
+    },
+    {
+      "source": "liberatory-ai-is-place-based",
+      "target": "amelia-lee-dogan",
+      "type": "author"
+    },
+    {
+      "source": "liberatory-ai-is-place-based",
+      "target": "nikko-stevens",
+      "type": "editor"
+    }
+  ]
+}
