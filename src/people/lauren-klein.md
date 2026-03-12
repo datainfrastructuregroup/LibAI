@@ -3,7 +3,7 @@ title: Lauren Klein
 position: Professor of Data & Decision Sciences and English
 description: Professor at Emory University, director of Digital Humanities Lab and Atlanta Interdisciplinary AI Network.
 orcid: 0000-0002-1511-0910
-headshot: /assets/headshot-placeholder.jpg
+headshot: /assets/headshot-lauren-klein.jpg
 subtitle:
 tags:
     - person

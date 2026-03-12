@@ -4,7 +4,7 @@ position: Ph.D. Student
 description: PhD student in Computer Science at Brown University focusing on societal impacts of AI and community-driven systems.
 url: 
 orcid: 0009-0000-8774-3867
-headshot: /assets/headshot-placeholder.jpg
+headshot: /assets/headshot-yujia.jpeg
 subtitle:
 tags:
     - person

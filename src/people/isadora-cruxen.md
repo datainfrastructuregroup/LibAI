@@ -1,10 +1,10 @@
 ---
 title: Isadora Cruxên
-position: Research Affiliate
+position: Senior Lecturer in Business Politics and Development at Queen Mary University of London
 description: Studies political economy of development with focus on Latin America and co-leads Data Against Feminicide project.
 url: 
 orcid: 
-headshot: /assets/headshot-placeholder.jpg
+headshot: /assets/headshot-isa.jpg
 subtitle:
 tags:
     - person

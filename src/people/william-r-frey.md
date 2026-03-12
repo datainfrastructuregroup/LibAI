@@ -4,7 +4,7 @@ position: Postdoctoral Associate
 description: 
 url: https://www.williamrfrey.com/
 orcid: 0000-0002-6416-654X
-headshot: /assets/headshot-placeholder.jpg
+headshot: /assets/headshot-william-frey-200x200.jpg
 subtitle:
 tags:
     - person

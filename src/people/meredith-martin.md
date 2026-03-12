@@ -4,7 +4,7 @@ position: Professor, English, Princeton University
 description: 
 url: https://cdh.princeton.edu/people/meredith-martin/
 orcid: 0000-0003-0214-8757
-headshot: /assets/headshot-placeholder.jpg
+headshot: /assets/headshot-meredith-martin-200x200.jpg
 subtitle:
 tags:
     - person

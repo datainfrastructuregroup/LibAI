@@ -4,7 +4,7 @@ position: PhD Student
 description: PhD student at University of Washington researching data systems for co-liberation and research affiliate at Data + Feminism Lab.
 url: 
 orcid: 0009-0006-6540-231X
-headshot: /assets/headshot-placeholder.jpg
+headshot: /assets/headshot-dogan.jpeg
 subtitle:
 tags:
     - person
